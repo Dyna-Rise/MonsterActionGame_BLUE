@@ -147,6 +147,18 @@ namespace MonsterAction.Home.UI
                 //   1. 売り切れ（GameData.IsSkillMaxed）なら       … "売り切れです"
                 //   2. GameData.TryBuySkill(e.skill) が true なら … "〇〇 が ★2 になった！" のように出す
                 //   3. false なら                                 … "お金が足りません"
+                if (GameData.IsSkillMaxed(e.skill))
+                {
+                    ShowMessage("売り切れです");
+                }
+                else if (GameData.TryBuySkill(e.skill))
+                {
+                    ShowMessage($"{SkillData.GetName(e.skill)} が {SkillData.GetStars(GameData.GetSkillLevel(e.skill))} になった！");
+                }
+                else
+                {
+                    ShowMessage("お金が足りません");
+                }
             }
 
             Refresh(); // 買ったあと、所持金や所持数の表示を更新する
