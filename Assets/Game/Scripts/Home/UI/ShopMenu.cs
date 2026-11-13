@@ -41,6 +41,12 @@ namespace MonsterAction.Home.UI
             //   ・CreateHeader でスキルの見出しを作る
             //   ・SkillData.All を foreach して、CreateRow() と entries.Add(new Entry { skill = skill })
             //   （上のアイテムとほとんど同じ形です）
+            CreateHeader("スキル");
+            foreach (var skill in SkillData.All)
+            {
+                CreateRow();                             // 行を1つ作る
+                entries.Add(new Entry { skill = skill });  // その行の中身を覚えておく
+            }
         }
 
         // ================================================================
