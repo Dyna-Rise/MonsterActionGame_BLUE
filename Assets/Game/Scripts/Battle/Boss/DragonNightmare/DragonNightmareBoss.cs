@@ -180,7 +180,7 @@ namespace MonsterAction.Battle.Boss
             Play(Scream);//親クラスのPlayメソッドでScreamモーションを再生する。遷移時間は初期値の0.15f
             
             //3番
-            yield return WaitStateTime(Scream, 0.25f);//Screamの25%まで進めたらWaitStateTimeを返す
+            yield return WaitStateTime(Scream, 0.25f);//Screamの25%まで進めたらWaitStateTimeを返す。GetStateTimeは(stateName)がどこまで再生されたか確認する。
             //     protected IEnumerator WaitStateTime(string stateName, float t, float timeout = 6f)
             //{
             //    float limit = Time.time + timeout;
@@ -231,7 +231,7 @@ namespace MonsterAction.Battle.Boss
                 yield return null;
             }
             //4番
-            biteHitbox.Begin(biteDamage, knockback: 1f);//口の攻撃判定、Beginは。
+            biteHitbox.Begin(biteDamage, knockback: 1f);//口の攻撃判定、Beginは
             //    public void Begin(float damage, float knockback = 1f, bool causesFlinch = true, bool knockDown = false)
             //{
             //    template = new DamageInfo(damage, Vector3.zero, Vector3.zero,
@@ -261,8 +261,31 @@ namespace MonsterAction.Battle.Boss
             //        ...
             //        foreach (var h in clawHitboxes) h.End();
             //   ・判定は 30% 〜 55%、最後に Rest(RestTime(0.9f))
-            yield return null; //エラー回避用
+            //yield return null; //エラー回避用
+            yield return TurnToPlayer(0.5f, Walk);
 
+            Play(ClawAttack);
+
+            yield return WaitStateTimeTracking(ClawAttack, 0.3f, 1.5f);//Time.time+timeoutになるまではプレイヤーの方向を向き続ける。
+
+            //  protected IEnumerator WaitStateTimeTracking(string stateName, float t, float turnMultiplier = 1f, float timeout = 6f)
+            //  {
+            //    float limit = Time.time + timeout;
+            //    yield return null;
+            //    while (GetStateTime(stateName) < t && Time.time < limit)
+            //    {
+            //        FaceTowards(DirectionToPlayer, turnMultiplier);
+            //        yield return null;
+            //    }
+            //  }
+
+            foreach (var h in clawHitboxes) h.Begin(clawDamage, knockback: 0.8f);
+
+            yield return WaitStateTime(ClawAttack, 0.55f);
+            foreach (var h in clawHitboxes) h.End();
+
+            yield return WaitStateTime(ClawAttack, 0.95f);
+            yield return Rest(RestTime(1f));
 
         }
 
