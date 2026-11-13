@@ -128,6 +128,18 @@ namespace MonsterAction.Home.UI
                 //   2. GameData.TryBuy(e.item) が true なら         … ShowMessage($"{e.item.DisplayName} を買った！")
                 //   3. false なら（お金が足りない）                 … ShowMessage("お金が足りません")
                 //   ヒント：if / else if / else を使います
+                if (GameData.GetCount(e.item) >= e.item.MaxCount)
+                {
+                    ShowMessage("これ以上持てません");
+                }
+                else if (GameData.TryBuy(e.item))
+                {
+                    ShowMessage($"{e.item.DisplayName} を買った！");
+                }
+                else
+                {
+                    ShowMessage("お金が足りません");
+                }
             }
             else
             {
