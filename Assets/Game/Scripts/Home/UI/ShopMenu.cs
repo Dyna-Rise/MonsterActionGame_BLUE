@@ -80,6 +80,12 @@ namespace MonsterAction.Home.UI
                     //                そうでなければ FormatMoney(GameData.GetNextSkillPrice(e.skill))
                     //   ・右の色  … 売り切れなら DisabledColor、そうでなければ PriceColor
                     //   rows[i].Set(名前, 情報, 右の文字, 右の色); で表示します（上のアイテムが参考になります）
+                    int level = GameData.GetSkillLevel(e.skill);
+                    bool isSkillMaxed = GameData.IsSkillMaxed(e.skill);
+                    rows[i].Set(SkillData.GetName(e.skill),
+                                SkillData.GetStars(level),
+                                isSkillMaxed ? "売切れ" : FormatMoney(GameData.GetNextSkillPrice(e.skill)),
+                                isSkillMaxed ? DisabledColor : PriceColor);
                 }
             }
         }
