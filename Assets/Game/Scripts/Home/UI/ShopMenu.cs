@@ -108,6 +108,7 @@ namespace MonsterAction.Home.UI
                 // TODO ④：スキルの説明を出す
                 //   SkillData.GetDescription(e.skill) を SetDescription に渡す
                 //   （「装備画面（ドア）で付けると効果が出ます。」と付け足すと親切）
+                SetDescription(SkillData.GetDescription(e.skill) + "\n装備画面（ドア）で付けると効果が出ます。");
             }
         }
 
