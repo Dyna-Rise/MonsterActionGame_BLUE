@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using MonsterAction.Battle.CameraSystem;
 using MonsterAction.Home.Player;
+using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
@@ -27,12 +28,12 @@ namespace MonsterAction.Home.UI
         [Tooltip("行のひな形（非表示にしておく）")]
         [SerializeField] protected MenuRow rowTemplate;
         [Tooltip("見出しのひな形（非表示にしておく）")]
-        [SerializeField] protected Text headerTemplate;
-        [SerializeField] protected Text moneyText;
+        [SerializeField] protected TextMeshProUGUI headerTemplate;
+        [SerializeField] protected TextMeshProUGUI moneyText;
         [Tooltip("選んでいる行の説明")]
-        [SerializeField] protected Text descriptionText;
+        [SerializeField] protected TextMeshProUGUI descriptionText;
         [Tooltip("「お金が足りません」などのメッセージ")]
-        [SerializeField] protected Text messageText;
+        [SerializeField] protected TextMeshProUGUI messageText;
         [SerializeField] protected Button closeButton;
 
         protected readonly List<MenuRow> rows = new List<MenuRow>();

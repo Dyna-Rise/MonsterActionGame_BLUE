@@ -83,7 +83,7 @@ namespace MonsterAction.Home.UI
             if (DepartRowIndex < rows.Count)
             {
                 int q = FindQuest(GameData.SelectedBossId);
-                rows[DepartRowIndex].Set("出撃する", q >= 0 ? GetName(quests[q]) : "", "▶", DepartColor);
+                rows[DepartRowIndex].Set("出撃する", q >= 0 ? GetName(quests[q]) : "", "→", DepartColor);
             }
         }
 
