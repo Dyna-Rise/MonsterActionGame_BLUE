@@ -69,8 +69,14 @@ namespace MonsterAction.Home.UI
             }
 
             // TODO ②：スキルも並べる
-            //   ・CreateHeader でスキルの見出しを作る
-            //   ・SkillData.All を foreach して、CreateRow() と entries.Add(new Entry { typeIndex = -1, skill = skill })
+            CreateHeader("スキルタイプ");
+            foreach (SkillType skill in SkillData.All)
+            {
+                CreateRow(); //行を作る
+                entries.Add(new Entry { typeIndex = -1, skill = skill });
+            }
+
+            //SkillData.All を foreach して、CreateRow() と entries.Add(new Entry { typeIndex = -1, skill = skill })
             //   （typeIndex = -1 で「スキルの行」という意味になります）
         }
 
@@ -102,6 +108,16 @@ namespace MonsterAction.Home.UI
                     //       付けている → 右に "装備中"（OnColor）
                     //       外している → 右に "外している"（OffColor）
                     //   ・名前は SkillData.GetName(e.skill)、情報は SkillData.GetStars(level)
+                    string skillName = SkillData.GetName(e.skill);
+                    int level = GameData.GetSkillLevel(e.skill);
+                    if (level <= 0)
+                    {
+                        rows[i].Set(skillName, SkillData.GetStars(0), "未購入", DisabledColor);
+                    }
+                    else if(GameData.IsSkillEquipped(e.skill))
+                    {
+
+                    }
                 }
             }
         }
@@ -131,7 +147,7 @@ namespace MonsterAction.Home.UI
         //  行が決定された → タイプを選ぶ / スキルを付け外しする
         // ================================================================
 
-        protected override void OnRowClicked(int index)
+        protected override void OnRowClicked(int index)　//行がクリックされた時
         {
             if (index < 0 || index >= entries.Count) return;
             var e = entries[index];
@@ -139,9 +155,12 @@ namespace MonsterAction.Home.UI
             if (e.IsType)
             {
                 // TODO ①：そのタイプにする
-                //   1. var t = playerTypes[e.typeIndex];  で選んだタイプを取り出す
-                //   2. GameData.SelectedPlayerTypeId に t.id を入れる
-                //   3. ShowMessage($"{t.displayName} にした");
+                var t = playerTypes[e.typeIndex];  //で記憶させていたタイプを取り出す
+                GameData.SelectedPlayerTypeId = t.id; //GameDataにidを入れる
+                ShowMessage($"{t.displayName} にした"); //メッセージを表示させる
+
+                //これでタイプ選択ができるようになった
+
             }
             else
             {
