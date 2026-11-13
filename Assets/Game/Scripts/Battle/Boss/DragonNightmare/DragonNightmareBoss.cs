@@ -1,4 +1,7 @@
+using MonsterAction.Combat;
 using System.Collections;
+using System.Security.Cryptography.X509Certificates;
+using System.Threading;
 using UnityEngine;
 
 namespace MonsterAction.Battle.Boss
@@ -88,14 +91,14 @@ namespace MonsterAction.Battle.Boss
         private bool hasRoared;
         private bool enraged;
 
-        private float RestTime(float seconds) => enraged ? seconds * enragedRestRate : seconds;
+        private float RestTime(float seconds) => enraged ? seconds * enragedRestRate : seconds;//bool型変数の後に？をその後の処理に:を付けることでifを省略して条件分岐させることができる
 
         // ================================================================
         //  どの行動をするか決める
         // ================================================================
 
         /// <summary>次の行動を決めて返す（行動が終わるたびに呼ばれる）</summary>
-        protected override IEnumerator ThinkNextAction()
+        protected override IEnumerator ThinkNextAction()//IEnumeratorはreturnを返さないとエラーになる
         {
             // TODO：次にやる行動を return で返す
             //   ★ 書きはじめたら、下の「yield return null;」は必ず消す
@@ -116,7 +119,37 @@ namespace MonsterAction.Battle.Boss
             //        if (distance <= farRange)   { if (r < 55) return ChargeCombo(); ... }
             //        （遠いとき）...
             //   4. 最後は必ず何かを return する（どの if にも入らなかったとき用）
-            yield return null; //エラー回避用
+            //yield return null; //エラー回避用
+
+            //1番
+            if (!hasRoared) { hasRoared = true; return Roar(); }//hasRoaredがfalseならRoarを実行する
+            
+            //2番
+            if (!enraged && HpRate <= 0.5f) { enraged = true; Anim.speed = enragedAnimSpeed;return Roar(); }//HpRateで体力の割合を管理、5割を下回ったら怒り状態をONにしてRoar
+            
+            //3番
+            float dis = DistanceToPlayer;//float型関数で距離を得る()Vector3.magnitudeは平方根を求める
+            int r = Random.Range(0, 100);
+            if (dis <= meleeRange) //近距離の処理
+            {
+                if (r < 40) return Bite();//0～39で噛みつき(40%)
+                else if (r >= 40 && r < 80) return Scratch();//40～79でひっかき(40%)
+                else if (r >= 80 && r < 90) return Breath();//80～89でブレス(10%)
+                else if (r >= 90 && r < 100) return Throw();//90～99で岩投げ(10%)
+            }
+
+            if (dis <= farRange) //中距離の処理
+            {
+                return null;
+            }
+
+            if (dis > farRange) //遠距離の処理
+            {
+                return null;
+            }
+            
+            //4番
+            return null;
         }
 
         // ================================================================
@@ -134,7 +167,35 @@ namespace MonsterAction.Battle.Boss
             //                                    （3つ目の 0f がダメージ。0 なのでのけぞるだけ）
             //   5. モーションの最後まで待つ      yield return WaitStateTime(Scream, 0.95f);
             //   6. 少し休む                      yield return Rest(RestTime(0.5f));
-            yield return null; //エラー回避用
+            //yield return null; //エラー回避用
+
+            //1番
+            yield return TurnToPlayer(1f, Walk);//Playerに1秒向き直す、アニメーションはWalkを参照
+            //transform.fowardは現在向いている方向の正規化された値
+            //normalizedは入力されているvectorの数値を距離で割って1以下にする
+            //Quaternion.LookRotationは指定した方向を向くための回転を計算する。Quaternion.RotateTowardsは現在の回転から、目標の回転へ徐々に近づける。
+            //RotateTowards(現在,指定した角度,回転速度)
+
+            //2番
+            Play(Scream);//親クラスのPlayメソッドでScreamモーションを再生する。遷移時間は初期値の0.15f
+            
+            //3番
+            yield return WaitStateTime(Scream, 0.25f);//Screamの25%まで進めたらWaitStateTimeを返す
+            //     protected IEnumerator WaitStateTime(string stateName, float t, float timeout = 6f)
+            //{
+            //    float limit = Time.time + timeout;
+            //    yield return null; // CrossFade が反映されるのを1フレーム待つ
+            //    while (GetStateTime(stateName) < t && Time.time < limit) yield return null;
+            //}
+            
+            //4番
+            AreaAttack(transform.position, roarRadius, 0f, knockback: 1.5f);//AreaAttackメソッド、現在地点からroarRadius半径分、0ﾀﾞﾒｰｼﾞで1.5mノックバックする
+            
+            //5番
+            yield return WaitStateTime(Scream, 0.95f);//Screamの95%まで進めたらWaitStateTimeを返す
+            
+            //6番
+            yield return Rest(RestTime(0.5f));//RestTimeに引数を渡すと怒り状態か判断してfloat型を返す。Restは引数にrestTimeScaleを掛け、0～restRandomExtra未満の数値を足した分Waitするしてreturnする。
         }
 
         // ================================================================
@@ -157,7 +218,36 @@ namespace MonsterAction.Battle.Boss
             //   4. 口の攻撃判定 ON                 biteHitbox.Begin(biteDamage, knockback: 1f);
             //   5. 55% まで待って OFF              WaitStateTime(BasicAttack, 0.55f) → biteHitbox.End();
             //   6. 最後まで待って休む              WaitStateTime(BasicAttack, 0.95f) → Rest(RestTime(1.0f))
-            yield return null; //エラー回避用
+            //yield return null; //エラー回避用
+            //1番
+            yield return TurnToPlayer(0.5f, Walk);
+            //2番
+            Play(BasicAttack);
+            //3番
+            while (GetStateTime(BasicAttack) < 0.3f) //GetStateTime内処理IsInTransitionはアニメーション遷移中かどうかをbool型で返し、GetNextAnimatorStateInfoは遷移先の参照、IsNameは再生しているステート名が引数と一致しているかbool型で返し、GetCurrentAnimatorStateInfoは現在のステート情報でそれぞれ引数の0はベースレイヤーで、normalizedTimeはアニメーションの進行度を0～1の割合で参照する。?は条件演算子でx?a:bでxならa、falseならbを返す。この場合BasicAttackの3割まで繰り返す。
+            {
+                FaceTowards(DirectionToPlayer, 1.5f);
+                Move(transform.forward * 2.5f);
+                yield return null;
+            }
+            //4番
+            biteHitbox.Begin(biteDamage, knockback: 1f);//口の攻撃判定、Beginは。
+            //    public void Begin(float damage, float knockback = 1f, bool causesFlinch = true, bool knockDown = false)
+            //{
+            //    template = new DamageInfo(damage, Vector3.zero, Vector3.zero,
+            //                              owner != null ? owner.gameObject : gameObject, causesFlinch, knockback, knockDown);
+            //    hasHit = false;
+            //    IsActive = true;
+            //}
+
+            //5番
+            yield return WaitStateTime(BasicAttack, 0.55f);
+            biteHitbox.End();//  public void End() => IsActive = false;
+
+            //6番
+            yield return WaitStateTime(BasicAttack, 0.95f);
+            yield return Rest(RestTime(1f));
+
         }
 
         /// <summary>ひっかき（小）：軸合わせしてから翼の爪で軽く払う</summary>
@@ -172,6 +262,8 @@ namespace MonsterAction.Battle.Boss
             //        foreach (var h in clawHitboxes) h.End();
             //   ・判定は 30% 〜 55%、最後に Rest(RestTime(0.9f))
             yield return null; //エラー回避用
+
+
         }
 
         // ================================================================
