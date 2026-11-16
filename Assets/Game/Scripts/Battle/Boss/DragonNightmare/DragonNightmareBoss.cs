@@ -3,6 +3,7 @@ using System.Collections;
 using System.Security.Cryptography.X509Certificates;
 using System.Threading;
 using Unity.VisualScripting;
+using UnityEditor;
 using UnityEngine;
 
 namespace MonsterAction.Battle.Boss
@@ -75,6 +76,9 @@ namespace MonsterAction.Battle.Boss
         [Header("咆哮")]
         [SerializeField] private float roarRadius = 12f;
 
+        [Header("歩き時間")]
+        [SerializeField] private float walkTime = 5f;
+
         [Header("怒り")]
         [Tooltip("怒り状態のモーション速度")]
         [SerializeField] private float enragedAnimSpeed = 1.2f;
@@ -88,6 +92,7 @@ namespace MonsterAction.Battle.Boss
         private const string ClawAttack = "Claw Attack";
         private const string HornAttack = "Horn Attack";
         private const string Scream = "Scream";
+        private const string Jump = "Jump";
 
         private bool hasRoared;
         private bool enraged;
@@ -141,17 +146,17 @@ namespace MonsterAction.Battle.Boss
 
             if (dis <= farRange) //中距離の処理
             {
-                if (r < 70) return null;//0～69で突進(70%)
+                if (r < 70) return ChargeCombo();//0～69で突進(70%)
                 else if (r >= 70 && r < 80) return Breath();//70～79でブレス(10%)
                 else if (r >= 80 && r < 90) return Throw();//80～89で岩投げ(10%)
-                else if (r >= 90 && r < 100) return null;//90～99で移動(10%)
+                else if (r >= 90 && r < 100) return Approach(walkTime);//90～99で移動(10%)
             }
 
             if (dis > farRange) //遠距離の処理
             {
                 if (r < 40) return Breath();//0～39でブレス(70%)
                 else if (r >= 40 && r < 80) return Throw();//40～79で岩投げ(40%)
-                else if (r >= 80 && r < 100) return null;//80～99で突進(20%)
+                else if (r >= 80 && r < 100) return ChargeCombo();//80～99で突進(20%)
             }
             
             //4番
@@ -299,6 +304,8 @@ namespace MonsterAction.Battle.Boss
 
         }
 
+
+
         // ================================================================
         //  遠距離攻撃（大）
         // ================================================================
@@ -388,11 +395,12 @@ namespace MonsterAction.Battle.Boss
                 //    }
                 //}
 
-                //4番
-                yield return WaitStateTime(Scream, 0.95f);
-                yield return Rest(RestTime(1.4f));
+            
 
             }
+            //4番
+            yield return WaitStateTime(Scream, 0.95f);
+            yield return Rest(RestTime(1.4f));
         }
 
         /// <summary>
@@ -493,7 +501,7 @@ namespace MonsterAction.Battle.Boss
             for (int i = 0; i < charge; i++)
             {
                 yield return ChargeRun();//ChargeRunが終わるまで処理を一時停止
-                if (i < charge - 1) yield return Drift();//もしChargeRun後にcharge回数が残っている場合はDrift
+                if (i < charge - 1) yield return Drift();//もしChargeRun後にcharge回数が残る場合はDrift
             }
 
             //4番
@@ -516,7 +524,42 @@ namespace MonsterAction.Battle.Boss
             //        ・プレイヤーが後ろ側（Mathf.Abs(AngleToPlayer) > 100f）にいる時間を数えて、0.35 秒を超えたら break
             //        ・time += Time.deltaTime;  yield return null;
             //   4. 判定 OFF                    bodyHitbox.End();
-            yield return null; //エラー回避用
+            //yield return null; //エラー回避用
+
+            //1番
+            Play(Run, 0.1f);
+
+            //2番
+            bodyHitbox.Begin(chargeDamage, knockback: 6f, knockDown: true);
+
+            //3番
+            float time = 0.0f;
+            float behindTime = 0.0f;
+            while (time < chargeMaxTime)
+            {
+                FaceTowards(DirectionToPlayer, chargeHoming);
+                Move(transform.forward * chargeSpeed);
+                if (Mathf.Abs(AngleToPlayer) > 100f)
+                {
+                    behindTime += Time.deltaTime;
+                }
+                else
+                {
+                    behindTime = 0f;
+                }
+
+                if (behindTime >= 0.35) 
+                {
+                    break;
+                }
+
+                time += Time.deltaTime;
+                yield return null;
+            }
+
+            //4番
+            bodyHitbox.End();
+            yield return null;
         }
 
         /// <summary>ドリフト：勢いで滑りながら、すばやくプレイヤーの方へ向き直る（この間も当たる）</summary>
@@ -532,7 +575,32 @@ namespace MonsterAction.Battle.Boss
             //        Move(slide * rate);                      // 勢いがだんだん落ちる
             //        FaceTowards(DirectionToPlayer, driftTurn);  // すばやく向き直る
             //   5. 判定 OFF
-            yield return null; //エラー回避用
+            //yield return null; //エラー回避用
+            
+            //1番
+            Vector3 slide = transform.forward * chargeSpeed;
+
+            //2番
+            Play(AngleToPlayer > 0f ? "Walk Right" : "Walk Left", 0.1f);
+
+            //3番
+            bodyHitbox.Begin(chargeDamage * 0.7f, knockback: 4f, knockDown: true);
+
+            //4番
+            float time = 0.0f;
+            while (time < driftTime)
+            {
+                float rate = 1f - time / driftTime;
+                Move(slide * rate);
+                FaceTowards(DirectionToPlayer, driftTurn);
+                time += Time.deltaTime;
+                yield return null;
+            }
+
+            //5番
+            bodyHitbox.End();
+            yield return null;
+
         }
 
         /// <summary>減速して止まる</summary>
@@ -543,7 +611,21 @@ namespace MonsterAction.Battle.Boss
             //   2. seconds 秒の間、毎フレーム少しずつ遅く進む
             //        Move(transform.forward * chargeSpeed * (1f - time / seconds) * 0.5f);
             //        time += Time.deltaTime;  yield return null;
-            yield return null; //エラー回避用
+            //yield return null; //エラー回避用
+            
+            //1番
+            Play(Walk, 0.2f);
+
+            //2番
+            float time = 0.0f;
+            while (time < seconds)
+            {
+                Move(transform.forward * chargeSpeed * (1f - time / seconds) * 0.5f);
+                time += Time.deltaTime;
+                yield return null;
+            }
+            yield return null;
+
         }
 
         // ================================================================
@@ -560,7 +642,28 @@ namespace MonsterAction.Battle.Boss
             //        FaceTowards(DirectionToPlayer);          // プレイヤーの方へ向く
             //        Move(transform.forward * walkSpeed);     // 前に進む
             //        yield return null;                       // 次のフレームまで待つ
-            yield return null; //エラー回避用
+            //yield return null; //エラー回避用
+            
+            //1番
+            Play(Walk, 0.25f);
+
+            //2番
+            float end = Time.time + maxSeconds;
+
+            while (Time.time < end && DistanceToPlayer > meleeRange * 0.8f)
+            {
+                FaceTowards(DirectionToPlayer);
+                Move(transform.forward * walkSpeed);
+                yield return null;
+            }
+            yield return null;
+        }
+
+        //ギズモ表示用
+        private void OnDrawGizmos()
+        {
+            Gizmos.DrawWireSphere(transform.position, meleeRange);
+            Gizmos.DrawWireSphere(transform.position, farRange);
         }
 
 #if UNITY_EDITOR
