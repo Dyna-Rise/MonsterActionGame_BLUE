@@ -147,7 +147,7 @@ namespace MonsterAction.Home.UI
                 SetDescription(SkillData.GetDescription(e.skill));
                 if(GameData.GetSkillLevel(e.skill)<=0)
                 {
-                    ShowMessage("村人のショップで買えます");
+                    SetDescription("村人のショップで買えます");
                 }
             }
         }
@@ -186,14 +186,15 @@ namespace MonsterAction.Home.UI
                 {
                     GameData.SetSkillEquipped(e.skill, false);//falseで外す
                 }
+                else if (GameData.EquippedSkillCount >= GameData.MaxEquippedSkills)//制限より多くスキルをつけようとしたら
+                {
+                    ShowMessage("スキル枠がいっぱいです。先にどれかを外してください");
+                }
                 else
                 {
                     GameData.SetSkillEquipped(e.skill, true);//true付ける
                 }
-                if (GameData.EquippedSkillCount >= GameData.MaxEquippedSkills)
-                {
-                    ShowMessage("スキル枠がいっぱいです。先にどれかを外してください");
-                }
+                
 
             }
 
