@@ -75,6 +75,15 @@ namespace MonsterAction.Battle.Boss
 
         [Header("咆哮")]
         [SerializeField] private float roarRadius = 12f;
+        [SerializeField] private float roarDamage = 10f;
+
+
+        //追加部分
+        [Header("ジャンプ攻撃")]
+        [SerializeField] private float jumpAttackRadius = 7f;
+        [SerializeField] private float jumpDamage = 15f;
+        [SerializeField] private GameObject jumpEffect;
+        //追加部分終了
 
         [Header("歩き時間")]
         [SerializeField] private float walkTime = 5f;
@@ -92,6 +101,10 @@ namespace MonsterAction.Battle.Boss
         private const string ClawAttack = "Claw Attack";
         private const string HornAttack = "Horn Attack";
         private const string Scream = "Scream";
+
+        //追加部分
+        private const string Jump = "Jump";
+        //追加部分終了
 
         private bool hasRoared;
         private bool enraged;
@@ -137,25 +150,24 @@ namespace MonsterAction.Battle.Boss
             int r = Random.Range(0, 100);
             if (dis <= meleeRange) //近距離の処理
             {
-                if (r < 40) return Bite();//0～39で噛みつき(40%)
-                else if (r >= 40 && r < 80) return Scratch();//40～79でひっかき(40%)
-                else if (r >= 80 && r < 90) return Breath();//80～89でブレス(10%)
-                else if (r >= 90 && r < 100) return Throw();//90～99で岩投げ(10%)
+                if (r < 25) return Bite();//0～24で噛みつき(25%)
+                else if (r >= 25 && r < 70) return Scratch();//25～69でひっかき(45%)
+                else if (r >= 70 && r < 80) return Roar();//70～79で咆哮(10%)
+                else if (r >= 80 && r < 100) return JumpAttack();//80～99でジャンプ攻撃(20%)
             }
 
             if (dis <= farRange) //中距離の処理
             {
-                if (r < 70) return ChargeCombo();//0～69で突進(70%)
-                else if (r >= 70 && r < 80) return Breath();//70～79でブレス(10%)
-                else if (r >= 80 && r < 90) return Throw();//80～89で岩投げ(10%)
+                if (r < 50) return ChargeCombo();//0～49で突進(50%)
+                else if (r >= 50 && r < 60) return Breath();//50～59でブレス(10%)
+                else if (r >= 60 && r < 90) return Throw();//60～89で岩投げ(30%)
                 else if (r >= 90 && r < 100) return Approach(walkTime);//90～99で移動(10%)
             }
 
             if (dis > farRange) //遠距離の処理
             {
-                if (r < 40) return Breath();//0～39でブレス(70%)
-                else if (r >= 40 && r < 80) return Throw();//40～79で岩投げ(40%)
-                else if (r >= 80 && r < 100) return ChargeCombo();//80～99で突進(20%)
+                if (r < 70) return Breath();//0～69でブレス(70%)
+                else if (r >= 70 && r < 100) return ChargeCombo();//70～99で突進(30%)
             }
             
             //4番
@@ -166,7 +178,7 @@ namespace MonsterAction.Battle.Boss
         //  咆哮
         // ================================================================
 
-        /// <summary>咆哮：プレイヤーの方を向いて吠える。近くにいるとのけぞらせる（ダメージなし）</summary>
+        /// <summary>咆哮：プレイヤーの方を向いて吠える。近くにいるとのけぞらせる</summary>
         private IEnumerator Roar()
         {
             // TODO：
@@ -199,7 +211,7 @@ namespace MonsterAction.Battle.Boss
             //}
             
             //4番
-            AreaAttack(transform.position, roarRadius, 0f, knockback: 1.5f);//AreaAttackメソッド、現在地点からroarRadius半径分、0ﾀﾞﾒｰｼﾞで1.5mノックバックする
+            AreaAttack(transform.position, roarRadius, roarDamage, knockback: 1.5f);//AreaAttackメソッド、現在地点からroarRadius半径分、roarﾀﾞﾒｰｼﾞで1.5mノックバックする
             
             //5番
             yield return WaitStateTime(Scream, 0.95f);//Screamの95%まで進めたらWaitStateTimeを返す
@@ -303,6 +315,7 @@ namespace MonsterAction.Battle.Boss
 
         }
 
+
         // ================================================================
         //  遠距離攻撃（大）
         // ================================================================
@@ -336,12 +349,14 @@ namespace MonsterAction.Battle.Boss
             //3番
             foreach (Vector3 dir in FanDirections(breathCount, breathSpreadAngle))//FanDirectionsからbrathCount分、方向を1つずつ取得する。
             {
+
                 var ball = BossProjectile.Spawn(breathPrefab, start, breathRadius, breathColor);//ブレスの弾を、スタート位置に設定された大きさと色で作る
                 //  /// <summary>Prefab か、無ければ色付きの球を、position に作る</summary>
                 //public static BossProjectile Spawn(BossProjectile prefab, Vector3 position, float radius, Color color)
                 //{
                 //    return prefab != null ? Instantiate(prefab, position, Quaternion.identity) : CreateDefault(position, radius, color);
                 //}
+                
                 ball.Launch(dir * breathSpeed, MakeDamage(breathDamage, knockback: 4, knockDown: true), transform);//攻撃者を自分にし、方向にスピードを掛けた数値で飛ばす
                 /// <summary>
                 /// 発射する。
@@ -392,9 +407,9 @@ namespace MonsterAction.Battle.Boss
                 //    }
                 //}
 
-            
 
             }
+
             //4番
             yield return WaitStateTime(Scream, 0.95f);
             yield return Rest(RestTime(1.4f));
@@ -624,6 +639,28 @@ namespace MonsterAction.Battle.Boss
             yield return null;
 
         }
+
+
+        //追加部分
+        // ================================================================
+        //  ジャンプ攻撃
+        // ================================================================
+        private IEnumerator JumpAttack()
+        {
+            Play(Jump);
+
+            yield return WaitStateTime(Jump, 0.75f);
+            AreaAttack(transform.position, jumpAttackRadius, jumpDamage, knockback: 1.5f, knockDown: true);
+            if (jumpEffect != null)
+            {
+                Instantiate(jumpEffect, this.transform.position, Quaternion.Euler(-90f, 0f, 0f));
+            }
+            yield return WaitStateTime(Jump, 0.95f);
+            yield return Rest(RestTime(1.5f));
+
+        }
+
+        //追加部分終了
 
         // ================================================================
         //  移動

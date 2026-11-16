@@ -92,7 +92,6 @@ namespace MonsterAction.Battle.Boss
         private const string ClawAttack = "Claw Attack";
         private const string HornAttack = "Horn Attack";
         private const string Scream = "Scream";
-        private const string Jump = "Jump";
 
         private bool hasRoared;
         private bool enraged;

@@ -92,8 +92,8 @@ MonoBehaviour:
   walkSpeed: 3
   biteHitbox: {fileID: 1817504790930669644}
   clawHitboxes:
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 560456162449472167}
+  - {fileID: 6230754789409213508}
   bodyHitbox: {fileID: 5272754394296137322}
   biteDamage: 20
   clawDamage: 15
@@ -104,7 +104,7 @@ MonoBehaviour:
   maxCharges: 3
   driftTime: 0.7
   driftTurn: 4
-  breathPrefab: {fileID: 0}
+  breathPrefab: {fileID: 559087982733288111, guid: c9f2a48407365ea45b9997b00515e4a3, type: 3}
   breathDamage: 35
   breathSpeed: 20
   breathRadius: 1
@@ -113,7 +113,7 @@ MonoBehaviour:
   breathHeight: 1.2
   breathStartForward: 4
   breathColor: {r: 1, g: 0.45, b: 0.1, a: 1}
-  rockPrefab: {fileID: 0}
+  rockPrefab: {fileID: 3992550560370543053, guid: 762206de9ab381042bf5dba6869a6a13, type: 3}
   rockDamage: 30
   rockRadius: 0.8
   rockCount: 3
@@ -200,6 +200,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8252519d2c6fd014bb5f75765a8c4fda, type: 3}
+--- !u!114 &560456162449472167 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6159059830985077131, guid: 8252519d2c6fd014bb5f75765a8c4fda, type: 3}
+  m_PrefabInstance: {fileID: 5962277318855789356}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84e324346f3c7504f8eef027cf8cc83e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MonsterAction.Battle.Boss.BossAttackHitbox
 --- !u!114 &1817504790930669644 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5442408128571951968, guid: 8252519d2c6fd014bb5f75765a8c4fda, type: 3}
@@ -232,3 +243,14 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 482832, guid: 8252519d2c6fd014bb5f75765a8c4fda, type: 3}
   m_PrefabInstance: {fileID: 5962277318855789356}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &6230754789409213508 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 344056815719827304, guid: 8252519d2c6fd014bb5f75765a8c4fda, type: 3}
+  m_PrefabInstance: {fileID: 5962277318855789356}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84e324346f3c7504f8eef027cf8cc83e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MonsterAction.Battle.Boss.BossAttackHitbox
