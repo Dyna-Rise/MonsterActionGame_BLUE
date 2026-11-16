@@ -82,8 +82,13 @@ namespace MonsterAction.Home.UI
                     //   rows[i].Set(名前, 情報, 右の文字, 右の色); で表示します（上のアイテムが参考になります）
                     int level = GameData.GetSkillLevel(e.skill);
                     bool isSkillMaxed = GameData.IsSkillMaxed(e.skill);
+                    string stars = SkillData.GetStars(level);
+                    if (!isSkillMaxed)
+                    {
+                        stars += $" → ★{level + 1} ×{SkillData.GetMultiplier(level + 1)}";
+                    }
                     rows[i].Set(SkillData.GetName(e.skill),
-                                SkillData.GetStars(level),
+                                stars,
                                 isSkillMaxed ? "売切れ" : FormatMoney(GameData.GetNextSkillPrice(e.skill)),
                                 isSkillMaxed ? DisabledColor : PriceColor);
                 }
