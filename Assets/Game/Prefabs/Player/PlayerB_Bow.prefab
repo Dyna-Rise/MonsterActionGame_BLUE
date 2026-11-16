@@ -165,6 +165,7 @@ MonoBehaviour:
   cameraTransform: {fileID: 0}
   animator: {fileID: 0}
   arrowPrefab: {fileID: 8106226520378755188, guid: c644c3ee1125f524b8cb6bf6a1d10ac2, type: 3}
+  arrowInHand: {fileID: 0}
   damage: 10
   chargedDamage: 25
   chargeTime: 1

@@ -15,6 +15,7 @@ namespace MonsterAction.Battle.Player
         // //を外す
         [Header("弓")]
         [SerializeField] private BowArrow arrowPrefab;      // 矢の Prefab
+        [SerializeField] private GameObject arrowInHand;    // ★追加1：手の中の矢（HumanArcher_ArrowInHand）
         [SerializeField] private float damage = 10f;        // ふつうの矢のダメージ
         [SerializeField] private float chargedDamage = 25f; // 溜めた矢のダメージ（ステップ7）
         [SerializeField] private float chargeTime = 1f;     // この秒数以上 押していたら「溜めた矢」（ステップ7）
@@ -27,6 +28,7 @@ namespace MonsterAction.Battle.Player
         protected override void Awake()
         {
             base.Awake();   // ← これが無いと Input などが null のまま（消さない）
+            if (arrowInHand != null) arrowInHand.SetActive(false); // ★追加2：開始時は手の中の矢を消す
         }
 
         // ================================================================
@@ -42,6 +44,7 @@ namespace MonsterAction.Battle.Player
                 BeginAction();                                                // … 攻撃中にする
                    FaceDirection(GetAttackFacingDirection(), instant: true);  //… 狙う方を向く
                    CrossFade("BowLoad");                                      //… 弓を引くモーション
+                if (arrowInHand != null) arrowInHand.SetActive(true); // ★追加3：構え始めたら矢を出す
                 isHolding = true;
                 holdAnimStarted = false;                                      //… 「引いている」と覚える
                    return true;                                               //… 攻撃を始めた
@@ -96,7 +99,8 @@ namespace MonsterAction.Battle.Player
     }
 else
 {
-    ReturnToLocomotion();// すぐ離しすぎた場合は攻撃をやめて戻る
+                        if (arrowInHand != null) arrowInHand.SetActive(false);
+                        ReturnToLocomotion();// すぐ離しすぎた場合は攻撃をやめて戻る
 }
 }
 return;
@@ -105,7 +109,8 @@ return;
 // 撃ったあと：StateTime - fireTime が 0.5 秒以上になったら普段の移動に戻る
 if (StateTime - fireTime >= 0.5f)
 {
-    ReturnToLocomotion();
+                if (arrowInHand != null) arrowInHand.SetActive(false);
+                ReturnToLocomotion();
 }
 }
         // ================================================================
@@ -115,34 +120,36 @@ if (StateTime - fireTime >= 0.5f)
         /// <summary>矢を放つ。ステップ7では Fire(float power, bool flinch) のように引数を足す</summary>
         // private void Fire()
         private void Fire(float currentDamage, bool flinch)
+
 {
-    // TODO：
-    //   1. isHolding = false;  fireTime = StateTime;   … もう引いていない・撃った時刻を覚える
-    //   2. CrossFade("BowRelease");                    … 放つモーション
-    //   3. ステップ3では Debug.Log("発射！"); だけで試す
-    //
-    //   ステップ5 から：矢を出す
-    //   4. 矢を出す位置（胸の高さの少し前）
-    //        Vector3 from = transform.position + Vector3.up * 1.4f + transform.forward * 0.5f;
-    //   5. 飛ばす向き：ふつうは正面 transform.forward
-    //        ステップ6：IsFocusing なら GetAimDirection(from)
-    //   6. 矢を作って飛ばす
-    //        BowArrow arrow = Instantiate(arrowPrefab, from, Quaternion.identity);
-    //        arrow.Shoot(向き, damage * AttackMultiplier, gameObject);
-    //        （ステップ7：arrow.Shoot(向き, power * AttackMultiplier, gameObject, flinch);）
+            // TODO：
+            //   1. isHolding = false;  fireTime = StateTime;   … もう引いていない・撃った時刻を覚える
+            //   2. CrossFade("BowRelease");                    … 放つモーション
+            //   3. ステップ3では Debug.Log("発射！"); だけで試す
+            //
+            //   ステップ5 から：矢を出す
+            //   4. 矢を出す位置（胸の高さの少し前）
+            //        Vector3 from = transform.position + Vector3.up * 1.4f + transform.forward * 0.5f;
+            //   5. 飛ばす向き：ふつうは正面 transform.forward
+            //        ステップ6：IsFocusing なら GetAimDirection(from)
+            //   6. 矢を作って飛ばす
+            //        BowArrow arrow = Instantiate(arrowPrefab, from, Quaternion.identity);
+            //        arrow.Shoot(向き, damage * AttackMultiplier, gameObject);
+            //        （ステップ7：arrow.Shoot(向き, power * AttackMultiplier, gameObject, flinch);）
+           
         isHolding = false;
         fireTime = StateTime;
         CrossFade("BowRelease");
-
-
-        // 4. 矢を出す位置（胸の高さの少し前）
-        Vector3 from = transform.position + Vector3.up * 1.4f + transform.forward * 0.5f;
+         if (arrowInHand != null) arrowInHand.SetActive(false); // ★追加4：放ったら手の中の矢を消す
+            // 4. 矢を出す位置（胸の高さの少し前）
+            Vector3 from = transform.position + Vector3.up * 1.4f + transform.forward * 0.5f;
         // 5. 飛ばす向き：集中モード（L1）なら照準へ、それ以外は正面
         Vector3 dir = IsFocusing ? GetAimDirection(from) : transform.forward;
         // 6. 矢を作って飛ばす
         if (arrowPrefab != null)
         {
-            BowArrow arrow = Instantiate(arrowPrefab, from, Quaternion.identity);
+            //BowArrow arrow = Instantiate(arrowPrefab, from, Quaternion.identity);
+            BowArrow arrow = Instantiate(arrowPrefab, from, Quaternion.LookRotation(dir));
             arrow.Shoot(dir, currentDamage * AttackMultiplier, gameObject, flinch);
         }
     }
@@ -153,8 +160,9 @@ if (StateTime - fireTime >= 0.5f)
 
         protected override void OnActionInterrupted()
         {
-    // TODO：引いている途中で中断されたら、引くのをやめる
-    isHolding = false;
+            if (arrowInHand != null) arrowInHand.SetActive(false);
+            // TODO：引いている途中で中断されたら、引くのをやめる
+            isHolding = false;
 }
     }
 }
