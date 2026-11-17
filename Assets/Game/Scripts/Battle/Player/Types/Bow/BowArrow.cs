@@ -1,3 +1,4 @@
+using MonsterAction.Combat;
 using UnityEngine;
 
 
@@ -45,6 +46,29 @@ namespace MonsterAction.Battle.Player
             // 【メモ】敵に当たったときのダメージ処理（プロジェクトの敵の仕様に合わせて呼び出す）
             // var enemy = other.GetComponent<EnemyHealth>();
             // if (enemy != null) { enemy.TakeDamage(damage, flinch); }
+
+            // 1. ぶつかった相手から「IDamageable」コンポーネント（ダメージを受けられる仕組み）を取得する
+            var damageable = other.GetComponent<IDamageable>();
+            if (damageable != null)
+            {
+                // 2. 資料に沿った DamageInfo を作成する
+                // 引数: (ダメージ量, 当たった場所, 攻撃の向き, 攻撃者, 怯ませるか, ノックバック距離, ダウンか)
+                Vector3 hitPoint = other.ClosestPoint(transform.position);
+                Vector3 hitDirection = transform.forward;
+
+                DamageInfo info = new DamageInfo(
+                    amount: damage,
+                    hitPoint: hitPoint,
+                    direction: hitDirection,
+                    attacker: owner != null ? owner : gameObject,
+                    causesFlinch: flinch,
+                    knockbackDistance: 1.0f, // 必要に応じて調整
+                    knockDown: false
+                );
+
+                // 3. 敵側の ApplyDamage メソッドを呼び出してダメージを伝える
+                damageable.ApplyDamage(info);
+            }
 
             // 何かに当たったら矢を消滅させる
             Destroy(gameObject);
