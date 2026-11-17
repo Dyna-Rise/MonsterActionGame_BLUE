@@ -76,7 +76,7 @@ namespace MonsterAction.Battle.Boss
         [Header("咆哮")]
         [SerializeField] private float roarRadius = 12f;
         [SerializeField] private float roarDamage = 10f;
-
+        [SerializeField] private GameObject roarEffect;
 
         //追加部分
         [Header("ジャンプ攻撃")]
@@ -212,7 +212,12 @@ namespace MonsterAction.Battle.Boss
             
             //4番
             AreaAttack(transform.position, roarRadius, roarDamage, knockback: 1.5f);//AreaAttackメソッド、現在地点からroarRadius半径分、roarﾀﾞﾒｰｼﾞで1.5mノックバックする
-            
+
+            if (roarEffect != null)
+            {
+                Instantiate(roarEffect, transform.position, Quaternion.Euler(0f, 0f, 0f));
+            }
+
             //5番
             yield return WaitStateTime(Scream, 0.95f);//Screamの95%まで進めたらWaitStateTimeを返す
             

@@ -125,6 +125,7 @@ MonoBehaviour:
   rockStartForward: 3
   rockColor: {r: 0.45, g: 0.4, b: 0.35, a: 1}
   roarRadius: 12
+  roarEffect: {fileID: 5614835284154224771, guid: d1417ef414a526d4880e92b37feb967f, type: 3}
   walkTime: 5
   enragedAnimSpeed: 1.2
   enragedRestRate: 0.6

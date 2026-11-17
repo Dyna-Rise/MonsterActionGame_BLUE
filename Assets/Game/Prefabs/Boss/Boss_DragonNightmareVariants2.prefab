@@ -141,6 +141,7 @@ MonoBehaviour:
   rockColor: {r: 0.45, g: 0.4, b: 0.35, a: 1}
   roarRadius: 12
   roarDamage: 15
+  roarEffect: {fileID: 5614835284154224771, guid: d1417ef414a526d4880e92b37feb967f, type: 3}
   jumpAttackRadius: 10
   jumpDamage: 20
   jumpEffect: {fileID: 4913061021662774499, guid: d6a636cc3196a974caef4275a078a8cd, type: 3}
