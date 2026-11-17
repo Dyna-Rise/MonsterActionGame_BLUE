@@ -150,7 +150,8 @@ namespace MonsterAction.Battle.Boss
             int r = Random.Range(0, 100);
             if (dis <= meleeRange) //近距離の処理
             {
-                if (r < 25) return Bite();//0～24で噛みつき(25%)
+                if (r < 20) return Bite();//0～19で噛みつき(20%)
+                else if (r >= 20 && r < 25) return ChargeCombo();//20～24で突進(5%)
                 else if (r >= 25 && r < 70) return Scratch();//25～69でひっかき(45%)
                 else if (r >= 70 && r < 80) return Roar();//70～79で咆哮(10%)
                 else if (r >= 80 && r < 100) return JumpAttack();//80～99でジャンプ攻撃(20%)
