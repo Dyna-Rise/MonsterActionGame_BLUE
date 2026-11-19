@@ -1,7 +1,3 @@
-using System.Collections.Generic;
-using MonsterAction.Combat;
-using UnityEngine;
-
 namespace MonsterAction.Battle.Player
 {
    

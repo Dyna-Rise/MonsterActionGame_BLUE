@@ -1,0 +1,2455 @@
+フォルダー パスの一覧:  ボリューム ボリューム
+ボリューム シリアル番号は 188D-3841 です
+D:.
+|   Fonts.meta
+|   Game.meta
+|   InputSystem_Actions.inputactions
+|   InputSystem_Actions.inputactions.meta
+|   MyAssets.meta
+|   New Terrain.asset
+|   New Terrain.asset.meta
+|   project_structure.txt
+|   Readme.asset
+|   Readme.asset.meta
+|   Scenes.meta
+|   Settings.meta
+|   TextMesh Pro.meta
+|   TutorialInfo.meta
+|   
++---Fonts
+|       GameFont Fallback SDF.asset
+|       GameFont Fallback SDF.asset.meta
+|       GameFont SDF Outline.mat
+|       GameFont SDF Outline.mat.meta
+|       NotoSansJP-Medium SDF Outline.mat
+|       NotoSansJP-Medium SDF Outline.mat.meta
+|       NotoSansJP-Medium SDF.asset
+|       NotoSansJP-Medium SDF.asset.meta
+|       NotoSansJP-Medium.ttf
+|       NotoSansJP-Medium.ttf.meta
+|       
++---Game
+|   |   Animations.meta
+|   |   Prefabs.meta
+|   |   README_BattlePlayer.md
+|   |   README_BattlePlayer.md.meta
+|   |   Resources.meta
+|   |   Scripts.meta
+|   |   Shaders.meta
+|   |   
+|   +---Animations
+|   |   |   Boss.meta
+|   |   |   Home.meta
+|   |   |   Player.meta
+|   |   |   
+|   |   +---Boss
+|   |   |       DragonNightmare.controller
+|   |   |       DragonNightmare.controller.meta
+|   |   |       
+|   |   +---Home
+|   |   |       HomePlayer.controller
+|   |   |       HomePlayer.controller.meta
+|   |   |       Villager.controller
+|   |   |       Villager.controller.meta
+|   |   |       Villager_Male.controller
+|   |   |       Villager_Male.controller.meta
+|   |   |       
+|   |   \---Player
+|   |       |   PlayerA_SwordShield.controller
+|   |       |   PlayerA_SwordShield.controller.meta
+|   |       |   PlayerB_Bow.controller
+|   |       |   PlayerB_Bow.controller.meta
+|   |       |   PlayerC_Magic.controller
+|   |       |   PlayerC_Magic.controller.meta
+|   |       |   Samples.meta
+|   |       |   
+|   |       \---Samples
+|   |               PlayerB_Bow_Sample.controller
+|   |               PlayerB_Bow_Sample.controller.meta
+|   |               PlayerC_Magic_Sample.controller
+|   |               PlayerC_Magic_Sample.controller.meta
+|   |               
+|   +---Prefabs
+|   |   |   Boss.meta
+|   |   |   Home.meta
+|   |   |   Player.meta
+|   |   |   UI.meta
+|   |   |   
+|   |   +---Boss
+|   |   |       Boss_DragonNightmare.prefab
+|   |   |       Boss_DragonNightmare.prefab.meta
+|   |   |       
+|   |   +---Home
+|   |   |       HomePlayer.prefab
+|   |   |       HomePlayer.prefab.meta
+|   |   |       Villager_Quest.prefab
+|   |   |       Villager_Quest.prefab.meta
+|   |   |       Villager_Shop.prefab
+|   |   |       Villager_Shop.prefab.meta
+|   |   |       
+|   |   +---Player
+|   |   |       Arrow.prefab
+|   |   |       Arrow.prefab.meta
+|   |   |       PlayerA_SwordShield.prefab
+|   |   |       PlayerA_SwordShield.prefab.meta
+|   |   |       PlayerB_Bow.prefab
+|   |   |       PlayerB_Bow.prefab.meta
+|   |   |       PlayerC_Magic.prefab
+|   |   |       PlayerC_Magic.prefab.meta
+|   |   |       
+|   |   \---UI
+|   |           BattleHUD.prefab
+|   |           BattleHUD.prefab.meta
+|   |           EquipmentMenu.prefab
+|   |           EquipmentMenu.prefab.meta
+|   |           HomeHUD.prefab
+|   |           HomeHUD.prefab.meta
+|   |           HomePauseMenu.prefab
+|   |           HomePauseMenu.prefab.meta
+|   |           QuestMenu.prefab
+|   |           QuestMenu.prefab.meta
+|   |           ShopMenu.prefab
+|   |           ShopMenu.prefab.meta
+|   |           
+|   +---Resources
+|   |   |   InteractHighlight.mat
+|   |   |   InteractHighlight.mat.meta
+|   |   |   Items.meta
+|   |   |   
+|   |   \---Items
+|   |           Potion.asset
+|   |           Potion.asset.meta
+|   |           
+|   +---Scripts
+|   |   |   Battle.meta
+|   |   |   Common.meta
+|   |   |   Home.meta
+|   |   |   Title.meta
+|   |   |   UI.meta
+|   |   |   
+|   |   +---Battle
+|   |   |   |   Boss.meta
+|   |   |   |   Camera.meta
+|   |   |   |   Debug.meta
+|   |   |   |   Effects.meta
+|   |   |   |   Flow.meta
+|   |   |   |   Player.meta
+|   |   |   |   
+|   |   |   +---Boss
+|   |   |   |   |   Core.meta
+|   |   |   |   |   DragonNightmare.meta
+|   |   |   |   |   
+|   |   |   |   +---Core
+|   |   |   |   |       BattleBossSpawner.cs
+|   |   |   |   |       BattleBossSpawner.cs.meta
+|   |   |   |   |       BossAttackHitbox.cs
+|   |   |   |   |       BossAttackHitbox.cs.meta
+|   |   |   |   |       BossBase.cs
+|   |   |   |   |       BossBase.cs.meta
+|   |   |   |   |       BossHurtbox.cs
+|   |   |   |   |       BossHurtbox.cs.meta
+|   |   |   |   |       BossProjectile.cs
+|   |   |   |   |       BossProjectile.cs.meta
+|   |   |   |   |       
+|   |   |   |   \---DragonNightmare
+|   |   |   |           DragonNightmareBoss.cs
+|   |   |   |           DragonNightmareBoss.cs.meta
+|   |   |   |           
+|   |   |   +---Camera
+|   |   |   |       BattleCameraController.cs
+|   |   |   |       BattleCameraController.cs.meta
+|   |   |   |       
+|   |   |   +---Debug
+|   |   |   |       DummyAttacker.cs
+|   |   |   |       DummyAttacker.cs.meta
+|   |   |   |       DummyProjectile.cs
+|   |   |   |       DummyProjectile.cs.meta
+|   |   |   |       TrainingDummy.cs
+|   |   |   |       TrainingDummy.cs.meta
+|   |   |   |       
+|   |   |   +---Effects
+|   |   |   |       HitEffects.cs
+|   |   |   |       HitEffects.cs.meta
+|   |   |   |       
+|   |   |   +---Flow
+|   |   |   |       BattleFlowController.cs
+|   |   |   |       BattleFlowController.cs.meta
+|   |   |   |       
+|   |   |   \---Player
+|   |   |       |   Core.meta
+|   |   |       |   Types.meta
+|   |   |       |   Weapons.meta
+|   |   |       |   
+|   |   |       +---Core
+|   |   |       |       BattlePlayerSpawner.cs
+|   |   |       |       BattlePlayerSpawner.cs.meta
+|   |   |       |       PlayerBattleController.cs
+|   |   |       |       PlayerBattleController.cs.meta
+|   |   |       |       PlayerInputReader.cs
+|   |   |       |       PlayerInputReader.cs.meta
+|   |   |       |       
+|   |   |       +---Types
+|   |   |       |   |   Bow.meta
+|   |   |       |   |   Magic.meta
+|   |   |       |   |   SwordShield.meta
+|   |   |       |   |   
+|   |   |       |   +---Bow
+|   |   |       |   |       BowArrow.cs
+|   |   |       |   |       BowArrow.cs.meta
+|   |   |       |   |       PlayerTypeB_Bow.cs
+|   |   |       |   |       PlayerTypeB_Bow.cs.meta
+|   |   |       |   |       
+|   |   |       |   +---Magic
+|   |   |       |   |       PlayerTypeC_Magic.cs
+|   |   |       |   |       PlayerTypeC_Magic.cs.meta
+|   |   |       |   |       
+|   |   |       |   \---SwordShield
+|   |   |       |           AttackStep.cs
+|   |   |       |           AttackStep.cs.meta
+|   |   |       |           PlayerTypeA_SwordShield.cs
+|   |   |       |           PlayerTypeA_SwordShield.cs.meta
+|   |   |       |           
+|   |   |       \---Weapons
+|   |   |               WeaponHitbox.cs
+|   |   |               WeaponHitbox.cs.meta
+|   |   |               
+|   |   +---Common
+|   |   |   |   Combat.meta
+|   |   |   |   Data.meta
+|   |   |   |   
+|   |   |   +---Combat
+|   |   |   |       DamageInfo.cs
+|   |   |   |       DamageInfo.cs.meta
+|   |   |   |       IDamageable.cs
+|   |   |   |       IDamageable.cs.meta
+|   |   |   |       IDamagePart.cs
+|   |   |   |       IDamagePart.cs.meta
+|   |   |   |       LockOnTarget.cs
+|   |   |   |       LockOnTarget.cs.meta
+|   |   |   |       
+|   |   |   \---Data
+|   |   |           GameData.cs
+|   |   |           GameData.cs.meta
+|   |   |           ItemDefinition.cs
+|   |   |           ItemDefinition.cs.meta
+|   |   |           SaveData.cs
+|   |   |           SaveData.cs.meta
+|   |   |           SaveSystem.cs
+|   |   |           SaveSystem.cs.meta
+|   |   |           SkillData.cs
+|   |   |           SkillData.cs.meta
+|   |   |           
+|   |   +---Home
+|   |   |   |   Interaction.meta
+|   |   |   |   Player.meta
+|   |   |   |   UI.meta
+|   |   |   |   
+|   |   |   +---Interaction
+|   |   |   |       DepartureGate.cs
+|   |   |   |       DepartureGate.cs.meta
+|   |   |   |       Interactable.cs
+|   |   |   |       Interactable.cs.meta
+|   |   |   |       InteractHighlight.cs
+|   |   |   |       InteractHighlight.cs.meta
+|   |   |   |       
+|   |   |   +---Player
+|   |   |   |       CharacterAnimatorSetup.cs
+|   |   |   |       CharacterAnimatorSetup.cs.meta
+|   |   |   |       HomeCameraController.cs
+|   |   |   |       HomeCameraController.cs.meta
+|   |   |   |       HomePlayerController.cs
+|   |   |   |       HomePlayerController.cs.meta
+|   |   |   |       
+|   |   |   \---UI
+|   |   |           EquipmentMenu.cs
+|   |   |           EquipmentMenu.cs.meta
+|   |   |           HomeHUD.cs
+|   |   |           HomeHUD.cs.meta
+|   |   |           HomeMenuBase.cs
+|   |   |           HomeMenuBase.cs.meta
+|   |   |           HomePauseMenu.cs
+|   |   |           HomePauseMenu.cs.meta
+|   |   |           MenuRow.cs
+|   |   |           MenuRow.cs.meta
+|   |   |           QuestMenu.cs
+|   |   |           QuestMenu.cs.meta
+|   |   |           ShopMenu.cs
+|   |   |           ShopMenu.cs.meta
+|   |   |           
+|   |   +---Title
+|   |   |       TitleMenu.cs
+|   |   |       TitleMenu.cs.meta
+|   |   |       
+|   |   \---UI
+|   |           BattleResultUI.cs
+|   |           BattleResultUI.cs.meta
+|   |           BossStatusHUD.cs
+|   |           BossStatusHUD.cs.meta
+|   |           ItemSlotHUD.cs
+|   |           ItemSlotHUD.cs.meta
+|   |           PlayerStatusHUD.cs
+|   |           PlayerStatusHUD.cs.meta
+|   |           
+|   \---Shaders
+|           InteractHighlight.shader
+|           InteractHighlight.shader.meta
+|           
++---MyAssets
+|   |   Charttyp.meta
+|   |   Fantasy Skybox FREE.meta
+|   |   FourEvilDragonsHP.meta
+|   |   Kevin Iglesias.meta
+|   |   Mixamo.meta
+|   |   
+|   +---Charttyp
+|   |   |   Stylized fantasy pagan village.meta
+|   |   |   
+|   |   \---Stylized fantasy pagan village
+|   |       |   Information.meta
+|   |       |   Materials.meta
+|   |       |   Meshes.meta
+|   |       |   PostProcess.meta
+|   |       |   Prefabs.meta
+|   |       |   Scenes.meta
+|   |       |   Terrain.meta
+|   |       |   Texture.meta
+|   |       |   
+|   |       +---Information
+|   |       |       Read Me.txt
+|   |       |       Read Me.txt.meta
+|   |       |       
+|   |       +---Materials
+|   |       |       Material_1.mat
+|   |       |       Material_1.mat.meta
+|   |       |       Material_2.mat
+|   |       |       Material_2.mat.meta
+|   |       |       Material_3.mat
+|   |       |       Material_3.mat.meta
+|   |       |       Material_4.mat
+|   |       |       Material_4.mat.meta
+|   |       |       Material_5.mat
+|   |       |       Material_5.mat.meta
+|   |       |       Material_6.mat
+|   |       |       Material_6.mat.meta
+|   |       |       Material_8.mat
+|   |       |       Material_8.mat.meta
+|   |       |       
+|   |       +---Meshes
+|   |       |       Barrel_1.fbx
+|   |       |       Barrel_1.fbx.meta
+|   |       |       Branch_1.fbx
+|   |       |       Branch_1.fbx.meta
+|   |       |       Bush_2.fbx
+|   |       |       Bush_2.fbx.meta
+|   |       |       Chest_1.fbx
+|   |       |       Chest_1.fbx.meta
+|   |       |       Chest_plank_apple.fbx
+|   |       |       Chest_plank_apple.fbx.meta
+|   |       |       Fence_1.fbx
+|   |       |       Fence_1.fbx.meta
+|   |       |       Fence_branches_1.fbx
+|   |       |       Fence_branches_1.fbx.meta
+|   |       |       Flower_1.fbx
+|   |       |       Flower_1.fbx.meta
+|   |       |       Grass_1.fbx
+|   |       |       Grass_1.fbx.meta
+|   |       |       House_1.fbx
+|   |       |       House_1.fbx.meta
+|   |       |       Laundry_hanger_1.fbx
+|   |       |       Laundry_hanger_1.fbx.meta
+|   |       |       Sack_closed_2.fbx
+|   |       |       Sack_closed_2.fbx.meta
+|   |       |       Tree_1.fbx
+|   |       |       Tree_1.fbx.meta
+|   |       |       Wheelbarrow.fbx
+|   |       |       Wheelbarrow.fbx.meta
+|   |       |       
+|   |       +---PostProcess
+|   |       |       Main Camera Profile.asset
+|   |       |       Main Camera Profile.asset.meta
+|   |       |       
+|   |       +---Prefabs
+|   |       |       Barrel_1.prefab
+|   |       |       Barrel_1.prefab.meta
+|   |       |       Branch_1.prefab
+|   |       |       Branch_1.prefab.meta
+|   |       |       Bush_2.prefab
+|   |       |       Bush_2.prefab.meta
+|   |       |       Chest_1.prefab
+|   |       |       Chest_1.prefab.meta
+|   |       |       Chest_plank_apple.prefab
+|   |       |       Chest_plank_apple.prefab.meta
+|   |       |       Fence_1.prefab
+|   |       |       Fence_1.prefab.meta
+|   |       |       Fence_branches_1.prefab
+|   |       |       Fence_branches_1.prefab.meta
+|   |       |       Flower_1.prefab
+|   |       |       Flower_1.prefab.meta
+|   |       |       Grass_1.prefab
+|   |       |       Grass_1.prefab.meta
+|   |       |       House_1.prefab
+|   |       |       House_1.prefab.meta
+|   |       |       Laundry_hanger_1.prefab
+|   |       |       Laundry_hanger_1.prefab.meta
+|   |       |       Sack_closed_2.prefab
+|   |       |       Sack_closed_2.prefab.meta
+|   |       |       Tree_1.prefab
+|   |       |       Tree_1.prefab.meta
+|   |       |       Wheelbarrow.prefab
+|   |       |       Wheelbarrow.prefab.meta
+|   |       |       
+|   |       +---Scenes
+|   |       |       SampleScene.unity
+|   |       |       SampleScene.unity.meta
+|   |       |       
+|   |       +---Terrain
+|   |       |       Ground_dirt_1.terrainlayer
+|   |       |       Ground_dirt_1.terrainlayer.meta
+|   |       |       Ground_dirt_1_grass_1.png
+|   |       |       Ground_dirt_1_grass_1.png.meta
+|   |       |       Ground_dirt_1_grass_1.terrainlayer
+|   |       |       Ground_dirt_1_grass_1.terrainlayer.meta
+|   |       |       Ground_grass.terrainlayer
+|   |       |       Ground_grass.terrainlayer.meta
+|   |       |       New Terrain.asset
+|   |       |       New Terrain.asset.meta
+|   |       |       
+|   |       \---Texture
+|   |               Ground_dirt_1.png
+|   |               Ground_dirt_1.png.meta
+|   |               Ground_dirt_1_grass_1_normals.png
+|   |               Ground_dirt_1_grass_1_normals.png.meta
+|   |               Ground_dirt_1_grass_2.png
+|   |               Ground_dirt_1_grass_2.png.meta
+|   |               Ground_dirt_1_grass_2.terrainlayer
+|   |               Ground_dirt_1_grass_2.terrainlayer.meta
+|   |               Ground_dirt_1_grass_2_normals.png
+|   |               Ground_dirt_1_grass_2_normals.png.meta
+|   |               Ground_dirt_1_normals.png
+|   |               Ground_dirt_1_normals.png.meta
+|   |               Ground_grass.png
+|   |               Ground_grass.png.meta
+|   |               Ground_grass_normals.png
+|   |               Ground_grass_normals.png.meta
+|   |               Texture_1_2k.png
+|   |               Texture_1_2k.png.meta
+|   |               Texture_1_normal_2k.png
+|   |               Texture_1_normal_2k.png.meta
+|   |               Texture_2_2k.png
+|   |               Texture_2_2k.png.meta
+|   |               Texture_2_normal_2k.png
+|   |               Texture_2_normal_2k.png.meta
+|   |               Texture_3_2k.png
+|   |               Texture_3_2k.png.meta
+|   |               Texture_3_normal_2k.png
+|   |               Texture_3_normal_2k.png.meta
+|   |               Texture_4_2k.png
+|   |               Texture_4_2k.png.meta
+|   |               Texture_4_normal_2k.png
+|   |               Texture_4_normal_2k.png.meta
+|   |               Texture_5_2k.png
+|   |               Texture_5_2k.png.meta
+|   |               Texture_5_normal_2k.png
+|   |               Texture_5_normal_2k.png.meta
+|   |               Texture_6_2k.png
+|   |               Texture_6_2k.png.meta
+|   |               Texture_6_normal_2k.png
+|   |               Texture_6_normal_2k.png.meta
+|   |               Texture_8_alpha_2k.png
+|   |               Texture_8_alpha_2k.png.meta
+|   |               
+|   +---Fantasy Skybox FREE
+|   |   |   Cubemaps.meta
+|   |   |   Panoramics.meta
+|   |   |   Readme.txt
+|   |   |   Readme.txt.meta
+|   |   |   ReleaseNotes.txt
+|   |   |   ReleaseNotes.txt.meta
+|   |   |   Scenes.meta
+|   |   |   
+|   |   +---Cubemaps
+|   |   |   |   Classic.meta
+|   |   |   |   
+|   |   |   \---Classic
+|   |   |           FS000_Day_01.mat
+|   |   |           FS000_Day_01.mat.meta
+|   |   |           FS000_Day_01.png
+|   |   |           FS000_Day_01.png.meta
+|   |   |           FS000_Day_01_Sunless.mat
+|   |   |           FS000_Day_01_Sunless.mat.meta
+|   |   |           FS000_Day_01_Sunless.png
+|   |   |           FS000_Day_01_Sunless.png.meta
+|   |   |           FS000_Day_02.mat
+|   |   |           FS000_Day_02.mat.meta
+|   |   |           FS000_Day_02.png
+|   |   |           FS000_Day_02.png.meta
+|   |   |           FS000_Day_02_Sunless.mat
+|   |   |           FS000_Day_02_Sunless.mat.meta
+|   |   |           FS000_Day_02_Sunless.png
+|   |   |           FS000_Day_02_Sunless.png.meta
+|   |   |           FS000_Day_03.mat
+|   |   |           FS000_Day_03.mat.meta
+|   |   |           FS000_Day_03.png
+|   |   |           FS000_Day_03.png.meta
+|   |   |           FS000_Day_03_Sunless.mat
+|   |   |           FS000_Day_03_Sunless.mat.meta
+|   |   |           FS000_Day_03_Sunless.png
+|   |   |           FS000_Day_03_Sunless.png.meta
+|   |   |           FS000_Day_04.mat
+|   |   |           FS000_Day_04.mat.meta
+|   |   |           FS000_Day_04.png
+|   |   |           FS000_Day_04.png.meta
+|   |   |           FS000_Day_04_Sunless.mat
+|   |   |           FS000_Day_04_Sunless.mat.meta
+|   |   |           FS000_Day_04_Sunless.png
+|   |   |           FS000_Day_04_Sunless.png.meta
+|   |   |           FS000_Day_05.mat
+|   |   |           FS000_Day_05.mat.meta
+|   |   |           FS000_Day_05.png
+|   |   |           FS000_Day_05.png.meta
+|   |   |           FS000_Day_05_Sunless.mat
+|   |   |           FS000_Day_05_Sunless.mat.meta
+|   |   |           FS000_Day_05_Sunless.png
+|   |   |           FS000_Day_05_Sunless.png.meta
+|   |   |           FS000_Day_06.mat
+|   |   |           FS000_Day_06.mat.meta
+|   |   |           FS000_Day_06.png
+|   |   |           FS000_Day_06.png.meta
+|   |   |           FS000_Day_06_Sunless.mat
+|   |   |           FS000_Day_06_Sunless.mat.meta
+|   |   |           FS000_Day_06_Sunless.png
+|   |   |           FS000_Day_06_Sunless.png.meta
+|   |   |           FS000_Night_01.mat
+|   |   |           FS000_Night_01.mat.meta
+|   |   |           FS000_Night_01.png
+|   |   |           FS000_Night_01.png.meta
+|   |   |           FS000_Night_01_Moonless.mat
+|   |   |           FS000_Night_01_Moonless.mat.meta
+|   |   |           FS000_Night_01_Moonless.png
+|   |   |           FS000_Night_01_Moonless.png.meta
+|   |   |           FS000_Night_02.mat
+|   |   |           FS000_Night_02.mat.meta
+|   |   |           FS000_Night_02.png
+|   |   |           FS000_Night_02.png.meta
+|   |   |           FS000_Night_02_Moonless.mat
+|   |   |           FS000_Night_02_Moonless.mat.meta
+|   |   |           FS000_Night_02_Moonless.png
+|   |   |           FS000_Night_02_Moonless.png.meta
+|   |   |           FS000_Night_03.mat
+|   |   |           FS000_Night_03.mat.meta
+|   |   |           FS000_Night_03.png
+|   |   |           FS000_Night_03.png.meta
+|   |   |           FS000_Night_03_Moonless.mat
+|   |   |           FS000_Night_03_Moonless.mat.meta
+|   |   |           FS000_Night_03_Moonless.png
+|   |   |           FS000_Night_03_Moonless.png.meta
+|   |   |           
+|   |   +---Panoramics
+|   |   |   |   FS002.meta
+|   |   |   |   FS003.meta
+|   |   |   |   FS013.meta
+|   |   |   |   FS017.meta
+|   |   |   |   
+|   |   |   +---FS002
+|   |   |   |       FS002_Day.mat
+|   |   |   |       FS002_Day.mat.meta
+|   |   |   |       FS002_Day.png
+|   |   |   |       FS002_Day.png.meta
+|   |   |   |       FS002_Day_Sunless.mat
+|   |   |   |       FS002_Day_Sunless.mat.meta
+|   |   |   |       FS002_Day_Sunless.png
+|   |   |   |       FS002_Day_Sunless.png.meta
+|   |   |   |       FS002_Night.mat
+|   |   |   |       FS002_Night.mat.meta
+|   |   |   |       FS002_Night.png
+|   |   |   |       FS002_Night.png.meta
+|   |   |   |       FS002_Night_Moonless.mat
+|   |   |   |       FS002_Night_Moonless.mat.meta
+|   |   |   |       FS002_Night_Moonless.png
+|   |   |   |       FS002_Night_Moonless.png.meta
+|   |   |   |       FS002_Rainy.mat
+|   |   |   |       FS002_Rainy.mat.meta
+|   |   |   |       FS002_Rainy.png
+|   |   |   |       FS002_Rainy.png.meta
+|   |   |   |       FS002_Snowy.mat
+|   |   |   |       FS002_Snowy.mat.meta
+|   |   |   |       FS002_Snowy.png
+|   |   |   |       FS002_Snowy.png.meta
+|   |   |   |       FS002_Sunrise.mat
+|   |   |   |       FS002_Sunrise.mat.meta
+|   |   |   |       FS002_Sunrise.png
+|   |   |   |       FS002_Sunrise.png.meta
+|   |   |   |       FS002_Sunset.mat
+|   |   |   |       FS002_Sunset.mat.meta
+|   |   |   |       FS002_Sunset.png
+|   |   |   |       FS002_Sunset.png.meta
+|   |   |   |       
+|   |   |   +---FS003
+|   |   |   |       FS003_Day.mat
+|   |   |   |       FS003_Day.mat.meta
+|   |   |   |       FS003_Day.png
+|   |   |   |       FS003_Day.png.meta
+|   |   |   |       FS003_Day_Sunless.mat
+|   |   |   |       FS003_Day_Sunless.mat.meta
+|   |   |   |       FS003_Day_Sunless.png
+|   |   |   |       FS003_Day_Sunless.png.meta
+|   |   |   |       FS003_Night.mat
+|   |   |   |       FS003_Night.mat.meta
+|   |   |   |       FS003_Night.png
+|   |   |   |       FS003_Night.png.meta
+|   |   |   |       FS003_Night_Moonless.mat
+|   |   |   |       FS003_Night_Moonless.mat.meta
+|   |   |   |       FS003_Night_Moonless.png
+|   |   |   |       FS003_Night_Moonless.png.meta
+|   |   |   |       FS003_Rainy.mat
+|   |   |   |       FS003_Rainy.mat.meta
+|   |   |   |       FS003_Rainy.png
+|   |   |   |       FS003_Rainy.png.meta
+|   |   |   |       FS003_Snowy.mat
+|   |   |   |       FS003_Snowy.mat.meta
+|   |   |   |       FS003_Snowy.png
+|   |   |   |       FS003_Snowy.png.meta
+|   |   |   |       FS003_Sunrise.mat
+|   |   |   |       FS003_Sunrise.mat.meta
+|   |   |   |       FS003_Sunrise.png
+|   |   |   |       FS003_Sunrise.png.meta
+|   |   |   |       FS003_Sunset.mat
+|   |   |   |       FS003_Sunset.mat.meta
+|   |   |   |       FS003_Sunset.png
+|   |   |   |       FS003_Sunset.png.meta
+|   |   |   |       
+|   |   |   +---FS013
+|   |   |   |       FS013_Day.mat
+|   |   |   |       FS013_Day.mat.meta
+|   |   |   |       FS013_Day.png
+|   |   |   |       FS013_Day.png.meta
+|   |   |   |       FS013_Day_Sunless.mat
+|   |   |   |       FS013_Day_Sunless.mat.meta
+|   |   |   |       FS013_Day_Sunless.png
+|   |   |   |       FS013_Day_Sunless.png.meta
+|   |   |   |       FS013_Night.mat
+|   |   |   |       FS013_Night.mat.meta
+|   |   |   |       FS013_Night.png
+|   |   |   |       FS013_Night.png.meta
+|   |   |   |       FS013_Night_Moonless.mat
+|   |   |   |       FS013_Night_Moonless.mat.meta
+|   |   |   |       FS013_Night_Moonless.png
+|   |   |   |       FS013_Night_Moonless.png.meta
+|   |   |   |       FS013_Rainy.mat
+|   |   |   |       FS013_Rainy.mat.meta
+|   |   |   |       FS013_Rainy.png
+|   |   |   |       FS013_Rainy.png.meta
+|   |   |   |       FS013_Snowy.mat
+|   |   |   |       FS013_Snowy.mat.meta
+|   |   |   |       FS013_Snowy.png
+|   |   |   |       FS013_Snowy.png.meta
+|   |   |   |       FS013_Sunrise.mat
+|   |   |   |       FS013_Sunrise.mat.meta
+|   |   |   |       FS013_Sunrise.png
+|   |   |   |       FS013_Sunrise.png.meta
+|   |   |   |       FS013_Sunset.mat
+|   |   |   |       FS013_Sunset.mat.meta
+|   |   |   |       FS013_Sunset.png
+|   |   |   |       FS013_Sunset.png.meta
+|   |   |   |       
+|   |   |   \---FS017
+|   |   |           FS017_Day.mat
+|   |   |           FS017_Day.mat.meta
+|   |   |           FS017_Day.png
+|   |   |           FS017_Day.png.meta
+|   |   |           FS017_Day_Sunless.mat
+|   |   |           FS017_Day_Sunless.mat.meta
+|   |   |           FS017_Day_Sunless.png
+|   |   |           FS017_Day_Sunless.png.meta
+|   |   |           FS017_Night.mat
+|   |   |           FS017_Night.mat.meta
+|   |   |           FS017_Night.png
+|   |   |           FS017_Night.png.meta
+|   |   |           FS017_Night_Moonless.mat
+|   |   |           FS017_Night_Moonless.mat.meta
+|   |   |           FS017_Night_Moonless.png
+|   |   |           FS017_Night_Moonless.png.meta
+|   |   |           FS017_Rainy.mat
+|   |   |           FS017_Rainy.mat.meta
+|   |   |           FS017_Rainy.png
+|   |   |           FS017_Rainy.png.meta
+|   |   |           FS017_Snowy.mat
+|   |   |           FS017_Snowy.mat.meta
+|   |   |           FS017_Snowy.png
+|   |   |           FS017_Snowy.png.meta
+|   |   |           FS017_Sunrise.mat
+|   |   |           FS017_Sunrise.mat.meta
+|   |   |           FS017_Sunrise.png
+|   |   |           FS017_Sunrise.png.meta
+|   |   |           FS017_Sunset.mat
+|   |   |           FS017_Sunset.mat.meta
+|   |   |           FS017_Sunset.png
+|   |   |           FS017_Sunset.png.meta
+|   |   |           
+|   |   \---Scenes
+|   |       |   Demo with terrain.unity
+|   |       |   Demo with terrain.unity.meta
+|   |       |   Demo without terrain.unity
+|   |       |   Demo without terrain.unity.meta
+|   |       |   Textures (Lightmaps).meta
+|   |       |   Textures (Terrain).meta
+|   |       |   
+|   |       +---Textures (Lightmaps)
+|   |       |       LightingData.asset
+|   |       |       LightingData.asset.meta
+|   |       |       Lightmap-0_comp_dir.png
+|   |       |       Lightmap-0_comp_dir.png.meta
+|   |       |       Lightmap-0_comp_light.exr
+|   |       |       Lightmap-0_comp_light.exr.meta
+|   |       |       ReflectionProbe-0.exr
+|   |       |       ReflectionProbe-0.exr.meta
+|   |       |       
+|   |       \---Textures (Terrain)
+|   |               Brush_Flower.png
+|   |               Brush_Flower.png.meta
+|   |               Brush_Grass_01.png
+|   |               Brush_Grass_01.png.meta
+|   |               Brush_Grass_02.png
+|   |               Brush_Grass_02.png.meta
+|   |               SampleTerrain.asset
+|   |               SampleTerrain.asset.meta
+|   |               TerrainDirt.terrainlayer
+|   |               TerrainDirt.terrainlayer.meta
+|   |               TerrainGrass.terrainlayer
+|   |               TerrainGrass.terrainlayer.meta
+|   |               TerrainRock.terrainlayer
+|   |               TerrainRock.terrainlayer.meta
+|   |               Texture_Dirt_Diffuse.png
+|   |               Texture_Dirt_Diffuse.png.meta
+|   |               Texture_Dirt_Normal.png
+|   |               Texture_Dirt_Normal.png.meta
+|   |               Texture_Grass_Diffuse.png
+|   |               Texture_Grass_Diffuse.png.meta
+|   |               Texture_Grass_Normal.png
+|   |               Texture_Grass_Normal.png.meta
+|   |               Texture_Rock_Diffuse.png
+|   |               Texture_Rock_Diffuse.png.meta
+|   |               Texure_Rock_Normal.png
+|   |               Texure_Rock_Normal.png.meta
+|   |               
+|   +---FourEvilDragonsHP
+|   |   |   Animations.meta
+|   |   |   Animators.meta
+|   |   |   Materials.meta
+|   |   |   Mesh.meta
+|   |   |   Prefab.meta
+|   |   |   Scene.meta
+|   |   |   Texture.meta
+|   |   |   
+|   |   +---Animations
+|   |   |   |   DragonNightMare.meta
+|   |   |   |   DragonSoulEater.meta
+|   |   |   |   DragonTerrorBringer.meta
+|   |   |   |   DragonUsurper.meta
+|   |   |   |   
+|   |   |   +---DragonNightMare
+|   |   |   |       Basic Attack.fbx
+|   |   |   |       Basic Attack.fbx.meta
+|   |   |   |       Claw Attack.fbx
+|   |   |   |       Claw Attack.fbx.meta
+|   |   |   |       defend.fbx
+|   |   |   |       defend.fbx.meta
+|   |   |   |       die.fbx
+|   |   |   |       die.fbx.meta
+|   |   |   |       getHit.fbx
+|   |   |   |       getHit.fbx.meta
+|   |   |   |       Horn Attack.fbx
+|   |   |   |       Horn Attack.fbx.meta
+|   |   |   |       idle01.fbx
+|   |   |   |       idle01.fbx.meta
+|   |   |   |       idle02.fbx
+|   |   |   |       idle02.fbx.meta
+|   |   |   |       Jump.fbx
+|   |   |   |       Jump.fbx.meta
+|   |   |   |       run.fbx
+|   |   |   |       run.fbx.meta
+|   |   |   |       scream.fbx
+|   |   |   |       scream.fbx.meta
+|   |   |   |       Sleep.fbx
+|   |   |   |       Sleep.fbx.meta
+|   |   |   |       walk.fbx
+|   |   |   |       walk.fbx.meta
+|   |   |   |       walkBack.fbx
+|   |   |   |       walkBack.fbx.meta
+|   |   |   |       walkLeft.fbx
+|   |   |   |       walkLeft.fbx.meta
+|   |   |   |       walkRight.fbx
+|   |   |   |       walkRight.fbx.meta
+|   |   |   |       
+|   |   |   +---DragonSoulEater
+|   |   |   |       Basic Attack.fbx
+|   |   |   |       Basic Attack.fbx.meta
+|   |   |   |       Defend.fbx
+|   |   |   |       Defend.fbx.meta
+|   |   |   |       Die.fbx
+|   |   |   |       Die.fbx.meta
+|   |   |   |       Fireball Shoot.fbx
+|   |   |   |       Fireball Shoot.fbx.meta
+|   |   |   |       Fly Fireball Shoot.fbx
+|   |   |   |       Fly Fireball Shoot.fbx.meta
+|   |   |   |       Fly Float.fbx
+|   |   |   |       Fly Float.fbx.meta
+|   |   |   |       Fly Forward.fbx
+|   |   |   |       Fly Forward.fbx.meta
+|   |   |   |       Fly Glide.fbx
+|   |   |   |       Fly Glide.fbx.meta
+|   |   |   |       Get Hit.fbx
+|   |   |   |       Get Hit.fbx.meta
+|   |   |   |       Idle.fbx
+|   |   |   |       Idle.fbx.meta
+|   |   |   |       Land.fbx
+|   |   |   |       Land.fbx.meta
+|   |   |   |       Run.fbx
+|   |   |   |       Run.fbx.meta
+|   |   |   |       Scream.fbx
+|   |   |   |       Scream.fbx.meta
+|   |   |   |       Sleeping.fbx
+|   |   |   |       Sleeping.fbx.meta
+|   |   |   |       Tail Attack.fbx
+|   |   |   |       Tail Attack.fbx.meta
+|   |   |   |       Take Off.fbx
+|   |   |   |       Take Off.fbx.meta
+|   |   |   |       Walk.fbx
+|   |   |   |       Walk.fbx.meta
+|   |   |   |       
+|   |   |   +---DragonTerrorBringer
+|   |   |   |       AttackWingClaw.fbx
+|   |   |   |       AttackWingClaw.fbx.meta
+|   |   |   |       Basic Attack.fbx
+|   |   |   |       Basic Attack.fbx.meta
+|   |   |   |       Defend.fbx
+|   |   |   |       Defend.fbx.meta
+|   |   |   |       die.fbx
+|   |   |   |       die.fbx.meta
+|   |   |   |       Flame Attack.fbx
+|   |   |   |       Flame Attack.fbx.meta
+|   |   |   |       FlyAttack.fbx
+|   |   |   |       FlyAttack.fbx.meta
+|   |   |   |       FlyForward.fbx
+|   |   |   |       FlyForward.fbx.meta
+|   |   |   |       FlyGlide.fbx
+|   |   |   |       FlyGlide.fbx.meta
+|   |   |   |       FlyIdle.fbx
+|   |   |   |       FlyIdle.fbx.meta
+|   |   |   |       GetHit.fbx
+|   |   |   |       GetHit.fbx.meta
+|   |   |   |       idle01.fbx
+|   |   |   |       idle01.fbx.meta
+|   |   |   |       idle02.fbx
+|   |   |   |       idle02.fbx.meta
+|   |   |   |       Landing.fbx
+|   |   |   |       Landing.fbx.meta
+|   |   |   |       Run.fbx
+|   |   |   |       Run.fbx.meta
+|   |   |   |       scream.fbx
+|   |   |   |       scream.fbx.meta
+|   |   |   |       sleep.fbx
+|   |   |   |       sleep.fbx.meta
+|   |   |   |       TakeOff.fbx
+|   |   |   |       TakeOff.fbx.meta
+|   |   |   |       walk.fbx
+|   |   |   |       walk.fbx.meta
+|   |   |   |       
+|   |   |   \---DragonUsurper
+|   |   |           attackFlame.fbx
+|   |   |           attackFlame.fbx.meta
+|   |   |           attackHand.fbx
+|   |   |           attackHand.fbx.meta
+|   |   |           attackMouth.fbx
+|   |   |           attackMouth.fbx.meta
+|   |   |           Defend.fbx
+|   |   |           Defend.fbx.meta
+|   |   |           Die.fbx
+|   |   |           Die.fbx.meta
+|   |   |           FlyFlame.fbx
+|   |   |           FlyFlame.fbx.meta
+|   |   |           FlyForward.fbx
+|   |   |           FlyForward.fbx.meta
+|   |   |           FlyGlide.fbx
+|   |   |           FlyGlide.fbx.meta
+|   |   |           FlyIdle.fbx
+|   |   |           FlyIdle.fbx.meta
+|   |   |           getHit.fbx
+|   |   |           getHit.fbx.meta
+|   |   |           idle01.fbx
+|   |   |           idle01.fbx.meta
+|   |   |           idle02.fbx
+|   |   |           idle02.fbx.meta
+|   |   |           Land.fbx
+|   |   |           Land.fbx.meta
+|   |   |           Run.fbx
+|   |   |           Run.fbx.meta
+|   |   |           Scream.fbx
+|   |   |           Scream.fbx.meta
+|   |   |           Sleep.fbx
+|   |   |           Sleep.fbx.meta
+|   |   |           takeOff.fbx
+|   |   |           takeOff.fbx.meta
+|   |   |           Walk.fbx
+|   |   |           Walk.fbx.meta
+|   |   |           
+|   |   +---Animators
+|   |   |       NightmareCTRL.controller
+|   |   |       NightmareCTRL.controller.meta
+|   |   |       SouleaterCTRL.controller
+|   |   |       SouleaterCTRL.controller.meta
+|   |   |       TerrorbringerCTRL.controller
+|   |   |       TerrorbringerCTRL.controller.meta
+|   |   |       UsurperCTRL.controller
+|   |   |       UsurperCTRL.controller.meta
+|   |   |       
+|   |   +---Materials
+|   |   |   |   DragonNightmare.meta
+|   |   |   |   DragonSoulEater.meta
+|   |   |   |   DragonTerrorBringer.meta
+|   |   |   |   DragonUsurper.meta
+|   |   |   |   NewLayer 1.terrainlayer
+|   |   |   |   NewLayer 1.terrainlayer.meta
+|   |   |   |   NewLayer 2.terrainlayer
+|   |   |   |   NewLayer 2.terrainlayer.meta
+|   |   |   |   NewLayer 3.terrainlayer
+|   |   |   |   NewLayer 3.terrainlayer.meta
+|   |   |   |   NewLayer.terrainlayer
+|   |   |   |   NewLayer.terrainlayer.meta
+|   |   |   |   Skybox_Mat.mat
+|   |   |   |   Skybox_Mat.mat.meta
+|   |   |   |   Stage.mat
+|   |   |   |   Stage.mat.meta
+|   |   |   |   
+|   |   |   +---DragonNightmare
+|   |   |   |       AlbinoHP.mat
+|   |   |   |       AlbinoHP.mat.meta
+|   |   |   |       BlueHP.mat
+|   |   |   |       BlueHP.mat.meta
+|   |   |   |       DarkBlueHP.mat
+|   |   |   |       DarkBlueHP.mat.meta
+|   |   |   |       GreenHP.mat
+|   |   |   |       GreenHP.mat.meta
+|   |   |   |       
+|   |   |   +---DragonSoulEater
+|   |   |   |       BlueHP.mat
+|   |   |   |       BlueHP.mat.meta
+|   |   |   |       GreenHP.mat
+|   |   |   |       GreenHP.mat.meta
+|   |   |   |       GreyHP.mat
+|   |   |   |       GreyHP.mat.meta
+|   |   |   |       RedHP.mat
+|   |   |   |       RedHP.mat.meta
+|   |   |   |       
+|   |   |   +---DragonTerrorBringer
+|   |   |   |       BlueHP.mat
+|   |   |   |       BlueHP.mat.meta
+|   |   |   |       GreenHP.mat
+|   |   |   |       GreenHP.mat.meta
+|   |   |   |       PurpleHP.mat
+|   |   |   |       PurpleHP.mat.meta
+|   |   |   |       RedHP.mat
+|   |   |   |       RedHP.mat.meta
+|   |   |   |       
+|   |   |   \---DragonUsurper
+|   |   |           BlueHP.mat
+|   |   |           BlueHP.mat.meta
+|   |   |           GreenHP.mat
+|   |   |           GreenHP.mat.meta
+|   |   |           PurpleHP.mat
+|   |   |           PurpleHP.mat.meta
+|   |   |           RedHP.mat
+|   |   |           RedHP.mat.meta
+|   |   |           
+|   |   +---Mesh
+|   |   |       DragonSoulEaterMesh.fbx
+|   |   |       DragonSoulEaterMesh.fbx.meta
+|   |   |       DragonTerrorBringerMesh.fbx
+|   |   |       DragonTerrorBringerMesh.fbx.meta
+|   |   |       DragonTheNightmareMesh.fbx
+|   |   |       DragonTheNightmareMesh.fbx.meta
+|   |   |       DragonUsurperMesh.fbx
+|   |   |       DragonUsurperMesh.fbx.meta
+|   |   |       Stage.fbx
+|   |   |       Stage.fbx.meta
+|   |   |       
+|   |   +---Prefab
+|   |   |   |   DragonNightmare.meta
+|   |   |   |   DragonSoulEater.meta
+|   |   |   |   DragonTerrorBringer.meta
+|   |   |   |   DragonUsurper.meta
+|   |   |   |   
+|   |   |   +---DragonNightmare
+|   |   |   |       Albino.prefab
+|   |   |   |       Albino.prefab.meta
+|   |   |   |       Blue.prefab
+|   |   |   |       Blue.prefab.meta
+|   |   |   |       DarkBlue.prefab
+|   |   |   |       DarkBlue.prefab.meta
+|   |   |   |       Green.prefab
+|   |   |   |       Green.prefab.meta
+|   |   |   |       
+|   |   |   +---DragonSoulEater
+|   |   |   |       Blue.prefab
+|   |   |   |       Blue.prefab.meta
+|   |   |   |       Green.prefab
+|   |   |   |       Green.prefab.meta
+|   |   |   |       Grey.prefab
+|   |   |   |       Grey.prefab.meta
+|   |   |   |       Red.prefab
+|   |   |   |       Red.prefab.meta
+|   |   |   |       
+|   |   |   +---DragonTerrorBringer
+|   |   |   |       Blue.prefab
+|   |   |   |       Blue.prefab.meta
+|   |   |   |       Green.prefab
+|   |   |   |       Green.prefab.meta
+|   |   |   |       Purple.prefab
+|   |   |   |       Purple.prefab.meta
+|   |   |   |       Red.prefab
+|   |   |   |       Red.prefab.meta
+|   |   |   |       
+|   |   |   \---DragonUsurper
+|   |   |           Blue.prefab
+|   |   |           Blue.prefab.meta
+|   |   |           Green.prefab
+|   |   |           Green.prefab.meta
+|   |   |           Purple.prefab
+|   |   |           Purple.prefab.meta
+|   |   |           Red.prefab
+|   |   |           Red.prefab.meta
+|   |   |           
+|   |   +---Scene
+|   |   |       MainScene.unity
+|   |   |       MainScene.unity.meta
+|   |   |       NightmareScene.unity
+|   |   |       NightmareScene.unity.meta
+|   |   |       SoulEaterScene.unity
+|   |   |       SoulEaterScene.unity.meta
+|   |   |       TerrorBringerScene.unity
+|   |   |       TerrorBringerScene.unity.meta
+|   |   |       UsurperScene.unity
+|   |   |       UsurperScene.unity.meta
+|   |   |       
+|   |   \---Texture
+|   |       |   DragonNightmare.meta
+|   |       |   DragonSoulEater.meta
+|   |       |   DragonTerrorBringer.meta
+|   |       |   DragonUsurper.meta
+|   |       |   
+|   |       +---DragonNightmare
+|   |       |       AlbinoHP.png
+|   |       |       AlbinoHP.png.meta
+|   |       |       BlueHP.png
+|   |       |       BlueHP.png.meta
+|   |       |       DarkblueHP.png
+|   |       |       DarkblueHP.png.meta
+|   |       |       GreenHP.png
+|   |       |       GreenHP.png.meta
+|   |       |       
+|   |       +---DragonSoulEater
+|   |       |       BlueHP.png
+|   |       |       BlueHP.png.meta
+|   |       |       GreenHP.png
+|   |       |       GreenHP.png.meta
+|   |       |       GreyHP.png
+|   |       |       GreyHP.png.meta
+|   |       |       RedHP.png
+|   |       |       RedHP.png.meta
+|   |       |       
+|   |       +---DragonTerrorBringer
+|   |       |       BlueHP.png
+|   |       |       BlueHP.png.meta
+|   |       |       GreenHP.png
+|   |       |       GreenHP.png.meta
+|   |       |       purpleHP.png
+|   |       |       purpleHP.png.meta
+|   |       |       RedHP.png
+|   |       |       RedHP.png.meta
+|   |       |       
+|   |       \---DragonUsurper
+|   |               BlueHP.png
+|   |               BlueHP.png.meta
+|   |               GreenHP.png
+|   |               GreenHP.png.meta
+|   |               PurpleHP.png
+|   |               PurpleHP.png.meta
+|   |               RedHP.png
+|   |               RedHP.png.meta
+|   |               
+|   +---Kevin Iglesias
+|   |   |   Human Animations.meta
+|   |   |   
+|   |   \---Human Animations
+|   |       |   Animations.meta
+|   |       |   Human Archer Animations 2.0 FREE.pdf
+|   |       |   Human Archer Animations 2.0 FREE.pdf.meta
+|   |       |   Human Melee Animations 2.0 FREE.pdf
+|   |       |   Human Melee Animations 2.0 FREE.pdf.meta
+|   |       |   Human Spellcasting Animations 2.0 FREE.pdf
+|   |       |   Human Spellcasting Animations 2.0 FREE.pdf.meta
+|   |       |   Materials.meta
+|   |       |   Models.meta
+|   |       |   Scripts.meta
+|   |       |   Unity Demo Scenes.meta
+|   |       |   
+|   |       +---Animations
+|   |       |   |   Female.meta
+|   |       |   |   HumanArcherAnimationsFREE_BlenderFiles.zip
+|   |       |   |   HumanArcherAnimationsFREE_BlenderFiles.zip.meta
+|   |       |   |   HumanMeleeAnimationsFREE_BlenderFiles.zip
+|   |       |   |   HumanMeleeAnimationsFREE_BlenderFiles.zip.meta
+|   |       |   |   HumanSpellcastingAnimationsFREE_BlenderFiles.zip
+|   |       |   |   HumanSpellcastingAnimationsFREE_BlenderFiles.zip.meta
+|   |       |   |   Male.meta
+|   |       |   |   Masked Poses.meta
+|   |       |   |   
+|   |       |   +---Female
+|   |       |   |   |   Combat.meta
+|   |       |   |   |   Idles.meta
+|   |       |   |   |   Misc.meta
+|   |       |   |   |   Movement.meta
+|   |       |   |   |   
+|   |       |   |   +---Combat
+|   |       |   |   |   |   1H.meta
+|   |       |   |   |   |   2H.meta
+|   |       |   |   |   |   Bow.meta
+|   |       |   |   |   |   HumanF@CombatDamage01.fbx
+|   |       |   |   |   |   HumanF@CombatDamage01.fbx.meta
+|   |       |   |   |   |   HumanF@CombatIdle01.fbx
+|   |       |   |   |   |   HumanF@CombatIdle01.fbx.meta
+|   |       |   |   |   |   HumanF@Death01.fbx
+|   |       |   |   |   |   HumanF@Death01.fbx.meta
+|   |       |   |   |   |   Polearm.meta
+|   |       |   |   |   |   Shield.meta
+|   |       |   |   |   |   Spellcasting.meta
+|   |       |   |   |   |   
+|   |       |   |   |   +---1H
+|   |       |   |   |   |       HumanF@Attack1H01_L.fbx
+|   |       |   |   |   |       HumanF@Attack1H01_L.fbx.meta
+|   |       |   |   |   |       HumanF@Attack1H01_R.fbx
+|   |       |   |   |   |       HumanF@Attack1H01_R.fbx.meta
+|   |       |   |   |   |       HumanF@CombatIdle1H01.fbx
+|   |       |   |   |   |       HumanF@CombatIdle1H01.fbx.meta
+|   |       |   |   |   |       
+|   |       |   |   |   +---2H
+|   |       |   |   |   |       HumanF@Attack2H01.fbx
+|   |       |   |   |   |       HumanF@Attack2H01.fbx.meta
+|   |       |   |   |   |       HumanF@CombatIdle2H01.fbx
+|   |       |   |   |   |       HumanF@CombatIdle2H01.fbx.meta
+|   |       |   |   |   |       
+|   |       |   |   |   +---Bow
+|   |       |   |   |   |       HumanF@BowIdle01.fbx
+|   |       |   |   |   |       HumanF@BowIdle01.fbx.meta
+|   |       |   |   |   |       HumanF@BowIdle02.fbx
+|   |       |   |   |   |       HumanF@BowIdle02.fbx.meta
+|   |       |   |   |   |       HumanF@BowShot01 - Hold.fbx
+|   |       |   |   |   |       HumanF@BowShot01 - Hold.fbx.meta
+|   |       |   |   |   |       HumanF@BowShot01 - Load.fbx
+|   |       |   |   |   |       HumanF@BowShot01 - Load.fbx.meta
+|   |       |   |   |   |       HumanF@BowShot01 - Release.fbx
+|   |       |   |   |   |       HumanF@BowShot01 - Release.fbx.meta
+|   |       |   |   |   |       
+|   |       |   |   |   +---Polearm
+|   |       |   |   |   |       HumanF@AttackPolearm01.fbx
+|   |       |   |   |   |       HumanF@AttackPolearm01.fbx.meta
+|   |       |   |   |   |       HumanF@CombatIdlePolearm01.fbx
+|   |       |   |   |   |       HumanF@CombatIdlePolearm01.fbx.meta
+|   |       |   |   |   |       
+|   |       |   |   |   +---Shield
+|   |       |   |   |   |       HumanF@AttackShield01.fbx
+|   |       |   |   |   |       HumanF@AttackShield01.fbx.meta
+|   |       |   |   |   |       
+|   |       |   |   |   \---Spellcasting
+|   |       |   |   |       |   HumanF@CastingDamage01.fbx
+|   |       |   |   |       |   HumanF@CastingDamage01.fbx.meta
+|   |       |   |   |       |   HumanF@CastingEnter01.fbx
+|   |       |   |   |       |   HumanF@CastingEnter01.fbx.meta
+|   |       |   |   |       |   HumanF@CastingExit01.fbx
+|   |       |   |   |       |   HumanF@CastingExit01.fbx.meta
+|   |       |   |   |       |   HumanF@CastingIdle01.fbx
+|   |       |   |   |       |   HumanF@CastingIdle01.fbx.meta
+|   |       |   |   |       |   MagicAttacks.meta
+|   |       |   |   |       |   
+|   |       |   |   |       \---MagicAttacks
+|   |       |   |   |           |   Call.meta
+|   |       |   |   |           |   Directional.meta
+|   |       |   |   |           |   Omnidirectional.meta
+|   |       |   |   |           |   
+|   |       |   |   |           +---Call
+|   |       |   |   |           |       HumanF@MagicAttackCall1H01_L - Cast.fbx
+|   |       |   |   |           |       HumanF@MagicAttackCall1H01_L - Cast.fbx.meta
+|   |       |   |   |           |       HumanF@MagicAttackCall1H01_L - Load.fbx
+|   |       |   |   |           |       HumanF@MagicAttackCall1H01_L - Load.fbx.meta
+|   |       |   |   |           |       HumanF@MagicAttackCall1H01_L.fbx
+|   |       |   |   |           |       HumanF@MagicAttackCall1H01_L.fbx.meta
+|   |       |   |   |           |       
+|   |       |   |   |           +---Directional
+|   |       |   |   |           |       HumanF@MagicAttackDirect1H01_L - Cast.fbx
+|   |       |   |   |           |       HumanF@MagicAttackDirect1H01_L - Cast.fbx.meta
+|   |       |   |   |           |       HumanF@MagicAttackDirect1H01_L - Load.fbx
+|   |       |   |   |           |       HumanF@MagicAttackDirect1H01_L - Load.fbx.meta
+|   |       |   |   |           |       HumanF@MagicAttackDirect1H01_L.fbx
+|   |       |   |   |           |       HumanF@MagicAttackDirect1H01_L.fbx.meta
+|   |       |   |   |           |       HumanF@MagicAttackDirect1H01_R - Cast.fbx
+|   |       |   |   |           |       HumanF@MagicAttackDirect1H01_R - Cast.fbx.meta
+|   |       |   |   |           |       HumanF@MagicAttackDirect1H01_R - Load.fbx
+|   |       |   |   |           |       HumanF@MagicAttackDirect1H01_R - Load.fbx.meta
+|   |       |   |   |           |       HumanF@MagicAttackDirect1H01_R.fbx
+|   |       |   |   |           |       HumanF@MagicAttackDirect1H01_R.fbx.meta
+|   |       |   |   |           |       HumanF@MagicAttackDirect2H01 - Cast.fbx
+|   |       |   |   |           |       HumanF@MagicAttackDirect2H01 - Cast.fbx.meta
+|   |       |   |   |           |       HumanF@MagicAttackDirect2H01 - Load.fbx
+|   |       |   |   |           |       HumanF@MagicAttackDirect2H01 - Load.fbx.meta
+|   |       |   |   |           |       HumanF@MagicAttackDirect2H01.fbx
+|   |       |   |   |           |       HumanF@MagicAttackDirect2H01.fbx.meta
+|   |       |   |   |           |       
+|   |       |   |   |           \---Omnidirectional
+|   |       |   |   |                   HumanF@MagicAttackOmni01 - Cast.fbx
+|   |       |   |   |                   HumanF@MagicAttackOmni01 - Cast.fbx.meta
+|   |       |   |   |                   HumanF@MagicAttackOmni01 - Load.fbx
+|   |       |   |   |                   HumanF@MagicAttackOmni01 - Load.fbx.meta
+|   |       |   |   |                   HumanF@MagicAttackOmni01.fbx
+|   |       |   |   |                   HumanF@MagicAttackOmni01.fbx.meta
+|   |       |   |   |                   
+|   |       |   |   +---Idles
+|   |       |   |   |       HumanF@Idle01-Idle02.fbx
+|   |       |   |   |       HumanF@Idle01-Idle02.fbx.meta
+|   |       |   |   |       HumanF@Idle01-Idle03.fbx
+|   |       |   |   |       HumanF@Idle01-Idle03.fbx.meta
+|   |       |   |   |       HumanF@Idle01-Idle04.fbx
+|   |       |   |   |       HumanF@Idle01-Idle04.fbx.meta
+|   |       |   |   |       HumanF@Idle01.fbx
+|   |       |   |   |       HumanF@Idle01.fbx.meta
+|   |       |   |   |       HumanF@Idle02-Idle01.fbx
+|   |       |   |   |       HumanF@Idle02-Idle01.fbx.meta
+|   |       |   |   |       HumanF@Idle02.fbx
+|   |       |   |   |       HumanF@Idle02.fbx.meta
+|   |       |   |   |       HumanF@Idle03-Idle01.fbx
+|   |       |   |   |       HumanF@Idle03-Idle01.fbx.meta
+|   |       |   |   |       HumanF@Idle03.fbx
+|   |       |   |   |       HumanF@Idle03.fbx.meta
+|   |       |   |   |       HumanF@Idle04-Idle01.fbx
+|   |       |   |   |       HumanF@Idle04-Idle01.fbx.meta
+|   |       |   |   |       HumanF@Idle04.fbx
+|   |       |   |   |       HumanF@Idle04.fbx.meta
+|   |       |   |   |       
+|   |       |   |   +---Misc
+|   |       |   |   |   |   Unsheathe.meta
+|   |       |   |   |   |   
+|   |       |   |   |   \---Unsheathe
+|   |       |   |   |           HumanF@SheatheBack01_L.fbx
+|   |       |   |   |           HumanF@SheatheBack01_L.fbx.meta
+|   |       |   |   |           HumanF@SheatheBack01_R.fbx
+|   |       |   |   |           HumanF@SheatheBack01_R.fbx.meta
+|   |       |   |   |           HumanF@SheatheBack02_L.fbx
+|   |       |   |   |           HumanF@SheatheBack02_L.fbx.meta
+|   |       |   |   |           HumanF@SheatheBack02_R.fbx
+|   |       |   |   |           HumanF@SheatheBack02_R.fbx.meta
+|   |       |   |   |           HumanF@UnsheatheBack01_L.fbx
+|   |       |   |   |           HumanF@UnsheatheBack01_L.fbx.meta
+|   |       |   |   |           HumanF@UnsheatheBack01_R.fbx
+|   |       |   |   |           HumanF@UnsheatheBack01_R.fbx.meta
+|   |       |   |   |           HumanF@UnsheatheBack02_L.fbx
+|   |       |   |   |           HumanF@UnsheatheBack02_L.fbx.meta
+|   |       |   |   |           HumanF@UnsheatheBack02_R.fbx
+|   |       |   |   |           HumanF@UnsheatheBack02_R.fbx.meta
+|   |       |   |   |           
+|   |       |   |   \---Movement
+|   |       |   |       |   Run.meta
+|   |       |   |       |   Strafe.meta
+|   |       |   |       |   Walk.meta
+|   |       |   |       |   
+|   |       |   |       +---Run
+|   |       |   |       |   |   HumanF@Run01_Backward.fbx
+|   |       |   |       |   |   HumanF@Run01_Backward.fbx.meta
+|   |       |   |       |   |   HumanF@Run01_BackwardLeft.fbx
+|   |       |   |       |   |   HumanF@Run01_BackwardLeft.fbx.meta
+|   |       |   |       |   |   HumanF@Run01_BackwardRight.fbx
+|   |       |   |       |   |   HumanF@Run01_BackwardRight.fbx.meta
+|   |       |   |       |   |   HumanF@Run01_Forward.fbx
+|   |       |   |       |   |   HumanF@Run01_Forward.fbx.meta
+|   |       |   |       |   |   HumanF@Run01_ForwardLeft.fbx
+|   |       |   |       |   |   HumanF@Run01_ForwardLeft.fbx.meta
+|   |       |   |       |   |   HumanF@Run01_ForwardRight.fbx
+|   |       |   |       |   |   HumanF@Run01_ForwardRight.fbx.meta
+|   |       |   |       |   |   HumanF@Run01_Left.fbx
+|   |       |   |       |   |   HumanF@Run01_Left.fbx.meta
+|   |       |   |       |   |   HumanF@Run01_Right.fbx
+|   |       |   |       |   |   HumanF@Run01_Right.fbx.meta
+|   |       |   |       |   |   RootMotion.meta
+|   |       |   |       |   |   
+|   |       |   |       |   \---RootMotion
+|   |       |   |       |           HumanF@Run01_Backward [RM].fbx
+|   |       |   |       |           HumanF@Run01_Backward [RM].fbx.meta
+|   |       |   |       |           HumanF@Run01_BackwardLeft [RM].fbx
+|   |       |   |       |           HumanF@Run01_BackwardLeft [RM].fbx.meta
+|   |       |   |       |           HumanF@Run01_BackwardRight [RM].fbx
+|   |       |   |       |           HumanF@Run01_BackwardRight [RM].fbx.meta
+|   |       |   |       |           HumanF@Run01_Forward [RM].fbx
+|   |       |   |       |           HumanF@Run01_Forward [RM].fbx.meta
+|   |       |   |       |           HumanF@Run01_ForwardLeft [RM].fbx
+|   |       |   |       |           HumanF@Run01_ForwardLeft [RM].fbx.meta
+|   |       |   |       |           HumanF@Run01_ForwardRight [RM].fbx
+|   |       |   |       |           HumanF@Run01_ForwardRight [RM].fbx.meta
+|   |       |   |       |           HumanF@Run01_Left [RM].fbx
+|   |       |   |       |           HumanF@Run01_Left [RM].fbx.meta
+|   |       |   |       |           HumanF@Run01_Right [RM].fbx
+|   |       |   |       |           HumanF@Run01_Right [RM].fbx.meta
+|   |       |   |       |           
+|   |       |   |       +---Strafe
+|   |       |   |       |   |   StrafeRun.meta
+|   |       |   |       |   |   
+|   |       |   |       |   \---StrafeRun
+|   |       |   |       |       |   HumanF@StrafeRun01_BackwardLeft.fbx
+|   |       |   |       |       |   HumanF@StrafeRun01_BackwardLeft.fbx.meta
+|   |       |   |       |       |   HumanF@StrafeRun01_BackwardRight.fbx
+|   |       |   |       |       |   HumanF@StrafeRun01_BackwardRight.fbx.meta
+|   |       |   |       |       |   HumanF@StrafeRun01_ForwardLeft.fbx
+|   |       |   |       |       |   HumanF@StrafeRun01_ForwardLeft.fbx.meta
+|   |       |   |       |       |   HumanF@StrafeRun01_ForwardRight.fbx
+|   |       |   |       |       |   HumanF@StrafeRun01_ForwardRight.fbx.meta
+|   |       |   |       |       |   HumanF@StrafeRun01_Left.fbx
+|   |       |   |       |       |   HumanF@StrafeRun01_Left.fbx.meta
+|   |       |   |       |       |   HumanF@StrafeRun01_Right.fbx
+|   |       |   |       |       |   HumanF@StrafeRun01_Right.fbx.meta
+|   |       |   |       |       |   RootMotion.meta
+|   |       |   |       |       |   
+|   |       |   |       |       \---RootMotion
+|   |       |   |       |               HumanF@StrafeRun01_BackwardLeft [RM].fbx
+|   |       |   |       |               HumanF@StrafeRun01_BackwardLeft [RM].fbx.meta
+|   |       |   |       |               HumanF@StrafeRun01_BackwardRight [RM].fbx
+|   |       |   |       |               HumanF@StrafeRun01_BackwardRight [RM].fbx.meta
+|   |       |   |       |               HumanF@StrafeRun01_ForwardLeft [RM].fbx
+|   |       |   |       |               HumanF@StrafeRun01_ForwardLeft [RM].fbx.meta
+|   |       |   |       |               HumanF@StrafeRun01_ForwardRight [RM].fbx
+|   |       |   |       |               HumanF@StrafeRun01_ForwardRight [RM].fbx.meta
+|   |       |   |       |               HumanF@StrafeRun01_Left [RM].fbx
+|   |       |   |       |               HumanF@StrafeRun01_Left [RM].fbx.meta
+|   |       |   |       |               HumanF@StrafeRun01_Right [RM].fbx
+|   |       |   |       |               HumanF@StrafeRun01_Right [RM].fbx.meta
+|   |       |   |       |               
+|   |       |   |       \---Walk
+|   |       |   |           |   HumanF@Walk01_Backward.fbx
+|   |       |   |           |   HumanF@Walk01_Backward.fbx.meta
+|   |       |   |           |   HumanF@Walk01_BackwardLeft.fbx
+|   |       |   |           |   HumanF@Walk01_BackwardLeft.fbx.meta
+|   |       |   |           |   HumanF@Walk01_BackwardRight.fbx
+|   |       |   |           |   HumanF@Walk01_BackwardRight.fbx.meta
+|   |       |   |           |   HumanF@Walk01_Forward.fbx
+|   |       |   |           |   HumanF@Walk01_Forward.fbx.meta
+|   |       |   |           |   HumanF@Walk01_ForwardLeft.fbx
+|   |       |   |           |   HumanF@Walk01_ForwardLeft.fbx.meta
+|   |       |   |           |   HumanF@Walk01_ForwardRight.fbx
+|   |       |   |           |   HumanF@Walk01_ForwardRight.fbx.meta
+|   |       |   |           |   HumanF@Walk01_Left.fbx
+|   |       |   |           |   HumanF@Walk01_Left.fbx.meta
+|   |       |   |           |   HumanF@Walk01_Right.fbx
+|   |       |   |           |   HumanF@Walk01_Right.fbx.meta
+|   |       |   |           |   RootMotion.meta
+|   |       |   |           |   
+|   |       |   |           \---RootMotion
+|   |       |   |                   HumanF@Walk01_Backward [RM].fbx
+|   |       |   |                   HumanF@Walk01_Backward [RM].fbx.meta
+|   |       |   |                   HumanF@Walk01_BackwardLeft [RM].fbx
+|   |       |   |                   HumanF@Walk01_BackwardLeft [RM].fbx.meta
+|   |       |   |                   HumanF@Walk01_BackwardRight [RM].fbx
+|   |       |   |                   HumanF@Walk01_BackwardRight [RM].fbx.meta
+|   |       |   |                   HumanF@Walk01_Forward [RM].fbx
+|   |       |   |                   HumanF@Walk01_Forward [RM].fbx.meta
+|   |       |   |                   HumanF@Walk01_ForwardLeft [RM].fbx
+|   |       |   |                   HumanF@Walk01_ForwardLeft [RM].fbx.meta
+|   |       |   |                   HumanF@Walk01_ForwardRight [RM].fbx
+|   |       |   |                   HumanF@Walk01_ForwardRight [RM].fbx.meta
+|   |       |   |                   HumanF@Walk01_Left [RM].fbx
+|   |       |   |                   HumanF@Walk01_Left [RM].fbx.meta
+|   |       |   |                   HumanF@Walk01_Right [RM].fbx
+|   |       |   |                   HumanF@Walk01_Right [RM].fbx.meta
+|   |       |   |                   
+|   |       |   +---Male
+|   |       |   |   |   Combat.meta
+|   |       |   |   |   Idles.meta
+|   |       |   |   |   Misc.meta
+|   |       |   |   |   Movement.meta
+|   |       |   |   |   
+|   |       |   |   +---Combat
+|   |       |   |   |   |   1H.meta
+|   |       |   |   |   |   2H.meta
+|   |       |   |   |   |   Bow.meta
+|   |       |   |   |   |   HumanM@CombatDamage01.fbx
+|   |       |   |   |   |   HumanM@CombatDamage01.fbx.meta
+|   |       |   |   |   |   HumanM@CombatIdle01.fbx
+|   |       |   |   |   |   HumanM@CombatIdle01.fbx.meta
+|   |       |   |   |   |   HumanM@Death01.fbx
+|   |       |   |   |   |   HumanM@Death01.fbx.meta
+|   |       |   |   |   |   Polearm.meta
+|   |       |   |   |   |   Shield.meta
+|   |       |   |   |   |   Spellcasting.meta
+|   |       |   |   |   |   
+|   |       |   |   |   +---1H
+|   |       |   |   |   |       HumanM@Attack1H01_L.fbx
+|   |       |   |   |   |       HumanM@Attack1H01_L.fbx.meta
+|   |       |   |   |   |       HumanM@Attack1H01_R.fbx
+|   |       |   |   |   |       HumanM@Attack1H01_R.fbx.meta
+|   |       |   |   |   |       HumanM@CombatIdle1H01.fbx
+|   |       |   |   |   |       HumanM@CombatIdle1H01.fbx.meta
+|   |       |   |   |   |       
+|   |       |   |   |   +---2H
+|   |       |   |   |   |       HumanM@Attack2H01.fbx
+|   |       |   |   |   |       HumanM@Attack2H01.fbx.meta
+|   |       |   |   |   |       HumanM@CombatIdle2H01.fbx
+|   |       |   |   |   |       HumanM@CombatIdle2H01.fbx.meta
+|   |       |   |   |   |       
+|   |       |   |   |   +---Bow
+|   |       |   |   |   |       HumanM@BowIdle01.fbx
+|   |       |   |   |   |       HumanM@BowIdle01.fbx.meta
+|   |       |   |   |   |       HumanM@BowIdle02.fbx
+|   |       |   |   |   |       HumanM@BowIdle02.fbx.meta
+|   |       |   |   |   |       HumanM@BowShot01 - Hold.fbx
+|   |       |   |   |   |       HumanM@BowShot01 - Hold.fbx.meta
+|   |       |   |   |   |       HumanM@BowShot01 - Load.fbx
+|   |       |   |   |   |       HumanM@BowShot01 - Load.fbx.meta
+|   |       |   |   |   |       HumanM@BowShot01 - Release.fbx
+|   |       |   |   |   |       HumanM@BowShot01 - Release.fbx.meta
+|   |       |   |   |   |       
+|   |       |   |   |   +---Polearm
+|   |       |   |   |   |       HumanM@AttackPolearm01.fbx
+|   |       |   |   |   |       HumanM@AttackPolearm01.fbx.meta
+|   |       |   |   |   |       HumanM@CombatIdlePolearm01.fbx
+|   |       |   |   |   |       HumanM@CombatIdlePolearm01.fbx.meta
+|   |       |   |   |   |       
+|   |       |   |   |   +---Shield
+|   |       |   |   |   |       HumanM@AttackShield01.fbx
+|   |       |   |   |   |       HumanM@AttackShield01.fbx.meta
+|   |       |   |   |   |       
+|   |       |   |   |   \---Spellcasting
+|   |       |   |   |       |   HumanM@CastingDamage01.fbx
+|   |       |   |   |       |   HumanM@CastingDamage01.fbx.meta
+|   |       |   |   |       |   HumanM@CastingEnter01.fbx
+|   |       |   |   |       |   HumanM@CastingEnter01.fbx.meta
+|   |       |   |   |       |   HumanM@CastingExit01.fbx
+|   |       |   |   |       |   HumanM@CastingExit01.fbx.meta
+|   |       |   |   |       |   HumanM@CastingIdle01.fbx
+|   |       |   |   |       |   HumanM@CastingIdle01.fbx.meta
+|   |       |   |   |       |   MagicAttacks.meta
+|   |       |   |   |       |   
+|   |       |   |   |       \---MagicAttacks
+|   |       |   |   |           |   Call.meta
+|   |       |   |   |           |   Directional.meta
+|   |       |   |   |           |   Omnidirectional.meta
+|   |       |   |   |           |   
+|   |       |   |   |           +---Call
+|   |       |   |   |           |       HumanM@MagicAttackCall1H01_L - Cast.fbx
+|   |       |   |   |           |       HumanM@MagicAttackCall1H01_L - Cast.fbx.meta
+|   |       |   |   |           |       HumanM@MagicAttackCall1H01_L - Load.fbx
+|   |       |   |   |           |       HumanM@MagicAttackCall1H01_L - Load.fbx.meta
+|   |       |   |   |           |       HumanM@MagicAttackCall1H01_L.fbx
+|   |       |   |   |           |       HumanM@MagicAttackCall1H01_L.fbx.meta
+|   |       |   |   |           |       
+|   |       |   |   |           +---Directional
+|   |       |   |   |           |       HumanM@MagicAttackDirect1H01_L - Cast.fbx
+|   |       |   |   |           |       HumanM@MagicAttackDirect1H01_L - Cast.fbx.meta
+|   |       |   |   |           |       HumanM@MagicAttackDirect1H01_L - Load.fbx
+|   |       |   |   |           |       HumanM@MagicAttackDirect1H01_L - Load.fbx.meta
+|   |       |   |   |           |       HumanM@MagicAttackDirect1H01_L.fbx
+|   |       |   |   |           |       HumanM@MagicAttackDirect1H01_L.fbx.meta
+|   |       |   |   |           |       HumanM@MagicAttackDirect1H01_R - Cast.fbx
+|   |       |   |   |           |       HumanM@MagicAttackDirect1H01_R - Cast.fbx.meta
+|   |       |   |   |           |       HumanM@MagicAttackDirect1H01_R - Load.fbx
+|   |       |   |   |           |       HumanM@MagicAttackDirect1H01_R - Load.fbx.meta
+|   |       |   |   |           |       HumanM@MagicAttackDirect1H01_R.fbx
+|   |       |   |   |           |       HumanM@MagicAttackDirect1H01_R.fbx.meta
+|   |       |   |   |           |       HumanM@MagicAttackDirect2H01 - Cast.fbx
+|   |       |   |   |           |       HumanM@MagicAttackDirect2H01 - Cast.fbx.meta
+|   |       |   |   |           |       HumanM@MagicAttackDirect2H01 - Load.fbx
+|   |       |   |   |           |       HumanM@MagicAttackDirect2H01 - Load.fbx.meta
+|   |       |   |   |           |       HumanM@MagicAttackDirect2H01.fbx
+|   |       |   |   |           |       HumanM@MagicAttackDirect2H01.fbx.meta
+|   |       |   |   |           |       
+|   |       |   |   |           \---Omnidirectional
+|   |       |   |   |                   HumanM@MagicAttackOmni01 - Cast.fbx
+|   |       |   |   |                   HumanM@MagicAttackOmni01 - Cast.fbx.meta
+|   |       |   |   |                   HumanM@MagicAttackOmni01 - Load.fbx
+|   |       |   |   |                   HumanM@MagicAttackOmni01 - Load.fbx.meta
+|   |       |   |   |                   HumanM@MagicAttackOmni01.fbx
+|   |       |   |   |                   HumanM@MagicAttackOmni01.fbx.meta
+|   |       |   |   |                   
+|   |       |   |   +---Idles
+|   |       |   |   |       HumanM@Idle01-Idle02.fbx
+|   |       |   |   |       HumanM@Idle01-Idle02.fbx.meta
+|   |       |   |   |       HumanM@Idle01-Idle03.fbx
+|   |       |   |   |       HumanM@Idle01-Idle03.fbx.meta
+|   |       |   |   |       HumanM@Idle01-Idle04.fbx
+|   |       |   |   |       HumanM@Idle01-Idle04.fbx.meta
+|   |       |   |   |       HumanM@Idle01.fbx
+|   |       |   |   |       HumanM@Idle01.fbx.meta
+|   |       |   |   |       HumanM@Idle02-Idle01.fbx
+|   |       |   |   |       HumanM@Idle02-Idle01.fbx.meta
+|   |       |   |   |       HumanM@Idle02.fbx
+|   |       |   |   |       HumanM@Idle02.fbx.meta
+|   |       |   |   |       HumanM@Idle03-Idle01.fbx
+|   |       |   |   |       HumanM@Idle03-Idle01.fbx.meta
+|   |       |   |   |       HumanM@Idle03.fbx
+|   |       |   |   |       HumanM@Idle03.fbx.meta
+|   |       |   |   |       HumanM@Idle04-Idle01.fbx
+|   |       |   |   |       HumanM@Idle04-Idle01.fbx.meta
+|   |       |   |   |       HumanM@Idle04.fbx
+|   |       |   |   |       HumanM@Idle04.fbx.meta
+|   |       |   |   |       
+|   |       |   |   +---Misc
+|   |       |   |   |   |   Unsheathe.meta
+|   |       |   |   |   |   
+|   |       |   |   |   \---Unsheathe
+|   |       |   |   |           HumanM@SheatheBack01_L.fbx
+|   |       |   |   |           HumanM@SheatheBack01_L.fbx.meta
+|   |       |   |   |           HumanM@SheatheBack01_R.fbx
+|   |       |   |   |           HumanM@SheatheBack01_R.fbx.meta
+|   |       |   |   |           HumanM@SheatheBack02_L.fbx
+|   |       |   |   |           HumanM@SheatheBack02_L.fbx.meta
+|   |       |   |   |           HumanM@SheatheBack02_R.fbx
+|   |       |   |   |           HumanM@SheatheBack02_R.fbx.meta
+|   |       |   |   |           HumanM@UnsheatheBack01_L.fbx
+|   |       |   |   |           HumanM@UnsheatheBack01_L.fbx.meta
+|   |       |   |   |           HumanM@UnsheatheBack01_R.fbx
+|   |       |   |   |           HumanM@UnsheatheBack01_R.fbx.meta
+|   |       |   |   |           HumanM@UnsheatheBack02_L.fbx
+|   |       |   |   |           HumanM@UnsheatheBack02_L.fbx.meta
+|   |       |   |   |           HumanM@UnsheatheBack02_R.fbx
+|   |       |   |   |           HumanM@UnsheatheBack02_R.fbx.meta
+|   |       |   |   |           
+|   |       |   |   \---Movement
+|   |       |   |       |   Run.meta
+|   |       |   |       |   Strafe.meta
+|   |       |   |       |   Walk.meta
+|   |       |   |       |   
+|   |       |   |       +---Run
+|   |       |   |       |   |   HumanM@Run01_Backward.fbx
+|   |       |   |       |   |   HumanM@Run01_Backward.fbx.meta
+|   |       |   |       |   |   HumanM@Run01_BackwardLeft.fbx
+|   |       |   |       |   |   HumanM@Run01_BackwardLeft.fbx.meta
+|   |       |   |       |   |   HumanM@Run01_BackwardRight.fbx
+|   |       |   |       |   |   HumanM@Run01_BackwardRight.fbx.meta
+|   |       |   |       |   |   HumanM@Run01_Forward.fbx
+|   |       |   |       |   |   HumanM@Run01_Forward.fbx.meta
+|   |       |   |       |   |   HumanM@Run01_ForwardLeft.fbx
+|   |       |   |       |   |   HumanM@Run01_ForwardLeft.fbx.meta
+|   |       |   |       |   |   HumanM@Run01_ForwardRight.fbx
+|   |       |   |       |   |   HumanM@Run01_ForwardRight.fbx.meta
+|   |       |   |       |   |   HumanM@Run01_Left.fbx
+|   |       |   |       |   |   HumanM@Run01_Left.fbx.meta
+|   |       |   |       |   |   HumanM@Run01_Right.fbx
+|   |       |   |       |   |   HumanM@Run01_Right.fbx.meta
+|   |       |   |       |   |   RootMotion.meta
+|   |       |   |       |   |   
+|   |       |   |       |   \---RootMotion
+|   |       |   |       |           HumanM@Run01_Backward [RM].fbx
+|   |       |   |       |           HumanM@Run01_Backward [RM].fbx.meta
+|   |       |   |       |           HumanM@Run01_BackwardLeft [RM].fbx
+|   |       |   |       |           HumanM@Run01_BackwardLeft [RM].fbx.meta
+|   |       |   |       |           HumanM@Run01_BackwardRight [RM].fbx
+|   |       |   |       |           HumanM@Run01_BackwardRight [RM].fbx.meta
+|   |       |   |       |           HumanM@Run01_Forward [RM].fbx
+|   |       |   |       |           HumanM@Run01_Forward [RM].fbx.meta
+|   |       |   |       |           HumanM@Run01_ForwardLeft [RM].fbx
+|   |       |   |       |           HumanM@Run01_ForwardLeft [RM].fbx.meta
+|   |       |   |       |           HumanM@Run01_ForwardRight [RM].fbx
+|   |       |   |       |           HumanM@Run01_ForwardRight [RM].fbx.meta
+|   |       |   |       |           HumanM@Run01_Left [RM].fbx
+|   |       |   |       |           HumanM@Run01_Left [RM].fbx.meta
+|   |       |   |       |           HumanM@Run01_Right [RM].fbx
+|   |       |   |       |           HumanM@Run01_Right [RM].fbx.meta
+|   |       |   |       |           
+|   |       |   |       +---Strafe
+|   |       |   |       |   |   StrafeRun.meta
+|   |       |   |       |   |   
+|   |       |   |       |   \---StrafeRun
+|   |       |   |       |       |   HumanM@StrafeRun01_BackwardLeft.fbx
+|   |       |   |       |       |   HumanM@StrafeRun01_BackwardLeft.fbx.meta
+|   |       |   |       |       |   HumanM@StrafeRun01_BackwardRight.fbx
+|   |       |   |       |       |   HumanM@StrafeRun01_BackwardRight.fbx.meta
+|   |       |   |       |       |   HumanM@StrafeRun01_ForwardLeft.fbx
+|   |       |   |       |       |   HumanM@StrafeRun01_ForwardLeft.fbx.meta
+|   |       |   |       |       |   HumanM@StrafeRun01_ForwardRight.fbx
+|   |       |   |       |       |   HumanM@StrafeRun01_ForwardRight.fbx.meta
+|   |       |   |       |       |   HumanM@StrafeRun01_Left.fbx
+|   |       |   |       |       |   HumanM@StrafeRun01_Left.fbx.meta
+|   |       |   |       |       |   HumanM@StrafeRun01_Right.fbx
+|   |       |   |       |       |   HumanM@StrafeRun01_Right.fbx.meta
+|   |       |   |       |       |   RootMotion.meta
+|   |       |   |       |       |   
+|   |       |   |       |       \---RootMotion
+|   |       |   |       |               HumanM@StrafeRun01_BackwardLeft [RM].fbx
+|   |       |   |       |               HumanM@StrafeRun01_BackwardLeft [RM].fbx.meta
+|   |       |   |       |               HumanM@StrafeRun01_BackwardRight [RM].fbx
+|   |       |   |       |               HumanM@StrafeRun01_BackwardRight [RM].fbx.meta
+|   |       |   |       |               HumanM@StrafeRun01_ForwardLeft [RM].fbx
+|   |       |   |       |               HumanM@StrafeRun01_ForwardLeft [RM].fbx.meta
+|   |       |   |       |               HumanM@StrafeRun01_ForwardRight [RM].fbx
+|   |       |   |       |               HumanM@StrafeRun01_ForwardRight [RM].fbx.meta
+|   |       |   |       |               HumanM@StrafeRun01_Left [RM].fbx
+|   |       |   |       |               HumanM@StrafeRun01_Left [RM].fbx.meta
+|   |       |   |       |               HumanM@StrafeRun01_Right [RM].fbx
+|   |       |   |       |               HumanM@StrafeRun01_Right [RM].fbx.meta
+|   |       |   |       |               
+|   |       |   |       \---Walk
+|   |       |   |           |   HumanM@Walk01_Backward.fbx
+|   |       |   |           |   HumanM@Walk01_Backward.fbx.meta
+|   |       |   |           |   HumanM@Walk01_BackwardLeft.fbx
+|   |       |   |           |   HumanM@Walk01_BackwardLeft.fbx.meta
+|   |       |   |           |   HumanM@Walk01_BackwardRight.fbx
+|   |       |   |           |   HumanM@Walk01_BackwardRight.fbx.meta
+|   |       |   |           |   HumanM@Walk01_Forward.fbx
+|   |       |   |           |   HumanM@Walk01_Forward.fbx.meta
+|   |       |   |           |   HumanM@Walk01_ForwardLeft.fbx
+|   |       |   |           |   HumanM@Walk01_ForwardLeft.fbx.meta
+|   |       |   |           |   HumanM@Walk01_ForwardRight.fbx
+|   |       |   |           |   HumanM@Walk01_ForwardRight.fbx.meta
+|   |       |   |           |   HumanM@Walk01_Left.fbx
+|   |       |   |           |   HumanM@Walk01_Left.fbx.meta
+|   |       |   |           |   HumanM@Walk01_Right.fbx
+|   |       |   |           |   HumanM@Walk01_Right.fbx.meta
+|   |       |   |           |   RootMotion.meta
+|   |       |   |           |   
+|   |       |   |           \---RootMotion
+|   |       |   |                   HumanM@Walk01_Backward [RM].fbx
+|   |       |   |                   HumanM@Walk01_Backward [RM].fbx.meta
+|   |       |   |                   HumanM@Walk01_BackwardLeft [RM].fbx
+|   |       |   |                   HumanM@Walk01_BackwardLeft [RM].fbx.meta
+|   |       |   |                   HumanM@Walk01_BackwardRight [RM].fbx
+|   |       |   |                   HumanM@Walk01_BackwardRight [RM].fbx.meta
+|   |       |   |                   HumanM@Walk01_Forward [RM].fbx
+|   |       |   |                   HumanM@Walk01_Forward [RM].fbx.meta
+|   |       |   |                   HumanM@Walk01_ForwardLeft [RM].fbx
+|   |       |   |                   HumanM@Walk01_ForwardLeft [RM].fbx.meta
+|   |       |   |                   HumanM@Walk01_ForwardRight [RM].fbx
+|   |       |   |                   HumanM@Walk01_ForwardRight [RM].fbx.meta
+|   |       |   |                   HumanM@Walk01_Left [RM].fbx
+|   |       |   |                   HumanM@Walk01_Left [RM].fbx.meta
+|   |       |   |                   HumanM@Walk01_Right [RM].fbx
+|   |       |   |                   HumanM@Walk01_Right [RM].fbx.meta
+|   |       |   |                   
+|   |       |   \---Masked Poses
+|   |       |           Human@HandsClosed01.fbx
+|   |       |           Human@HandsClosed01.fbx.meta
+|   |       |           Human@ObjectGripHands01.fbx
+|   |       |           Human@ObjectGripHands01.fbx.meta
+|   |       |           HumanF@ObjectBook01_L.fbx
+|   |       |           HumanF@ObjectBook01_L.fbx.meta
+|   |       |           HumanF@ObjectBook01_R.fbx
+|   |       |           HumanF@ObjectBook01_R.fbx.meta
+|   |       |           HumanF@ObjectGripShoulder01_L.fbx
+|   |       |           HumanF@ObjectGripShoulder01_L.fbx.meta
+|   |       |           HumanF@ObjectGripShoulder01_R.fbx
+|   |       |           HumanF@ObjectGripShoulder01_R.fbx.meta
+|   |       |           HumanF@ObjectGripShoulder02_L.fbx
+|   |       |           HumanF@ObjectGripShoulder02_L.fbx.meta
+|   |       |           HumanF@ObjectGripShoulder02_R.fbx
+|   |       |           HumanF@ObjectGripShoulder02_R.fbx.meta
+|   |       |           HumanF@WeaponHold2H01.fbx
+|   |       |           HumanF@WeaponHold2H01.fbx.meta
+|   |       |           HumanF@WeaponHoldPolearm01.fbx
+|   |       |           HumanF@WeaponHoldPolearm01.fbx.meta
+|   |       |           HumanM@ObjectBook01_L.fbx
+|   |       |           HumanM@ObjectBook01_L.fbx.meta
+|   |       |           HumanM@ObjectBook01_R.fbx
+|   |       |           HumanM@ObjectBook01_R.fbx.meta
+|   |       |           HumanM@ObjectGripShoulder01_L.fbx
+|   |       |           HumanM@ObjectGripShoulder01_L.fbx.meta
+|   |       |           HumanM@ObjectGripShoulder01_R.fbx
+|   |       |           HumanM@ObjectGripShoulder01_R.fbx.meta
+|   |       |           HumanM@ObjectGripShoulder02_L.fbx
+|   |       |           HumanM@ObjectGripShoulder02_L.fbx.meta
+|   |       |           HumanM@ObjectGripShoulder02_R.fbx
+|   |       |           HumanM@ObjectGripShoulder02_R.fbx.meta
+|   |       |           HumanM@WeaponHold2H01.fbx
+|   |       |           HumanM@WeaponHold2H01.fbx.meta
+|   |       |           HumanM@WeaponHoldPolearm01.fbx
+|   |       |           HumanM@WeaponHoldPolearm01.fbx.meta
+|   |       |           
+|   |       +---Materials
+|   |       |       HumanAnimations_Dummy-Purple.mat
+|   |       |       HumanAnimations_Dummy-Purple.mat.meta
+|   |       |       HumanAnimations_Dummy-Yellow.mat
+|   |       |       HumanAnimations_Dummy-Yellow.mat.meta
+|   |       |       
+|   |       +---Models
+|   |       |   |   Avatar Masks.meta
+|   |       |   |   HumanF_Model.fbx
+|   |       |   |   HumanF_Model.fbx.meta
+|   |       |   |   HumanM_Model.fbx
+|   |       |   |   HumanM_Model.fbx.meta
+|   |       |   |   
+|   |       |   \---Avatar Masks
+|   |       |       |   Arms.meta
+|   |       |       |   Hands.meta
+|   |       |       |   Human Body Full Mask.mask
+|   |       |       |   Human Body Full Mask.mask.meta
+|   |       |       |   Human Body Upper Mask.mask
+|   |       |       |   Human Body Upper Mask.mask.meta
+|   |       |       |   Human Head Mask.mask
+|   |       |       |   Human Head Mask.mask.meta
+|   |       |       |   
+|   |       |       +---Arms
+|   |       |       |       Human Arm Left Mask.mask
+|   |       |       |       Human Arm Left Mask.mask.meta
+|   |       |       |       Human Arm Right Mask.mask
+|   |       |       |       Human Arm Right Mask.mask.meta
+|   |       |       |       Human Arms Mask.mask
+|   |       |       |       Human Arms Mask.mask.meta
+|   |       |       |       
+|   |       |       \---Hands
+|   |       |               Human Hand Left Mask.mask
+|   |       |               Human Hand Left Mask.mask.meta
+|   |       |               Human Hand Right Mask.mask
+|   |       |               Human Hand Right Mask.mask.meta
+|   |       |               Human Hands Mask.mask
+|   |       |               Human Hands Mask.mask.meta
+|   |       |               
+|   |       +---Scripts
+|   |       |       SpineProxy.cs
+|   |       |       SpineProxy.cs.meta
+|   |       |       UpperBodyAnimations-SpineProxy.url
+|   |       |       UpperBodyAnimations-SpineProxy.url.meta
+|   |       |       
+|   |       \---Unity Demo Scenes
+|   |           |   Human Archer Animations.meta
+|   |           |   Human Melee Animations.meta
+|   |           |   Human Spellcasting Animations.meta
+|   |           |   
+|   |           +---Human Archer Animations
+|   |           |   |   AnimatorControllers.meta
+|   |           |   |   Human Archer Animations - Unity Demo Scene.unity
+|   |           |   |   Human Archer Animations - Unity Demo Scene.unity.meta
+|   |           |   |   Materials.meta
+|   |           |   |   Models.meta
+|   |           |   |   Prefabs.meta
+|   |           |   |   Scripts.meta
+|   |           |   |   
+|   |           |   +---AnimatorControllers
+|   |           |   |       HumanF@ArcherController.overrideController
+|   |           |   |       HumanF@ArcherController.overrideController.meta
+|   |           |   |       HumanM@ArcherController.controller
+|   |           |   |       HumanM@ArcherController.controller.meta
+|   |           |   |       
+|   |           |   +---Materials
+|   |           |   |       HumanArcherAnimations_ArrowTrail.mat
+|   |           |   |       HumanArcherAnimations_ArrowTrail.mat.meta
+|   |           |   |       HumanArcherAnimations_Bowstring.mat
+|   |           |   |       HumanArcherAnimations_Bowstring.mat.meta
+|   |           |   |       HumanArcherAnimations_Floor.mat
+|   |           |   |       HumanArcherAnimations_Floor.mat.meta
+|   |           |   |       HumanArcherAnimations_Props.mat
+|   |           |   |       HumanArcherAnimations_Props.mat.meta
+|   |           |   |       
+|   |           |   +---Models
+|   |           |   |       HumanArcher_Arrow.fbx
+|   |           |   |       HumanArcher_Arrow.fbx.meta
+|   |           |   |       HumanArcher_Bow.fbx
+|   |           |   |       HumanArcher_Bow.fbx.meta
+|   |           |   |       HumanArcher_BycocketHat.fbx
+|   |           |   |       HumanArcher_BycocketHat.fbx.meta
+|   |           |   |       HumanArcher_Quiver.fbx
+|   |           |   |       HumanArcher_Quiver.fbx.meta
+|   |           |   |       HumanArcher_Trap.fbx
+|   |           |   |       HumanArcher_Trap.fbx.meta
+|   |           |   |       
+|   |           |   +---Prefabs
+|   |           |   |       HumanArcher_ArrowToShoot.prefab
+|   |           |   |       HumanArcher_ArrowToShoot.prefab.meta
+|   |           |   |       HumanArcher_Bow.prefab
+|   |           |   |       HumanArcher_Bow.prefab.meta
+|   |           |   |       HumanArcher_Quiver.prefab
+|   |           |   |       HumanArcher_Quiver.prefab.meta
+|   |           |   |       HumanF_Archer.prefab
+|   |           |   |       HumanF_Archer.prefab.meta
+|   |           |   |       HumanM_Archer.prefab
+|   |           |   |       HumanM_Archer.prefab.meta
+|   |           |   |       
+|   |           |   \---Scripts
+|   |           |           HumanArcherArrow.cs
+|   |           |           HumanArcherArrow.cs.meta
+|   |           |           HumanArcherBowSMB.cs
+|   |           |           HumanArcherBowSMB.cs.meta
+|   |           |           HumanArcherController.cs
+|   |           |           HumanArcherController.cs.meta
+|   |           |           HumanArcherGetArrowSMB.cs
+|   |           |           HumanArcherGetArrowSMB.cs.meta
+|   |           |           HumanArcherTriggerSMB.cs
+|   |           |           HumanArcherTriggerSMB.cs.meta
+|   |           |           HumanArcherUnsheatheBowSMB.cs
+|   |           |           HumanArcherUnsheatheBowSMB.cs.meta
+|   |           |           
+|   |           +---Human Melee Animations
+|   |           |   |   AnimatorControllers.meta
+|   |           |   |   Human Melee Animations - Unity Demo Scene.unity
+|   |           |   |   Human Melee Animations - Unity Demo Scene.unity.meta
+|   |           |   |   Materials.meta
+|   |           |   |   Models.meta
+|   |           |   |   Prefabs.meta
+|   |           |   |   Shaders.meta
+|   |           |   |   Textures.meta
+|   |           |   |   
+|   |           |   +---AnimatorControllers
+|   |           |   |   |   Female.meta
+|   |           |   |   |   Male.meta
+|   |           |   |   |   
+|   |           |   |   +---Female
+|   |           |   |   |   |   1H.meta
+|   |           |   |   |   |   2H.meta
+|   |           |   |   |   |   Polearm.meta
+|   |           |   |   |   |   
+|   |           |   |   |   +---1H
+|   |           |   |   |   |       HumanF@Combat - Sword and Shield.overrideController
+|   |           |   |   |   |       HumanF@Combat - Sword and Shield.overrideController.meta
+|   |           |   |   |   |       HumanF@Combat Movement - Sword and Shield.overrideController
+|   |           |   |   |   |       HumanF@Combat Movement - Sword and Shield.overrideController.meta
+|   |           |   |   |   |       HumanF@RunStrafe01_BackwardLeft - 1H.overrideController
+|   |           |   |   |   |       HumanF@RunStrafe01_BackwardLeft - 1H.overrideController.meta
+|   |           |   |   |   |       HumanF@RunStrafe01_BackwardRight - 1H.overrideController
+|   |           |   |   |   |       HumanF@RunStrafe01_BackwardRight - 1H.overrideController.meta
+|   |           |   |   |   |       HumanF@RunStrafe01_ForwardLeft - 1H.overrideController
+|   |           |   |   |   |       HumanF@RunStrafe01_ForwardLeft - 1H.overrideController.meta
+|   |           |   |   |   |       HumanF@RunStrafe01_ForwardRight - 1H.overrideController
+|   |           |   |   |   |       HumanF@RunStrafe01_ForwardRight - 1H.overrideController.meta
+|   |           |   |   |   |       HumanF@RunStrafe01_Left - 1H.overrideController
+|   |           |   |   |   |       HumanF@RunStrafe01_Left - 1H.overrideController.meta
+|   |           |   |   |   |       HumanF@RunStrafe01_Right - 1H.overrideController
+|   |           |   |   |   |       HumanF@RunStrafe01_Right - 1H.overrideController.meta
+|   |           |   |   |   |       HumanF@Run_Backward - 1H.overrideController
+|   |           |   |   |   |       HumanF@Run_Backward - 1H.overrideController.meta
+|   |           |   |   |   |       HumanF@Run_BackwardLeft - 1H.overrideController
+|   |           |   |   |   |       HumanF@Run_BackwardLeft - 1H.overrideController.meta
+|   |           |   |   |   |       HumanF@Run_BackwardRight - 1H.overrideController
+|   |           |   |   |   |       HumanF@Run_BackwardRight - 1H.overrideController.meta
+|   |           |   |   |   |       HumanF@Run_Forward - 1H.overrideController
+|   |           |   |   |   |       HumanF@Run_Forward - 1H.overrideController.meta
+|   |           |   |   |   |       HumanF@Run_ForwardLeft - 1H.overrideController
+|   |           |   |   |   |       HumanF@Run_ForwardLeft - 1H.overrideController.meta
+|   |           |   |   |   |       HumanF@Run_ForwardRight - 1H.overrideController
+|   |           |   |   |   |       HumanF@Run_ForwardRight - 1H.overrideController.meta
+|   |           |   |   |   |       HumanF@Run_Left - 1H.overrideController
+|   |           |   |   |   |       HumanF@Run_Left - 1H.overrideController.meta
+|   |           |   |   |   |       HumanF@Run_Right - 1H.overrideController
+|   |           |   |   |   |       HumanF@Run_Right - 1H.overrideController.meta
+|   |           |   |   |   |       
+|   |           |   |   |   +---2H
+|   |           |   |   |   |       HumanF@Combat - 2H.overrideController
+|   |           |   |   |   |       HumanF@Combat - 2H.overrideController.meta
+|   |           |   |   |   |       HumanF@Combat Movement - 2H.overrideController
+|   |           |   |   |   |       HumanF@Combat Movement - 2H.overrideController.meta
+|   |           |   |   |   |       HumanF@RunStrafe01_BackwardLeft - 2H.overrideController
+|   |           |   |   |   |       HumanF@RunStrafe01_BackwardLeft - 2H.overrideController.meta
+|   |           |   |   |   |       HumanF@RunStrafe01_BackwardRight - 2H.overrideController
+|   |           |   |   |   |       HumanF@RunStrafe01_BackwardRight - 2H.overrideController.meta
+|   |           |   |   |   |       HumanF@RunStrafe01_ForwardLeft - 2H.overrideController
+|   |           |   |   |   |       HumanF@RunStrafe01_ForwardLeft - 2H.overrideController.meta
+|   |           |   |   |   |       HumanF@RunStrafe01_ForwardRight - 2H.overrideController
+|   |           |   |   |   |       HumanF@RunStrafe01_ForwardRight - 2H.overrideController.meta
+|   |           |   |   |   |       HumanF@RunStrafe01_Left - 2H.overrideController
+|   |           |   |   |   |       HumanF@RunStrafe01_Left - 2H.overrideController.meta
+|   |           |   |   |   |       HumanF@RunStrafe01_Right - 2H.overrideController
+|   |           |   |   |   |       HumanF@RunStrafe01_Right - 2H.overrideController.meta
+|   |           |   |   |   |       HumanF@Run_Backward - 2H.overrideController
+|   |           |   |   |   |       HumanF@Run_Backward - 2H.overrideController.meta
+|   |           |   |   |   |       HumanF@Run_BackwardLeft - 2H.overrideController
+|   |           |   |   |   |       HumanF@Run_BackwardLeft - 2H.overrideController.meta
+|   |           |   |   |   |       HumanF@Run_BackwardRight - 2H.overrideController
+|   |           |   |   |   |       HumanF@Run_BackwardRight - 2H.overrideController.meta
+|   |           |   |   |   |       HumanF@Run_Forward - 2H.overrideController
+|   |           |   |   |   |       HumanF@Run_Forward - 2H.overrideController.meta
+|   |           |   |   |   |       HumanF@Run_ForwardLeft - 2H.overrideController
+|   |           |   |   |   |       HumanF@Run_ForwardLeft - 2H.overrideController.meta
+|   |           |   |   |   |       HumanF@Run_ForwardRight - 2H.overrideController
+|   |           |   |   |   |       HumanF@Run_ForwardRight - 2H.overrideController.meta
+|   |           |   |   |   |       HumanF@Run_Left - 2H.overrideController
+|   |           |   |   |   |       HumanF@Run_Left - 2H.overrideController.meta
+|   |           |   |   |   |       HumanF@Run_Right - 2H.overrideController
+|   |           |   |   |   |       HumanF@Run_Right - 2H.overrideController.meta
+|   |           |   |   |   |       
+|   |           |   |   |   \---Polearm
+|   |           |   |   |           HumanF@Combat - Polearm.overrideController
+|   |           |   |   |           HumanF@Combat - Polearm.overrideController.meta
+|   |           |   |   |           HumanF@Combat Movement - Polearm.overrideController
+|   |           |   |   |           HumanF@Combat Movement - Polearm.overrideController.meta
+|   |           |   |   |           HumanF@RunStrafe01_BackwardLeft - Polearm.overrideController
+|   |           |   |   |           HumanF@RunStrafe01_BackwardLeft - Polearm.overrideController.meta
+|   |           |   |   |           HumanF@RunStrafe01_BackwardRight - Polearm.overrideController
+|   |           |   |   |           HumanF@RunStrafe01_BackwardRight - Polearm.overrideController.meta
+|   |           |   |   |           HumanF@RunStrafe01_ForwardLeft - Polearm.overrideController
+|   |           |   |   |           HumanF@RunStrafe01_ForwardLeft - Polearm.overrideController.meta
+|   |           |   |   |           HumanF@RunStrafe01_ForwardRight - Polearm.overrideController
+|   |           |   |   |           HumanF@RunStrafe01_ForwardRight - Polearm.overrideController.meta
+|   |           |   |   |           HumanF@RunStrafe01_Left - Polearm.overrideController
+|   |           |   |   |           HumanF@RunStrafe01_Left - Polearm.overrideController.meta
+|   |           |   |   |           HumanF@RunStrafe01_Right - Polearm.overrideController
+|   |           |   |   |           HumanF@RunStrafe01_Right - Polearm.overrideController.meta
+|   |           |   |   |           HumanF@Run_Backward - Polearm.overrideController
+|   |           |   |   |           HumanF@Run_Backward - Polearm.overrideController.meta
+|   |           |   |   |           HumanF@Run_BackwardLeft - Polearm.overrideController
+|   |           |   |   |           HumanF@Run_BackwardLeft - Polearm.overrideController.meta
+|   |           |   |   |           HumanF@Run_BackwardRight - Polearm.overrideController
+|   |           |   |   |           HumanF@Run_BackwardRight - Polearm.overrideController.meta
+|   |           |   |   |           HumanF@Run_Forward - Polearm.overrideController
+|   |           |   |   |           HumanF@Run_Forward - Polearm.overrideController.meta
+|   |           |   |   |           HumanF@Run_ForwardLeft - Polearm.overrideController
+|   |           |   |   |           HumanF@Run_ForwardLeft - Polearm.overrideController.meta
+|   |           |   |   |           HumanF@Run_ForwardRight - Polearm.overrideController
+|   |           |   |   |           HumanF@Run_ForwardRight - Polearm.overrideController.meta
+|   |           |   |   |           HumanF@Run_Left - Polearm.overrideController
+|   |           |   |   |           HumanF@Run_Left - Polearm.overrideController.meta
+|   |           |   |   |           HumanF@Run_Right - Polearm.overrideController
+|   |           |   |   |           HumanF@Run_Right - Polearm.overrideController.meta
+|   |           |   |   |           
+|   |           |   |   \---Male
+|   |           |   |       |   1H.meta
+|   |           |   |       |   2H.meta
+|   |           |   |       |   Polearm.meta
+|   |           |   |       |   
+|   |           |   |       +---1H
+|   |           |   |       |       HumanM@Combat - Sword and Shield.controller
+|   |           |   |       |       HumanM@Combat - Sword and Shield.controller.meta
+|   |           |   |       |       HumanM@Combat Movement - Sword and Shield.controller
+|   |           |   |       |       HumanM@Combat Movement - Sword and Shield.controller.meta
+|   |           |   |       |       HumanM@RunStrafe01_BackwardLeft - 1H.controller
+|   |           |   |       |       HumanM@RunStrafe01_BackwardLeft - 1H.controller.meta
+|   |           |   |       |       HumanM@RunStrafe01_BackwardRight - 1H.controller
+|   |           |   |       |       HumanM@RunStrafe01_BackwardRight - 1H.controller.meta
+|   |           |   |       |       HumanM@RunStrafe01_ForwardLeft - 1H.controller
+|   |           |   |       |       HumanM@RunStrafe01_ForwardLeft - 1H.controller.meta
+|   |           |   |       |       HumanM@RunStrafe01_ForwardRight - 1H.controller
+|   |           |   |       |       HumanM@RunStrafe01_ForwardRight - 1H.controller.meta
+|   |           |   |       |       HumanM@RunStrafe01_Left - 1H.controller
+|   |           |   |       |       HumanM@RunStrafe01_Left - 1H.controller.meta
+|   |           |   |       |       HumanM@RunStrafe01_Right - 1H.controller
+|   |           |   |       |       HumanM@RunStrafe01_Right - 1H.controller.meta
+|   |           |   |       |       HumanM@Run_Backward - 1H.controller
+|   |           |   |       |       HumanM@Run_Backward - 1H.controller.meta
+|   |           |   |       |       HumanM@Run_BackwardLeft - 1H.controller
+|   |           |   |       |       HumanM@Run_BackwardLeft - 1H.controller.meta
+|   |           |   |       |       HumanM@Run_BackwardRight - 1H.controller
+|   |           |   |       |       HumanM@Run_BackwardRight - 1H.controller.meta
+|   |           |   |       |       HumanM@Run_Forward - 1H.controller
+|   |           |   |       |       HumanM@Run_Forward - 1H.controller.meta
+|   |           |   |       |       HumanM@Run_ForwardLeft - 1H.controller
+|   |           |   |       |       HumanM@Run_ForwardLeft - 1H.controller.meta
+|   |           |   |       |       HumanM@Run_ForwardRight - 1H.controller
+|   |           |   |       |       HumanM@Run_ForwardRight - 1H.controller.meta
+|   |           |   |       |       HumanM@Run_Left - 1H.controller
+|   |           |   |       |       HumanM@Run_Left - 1H.controller.meta
+|   |           |   |       |       HumanM@Run_Right - 1H.controller
+|   |           |   |       |       HumanM@Run_Right - 1H.controller.meta
+|   |           |   |       |       
+|   |           |   |       +---2H
+|   |           |   |       |       HumanM@Combat - 2H.controller
+|   |           |   |       |       HumanM@Combat - 2H.controller.meta
+|   |           |   |       |       HumanM@Combat Movement - 2H.controller
+|   |           |   |       |       HumanM@Combat Movement - 2H.controller.meta
+|   |           |   |       |       HumanM@RunStrafe01_BackwardLeft - 2H.controller
+|   |           |   |       |       HumanM@RunStrafe01_BackwardLeft - 2H.controller.meta
+|   |           |   |       |       HumanM@RunStrafe01_BackwardRight - 2H.controller
+|   |           |   |       |       HumanM@RunStrafe01_BackwardRight - 2H.controller.meta
+|   |           |   |       |       HumanM@RunStrafe01_ForwardLeft - 2H.controller
+|   |           |   |       |       HumanM@RunStrafe01_ForwardLeft - 2H.controller.meta
+|   |           |   |       |       HumanM@RunStrafe01_ForwardRight - 2H.controller
+|   |           |   |       |       HumanM@RunStrafe01_ForwardRight - 2H.controller.meta
+|   |           |   |       |       HumanM@RunStrafe01_Left - 2H.controller
+|   |           |   |       |       HumanM@RunStrafe01_Left - 2H.controller.meta
+|   |           |   |       |       HumanM@RunStrafe01_Right - 2H.controller
+|   |           |   |       |       HumanM@RunStrafe01_Right - 2H.controller.meta
+|   |           |   |       |       HumanM@Run_Backward - 2H.controller
+|   |           |   |       |       HumanM@Run_Backward - 2H.controller.meta
+|   |           |   |       |       HumanM@Run_BackwardLeft - 2H.controller
+|   |           |   |       |       HumanM@Run_BackwardLeft - 2H.controller.meta
+|   |           |   |       |       HumanM@Run_BackwardRight - 2H.controller
+|   |           |   |       |       HumanM@Run_BackwardRight - 2H.controller.meta
+|   |           |   |       |       HumanM@Run_Forward - 2H.controller
+|   |           |   |       |       HumanM@Run_Forward - 2H.controller.meta
+|   |           |   |       |       HumanM@Run_ForwardLeft - 2H.controller
+|   |           |   |       |       HumanM@Run_ForwardLeft - 2H.controller.meta
+|   |           |   |       |       HumanM@Run_ForwardRight - 2H.controller
+|   |           |   |       |       HumanM@Run_ForwardRight - 2H.controller.meta
+|   |           |   |       |       HumanM@Run_Left - 2H.controller
+|   |           |   |       |       HumanM@Run_Left - 2H.controller.meta
+|   |           |   |       |       HumanM@Run_Right - 2H.controller
+|   |           |   |       |       HumanM@Run_Right - 2H.controller.meta
+|   |           |   |       |       
+|   |           |   |       \---Polearm
+|   |           |   |               HumanM@Combat - Polearm.controller
+|   |           |   |               HumanM@Combat - Polearm.controller.meta
+|   |           |   |               HumanM@Combat Movement - Polearm.controller
+|   |           |   |               HumanM@Combat Movement - Polearm.controller.meta
+|   |           |   |               HumanM@RunStrafe01_BackwardLeft - Polearm.controller
+|   |           |   |               HumanM@RunStrafe01_BackwardLeft - Polearm.controller.meta
+|   |           |   |               HumanM@RunStrafe01_BackwardRight - Polearm.controller
+|   |           |   |               HumanM@RunStrafe01_BackwardRight - Polearm.controller.meta
+|   |           |   |               HumanM@RunStrafe01_ForwardLeft - Polearm.controller
+|   |           |   |               HumanM@RunStrafe01_ForwardLeft - Polearm.controller.meta
+|   |           |   |               HumanM@RunStrafe01_ForwardRight - Polearm.controller
+|   |           |   |               HumanM@RunStrafe01_ForwardRight - Polearm.controller.meta
+|   |           |   |               HumanM@RunStrafe01_Left - Polearm.controller
+|   |           |   |               HumanM@RunStrafe01_Left - Polearm.controller.meta
+|   |           |   |               HumanM@RunStrafe01_Right - Polearm.controller
+|   |           |   |               HumanM@RunStrafe01_Right - Polearm.controller.meta
+|   |           |   |               HumanM@Run_Backward - Polearm.controller
+|   |           |   |               HumanM@Run_Backward - Polearm.controller.meta
+|   |           |   |               HumanM@Run_BackwardLeft - Polearm.controller
+|   |           |   |               HumanM@Run_BackwardLeft - Polearm.controller.meta
+|   |           |   |               HumanM@Run_BackwardRight - Polearm.controller
+|   |           |   |               HumanM@Run_BackwardRight - Polearm.controller.meta
+|   |           |   |               HumanM@Run_Forward - Polearm.controller
+|   |           |   |               HumanM@Run_Forward - Polearm.controller.meta
+|   |           |   |               HumanM@Run_ForwardLeft - Polearm.controller
+|   |           |   |               HumanM@Run_ForwardLeft - Polearm.controller.meta
+|   |           |   |               HumanM@Run_ForwardRight - Polearm.controller
+|   |           |   |               HumanM@Run_ForwardRight - Polearm.controller.meta
+|   |           |   |               HumanM@Run_Left - Polearm.controller
+|   |           |   |               HumanM@Run_Left - Polearm.controller.meta
+|   |           |   |               HumanM@Run_Right - Polearm.controller
+|   |           |   |               HumanM@Run_Right - Polearm.controller.meta
+|   |           |   |               
+|   |           |   +---Materials
+|   |           |   |       HumanMeleeAnimations_Dummy-Red.mat
+|   |           |   |       HumanMeleeAnimations_Dummy-Red.mat.meta
+|   |           |   |       HumanMeleeAnimations_Floor.mat
+|   |           |   |       HumanMeleeAnimations_Floor.mat.meta
+|   |           |   |       HumanMeleeAnimations_Weapons.mat
+|   |           |   |       HumanMeleeAnimations_Weapons.mat.meta
+|   |           |   |       
+|   |           |   +---Models
+|   |           |   |       Human_Dagger.fbx
+|   |           |   |       Human_Dagger.fbx.meta
+|   |           |   |       Human_Greatsword.fbx
+|   |           |   |       Human_Greatsword.fbx.meta
+|   |           |   |       Human_Polearm.fbx
+|   |           |   |       Human_Polearm.fbx.meta
+|   |           |   |       Human_Shield.fbx
+|   |           |   |       Human_Shield.fbx.meta
+|   |           |   |       Human_Sword.fbx
+|   |           |   |       Human_Sword.fbx.meta
+|   |           |   |       Human_Warhammer.fbx
+|   |           |   |       Human_Warhammer.fbx.meta
+|   |           |   |       
+|   |           |   +---Prefabs
+|   |           |   |   |   Characters.meta
+|   |           |   |   |   Weapons.meta
+|   |           |   |   |   
+|   |           |   |   +---Characters
+|   |           |   |   |       HumanF_Dummy_Red - Dual Wield.prefab
+|   |           |   |   |       HumanF_Dummy_Red - Dual Wield.prefab.meta
+|   |           |   |   |       HumanF_Dummy_Red - Greatsword.prefab
+|   |           |   |   |       HumanF_Dummy_Red - Greatsword.prefab.meta
+|   |           |   |   |       HumanF_Dummy_Red - Polearm.prefab
+|   |           |   |   |       HumanF_Dummy_Red - Polearm.prefab.meta
+|   |           |   |   |       HumanF_Dummy_Red - Sword and Shield.prefab
+|   |           |   |   |       HumanF_Dummy_Red - Sword and Shield.prefab.meta
+|   |           |   |   |       HumanF_Dummy_Red.prefab
+|   |           |   |   |       HumanF_Dummy_Red.prefab.meta
+|   |           |   |   |       HumanM_Dummy_Red - Dual Wield.prefab
+|   |           |   |   |       HumanM_Dummy_Red - Dual Wield.prefab.meta
+|   |           |   |   |       HumanM_Dummy_Red - Greatsword.prefab
+|   |           |   |   |       HumanM_Dummy_Red - Greatsword.prefab.meta
+|   |           |   |   |       HumanM_Dummy_Red - Polearm.prefab
+|   |           |   |   |       HumanM_Dummy_Red - Polearm.prefab.meta
+|   |           |   |   |       HumanM_Dummy_Red - Sword and Shield.prefab
+|   |           |   |   |       HumanM_Dummy_Red - Sword and Shield.prefab.meta
+|   |           |   |   |       HumanM_Dummy_Red.prefab
+|   |           |   |   |       HumanM_Dummy_Red.prefab.meta
+|   |           |   |   |       
+|   |           |   |   \---Weapons
+|   |           |   |           Human_Dagger.prefab
+|   |           |   |           Human_Dagger.prefab.meta
+|   |           |   |           Human_Greatsword.prefab
+|   |           |   |           Human_Greatsword.prefab.meta
+|   |           |   |           Human_Polearm.prefab
+|   |           |   |           Human_Polearm.prefab.meta
+|   |           |   |           Human_Shield.prefab
+|   |           |   |           Human_Shield.prefab.meta
+|   |           |   |           Human_Sword.prefab
+|   |           |   |           Human_Sword.prefab.meta
+|   |           |   |           Human_Warhammer.prefab
+|   |           |   |           Human_Warhammer.prefab.meta
+|   |           |   |           
+|   |           |   +---Shaders
+|   |           |   |       HumanMeleeAnimationsScene.shader
+|   |           |   |       HumanMeleeAnimationsScene.shader.meta
+|   |           |   |       
+|   |           |   \---Textures
+|   |           |           HumanAnimations_ColorPalette.png
+|   |           |           HumanAnimations_ColorPalette.png.meta
+|   |           |           HumanMeleeAnimationsTexture.png
+|   |           |           HumanMeleeAnimationsTexture.png.meta
+|   |           |           
+|   |           \---Human Spellcasting Animations
+|   |               |   AnimatorControllers.meta
+|   |               |   Human Spellcasting Animations - Unity Demo Scene.unity
+|   |               |   Human Spellcasting Animations - Unity Demo Scene.unity.meta
+|   |               |   Materials.meta
+|   |               |   Models.meta
+|   |               |   Prefabs.meta
+|   |               |   Textures.meta
+|   |               |   
+|   |               +---AnimatorControllers
+|   |               |       HumanF@CastingBlock01.overrideController
+|   |               |       HumanF@CastingBlock01.overrideController.meta
+|   |               |       HumanF@CastingDamages.overrideController
+|   |               |       HumanF@CastingDamages.overrideController.meta
+|   |               |       HumanF@CastingDeaths.overrideController
+|   |               |       HumanF@CastingDeaths.overrideController.meta
+|   |               |       HumanF@CastingDodge01.overrideController
+|   |               |       HumanF@CastingDodge01.overrideController.meta
+|   |               |       HumanF@CastingIdles.overrideController
+|   |               |       HumanF@CastingIdles.overrideController.meta
+|   |               |       HumanF@IdlesBook_L.overrideController
+|   |               |       HumanF@IdlesBook_L.overrideController.meta
+|   |               |       HumanF@IdlesBook_R.overrideController
+|   |               |       HumanF@IdlesBook_R.overrideController.meta
+|   |               |       HumanF@MagicAttackCalls.overrideController
+|   |               |       HumanF@MagicAttackCalls.overrideController.meta
+|   |               |       HumanF@MagicAttackDirectionals.overrideController
+|   |               |       HumanF@MagicAttackDirectionals.overrideController.meta
+|   |               |       HumanF@MagicAttackGrounds.overrideController
+|   |               |       HumanF@MagicAttackGrounds.overrideController.meta
+|   |               |       HumanF@MagicAttackOmnidirectionals.overrideController
+|   |               |       HumanF@MagicAttackOmnidirectionals.overrideController.meta
+|   |               |       HumanF@RunningDirectionalCasts.overrideController
+|   |               |       HumanF@RunningDirectionalCasts.overrideController.meta
+|   |               |       HumanF@SpecialMagicAttack01.overrideController
+|   |               |       HumanF@SpecialMagicAttack01.overrideController.meta
+|   |               |       HumanM@CastingBlock01.controller
+|   |               |       HumanM@CastingBlock01.controller.meta
+|   |               |       HumanM@CastingDamages.controller
+|   |               |       HumanM@CastingDamages.controller.meta
+|   |               |       HumanM@CastingDeaths.controller
+|   |               |       HumanM@CastingDeaths.controller.meta
+|   |               |       HumanM@CastingDodge01.controller
+|   |               |       HumanM@CastingDodge01.controller.meta
+|   |               |       HumanM@CastingIdles.controller
+|   |               |       HumanM@CastingIdles.controller.meta
+|   |               |       HumanM@IdlesBook_L.controller
+|   |               |       HumanM@IdlesBook_L.controller.meta
+|   |               |       HumanM@IdlesBook_R.controller
+|   |               |       HumanM@IdlesBook_R.controller.meta
+|   |               |       HumanM@MagicAttackCalls.controller
+|   |               |       HumanM@MagicAttackCalls.controller.meta
+|   |               |       HumanM@MagicAttackDirectionals.controller
+|   |               |       HumanM@MagicAttackDirectionals.controller.meta
+|   |               |       HumanM@MagicAttackGrounds.controller
+|   |               |       HumanM@MagicAttackGrounds.controller.meta
+|   |               |       HumanM@MagicAttackOmnidirectionals.controller
+|   |               |       HumanM@MagicAttackOmnidirectionals.controller.meta
+|   |               |       HumanM@RunningDirectionalCasts.controller
+|   |               |       HumanM@RunningDirectionalCasts.controller.meta
+|   |               |       HumanM@SpecialMagicAttack01.controller
+|   |               |       HumanM@SpecialMagicAttack01.controller.meta
+|   |               |       
+|   |               +---Materials
+|   |               |   |   HumanSpellcastingAnimations_Floor.mat
+|   |               |   |   HumanSpellcastingAnimations_Floor.mat.meta
+|   |               |   |   HumanSpellcastingAnimations_Props.mat
+|   |               |   |   HumanSpellcastingAnimations_Props.mat.meta
+|   |               |   |   Spells.meta
+|   |               |   |   
+|   |               |   \---Spells
+|   |               |           HumanSpellcastingAnimations_Spell_Burn_Mark.mat
+|   |               |           HumanSpellcastingAnimations_Spell_Burn_Mark.mat.meta
+|   |               |           HumanSpellcastingAnimations_Spell_Fireball.mat
+|   |               |           HumanSpellcastingAnimations_Spell_Fireball.mat.meta
+|   |               |           HumanSpellcastingAnimations_Spell_Flame.mat
+|   |               |           HumanSpellcastingAnimations_Spell_Flame.mat.meta
+|   |               |           HumanSpellcastingAnimations_Spell_Heal_Aura.mat
+|   |               |           HumanSpellcastingAnimations_Spell_Heal_Aura.mat.meta
+|   |               |           HumanSpellcastingAnimations_Spell_Heal_Base.mat
+|   |               |           HumanSpellcastingAnimations_Spell_Heal_Base.mat.meta
+|   |               |           HumanSpellcastingAnimations_Spell_Heal_Glow.mat
+|   |               |           HumanSpellcastingAnimations_Spell_Heal_Glow.mat.meta
+|   |               |           HumanSpellcastingAnimations_Spell_Heal_Particles.mat
+|   |               |           HumanSpellcastingAnimations_Spell_Heal_Particles.mat.meta
+|   |               |           HumanSpellcastingAnimations_Spell_Heal_Seal.mat
+|   |               |           HumanSpellcastingAnimations_Spell_Heal_Seal.mat.meta
+|   |               |           HumanSpellcastingAnimations_Spell_Heal_Sparks.mat
+|   |               |           HumanSpellcastingAnimations_Spell_Heal_Sparks.mat.meta
+|   |               |           HumanSpellcastingAnimations_Spell_Ice_Aura.mat
+|   |               |           HumanSpellcastingAnimations_Spell_Ice_Aura.mat.meta
+|   |               |           HumanSpellcastingAnimations_Spell_Ice_Sparks.mat
+|   |               |           HumanSpellcastingAnimations_Spell_Ice_Sparks.mat.meta
+|   |               |           HumanSpellcastingAnimations_Spell_Ice_Spikes.mat
+|   |               |           HumanSpellcastingAnimations_Spell_Ice_Spikes.mat.meta
+|   |               |           HumanSpellcastingAnimations_Spell_Lightning01.mat
+|   |               |           HumanSpellcastingAnimations_Spell_Lightning01.mat.meta
+|   |               |           HumanSpellcastingAnimations_Spell_Lightning02.mat
+|   |               |           HumanSpellcastingAnimations_Spell_Lightning02.mat.meta
+|   |               |           HumanSpellcastingAnimations_Spell_Lightning03.mat
+|   |               |           HumanSpellcastingAnimations_Spell_Lightning03.mat.meta
+|   |               |           HumanSpellcastingAnimations_Spell_LightningAura.mat
+|   |               |           HumanSpellcastingAnimations_Spell_LightningAura.mat.meta
+|   |               |           HumanSpellcastingAnimations_Spell_LightningSpark.mat
+|   |               |           HumanSpellcastingAnimations_Spell_LightningSpark.mat.meta
+|   |               |           HumanSpellcastingAnimations_Spell_LightningWind.mat
+|   |               |           HumanSpellcastingAnimations_Spell_LightningWind.mat.meta
+|   |               |           HumanSpellcastingAnimations_Spell_Ring.mat
+|   |               |           HumanSpellcastingAnimations_Spell_Ring.mat.meta
+|   |               |           HumanSpellcastingAnimations_Spell_Shield.mat
+|   |               |           HumanSpellcastingAnimations_Spell_Shield.mat.meta
+|   |               |           HumanSpellcastingAnimations_Spell_Shockwave_Cone.mat
+|   |               |           HumanSpellcastingAnimations_Spell_Shockwave_Cone.mat.meta
+|   |               |           HumanSpellcastingAnimations_Spell_Shockwave_Explosion.mat
+|   |               |           HumanSpellcastingAnimations_Spell_Shockwave_Explosion.mat.meta
+|   |               |           HumanSpellcastingAnimations_Spell_Shockwave_Ground.mat
+|   |               |           HumanSpellcastingAnimations_Spell_Shockwave_Ground.mat.meta
+|   |               |           HumanSpellcastingAnimations_Spell_Shockwave_Sparks.mat
+|   |               |           HumanSpellcastingAnimations_Spell_Shockwave_Sparks.mat.meta
+|   |               |           HumanSpellcastingAnimations_Spell_Smoke_Fire.mat
+|   |               |           HumanSpellcastingAnimations_Spell_Smoke_Fire.mat.meta
+|   |               |           HumanSpellcastingAnimations_Spell_Smoke_Ice.mat
+|   |               |           HumanSpellcastingAnimations_Spell_Smoke_Ice.mat.meta
+|   |               |           HumanSpellcastingAnimations_Spell_Smoke_Lighting.mat
+|   |               |           HumanSpellcastingAnimations_Spell_Smoke_Lighting.mat.meta
+|   |               |           HumanSpellcastingAnimations_Spell_Spark.mat
+|   |               |           HumanSpellcastingAnimations_Spell_Spark.mat.meta
+|   |               |           
+|   |               +---Models
+|   |               |   |   Human_MageBook.fbx
+|   |               |   |   Human_MageBook.fbx.meta
+|   |               |   |   Human_MageHat.fbx
+|   |               |   |   Human_MageHat.fbx.meta
+|   |               |   |   Spells.meta
+|   |               |   |   
+|   |               |   \---Spells
+|   |               |           Human_Spell_Ice.fbx
+|   |               |           Human_Spell_Ice.fbx.meta
+|   |               |           Human_Spell_Lightning_Ground.fbx
+|   |               |           Human_Spell_Lightning_Ground.fbx.meta
+|   |               |           Human_Spell_Lightning_Strike.fbx
+|   |               |           Human_Spell_Lightning_Strike.fbx.meta
+|   |               |           Human_Spell_Shield.fbx
+|   |               |           Human_Spell_Shield.fbx.meta
+|   |               |           Human_Spell_Shockwave_Cone.fbx
+|   |               |           Human_Spell_Shockwave_Cone.fbx.meta
+|   |               |           Human_Spell_Shockwave_Ground.fbx
+|   |               |           Human_Spell_Shockwave_Ground.fbx.meta
+|   |               |           Human_Spell_Shockwave_Sphere.fbx
+|   |               |           Human_Spell_Shockwave_Sphere.fbx.meta
+|   |               |           Human_Spell_Spark.fbx
+|   |               |           Human_Spell_Spark.fbx.meta
+|   |               |           
+|   |               +---Prefabs
+|   |               |   |   HumanF_Dummy_Purple.prefab
+|   |               |   |   HumanF_Dummy_Purple.prefab.meta
+|   |               |   |   HumanM_Dummy_Purple.prefab
+|   |               |   |   HumanM_Dummy_Purple.prefab.meta
+|   |               |   |   Human_MageBook.prefab
+|   |               |   |   Human_MageBook.prefab.meta
+|   |               |   |   Human_MageHat.prefab
+|   |               |   |   Human_MageHat.prefab.meta
+|   |               |   |   Spells.meta
+|   |               |   |   
+|   |               |   \---Spells
+|   |               |           Human_SpellAura_Fire.prefab
+|   |               |           Human_SpellAura_Fire.prefab.meta
+|   |               |           Human_SpellAura_Heal.prefab
+|   |               |           Human_SpellAura_Heal.prefab.meta
+|   |               |           Human_SpellAura_Ice.prefab
+|   |               |           Human_SpellAura_Ice.prefab.meta
+|   |               |           Human_SpellAura_Lightning.prefab
+|   |               |           Human_SpellAura_Lightning.prefab.meta
+|   |               |           Human_SpellAura_Shockwave_Ground.prefab
+|   |               |           Human_SpellAura_Shockwave_Ground.prefab.meta
+|   |               |           Human_Spell_Fireball.prefab
+|   |               |           Human_Spell_Fireball.prefab.meta
+|   |               |           Human_Spell_Fireball_Large.prefab
+|   |               |           Human_Spell_Fireball_Large.prefab.meta
+|   |               |           Human_Spell_Heal.prefab
+|   |               |           Human_Spell_Heal.prefab.meta
+|   |               |           Human_Spell_Ice.prefab
+|   |               |           Human_Spell_Ice.prefab.meta
+|   |               |           Human_Spell_LightningStrike.prefab
+|   |               |           Human_Spell_LightningStrike.prefab.meta
+|   |               |           Human_Spell_Shield.prefab
+|   |               |           Human_Spell_Shield.prefab.meta
+|   |               |           Human_Spell_Shockwave_Explosion.prefab
+|   |               |           Human_Spell_Shockwave_Explosion.prefab.meta
+|   |               |           Human_Spell_Shockwave_Ground.prefab
+|   |               |           Human_Spell_Shockwave_Ground.prefab.meta
+|   |               |           
+|   |               \---Textures
+|   |                       Human_Spell_Burn_Mark.png
+|   |                       Human_Spell_Burn_Mark.png.meta
+|   |                       Human_Spell_Fireball_Texture.tga
+|   |                       Human_Spell_Fireball_Texture.tga.meta
+|   |                       Human_Spell_Flame_Texture.tga
+|   |                       Human_Spell_Flame_Texture.tga.meta
+|   |                       Human_Spell_IceRing_Texture.tga
+|   |                       Human_Spell_IceRing_Texture.tga.meta
+|   |                       Human_Spell_IceSpike_Texture.png
+|   |                       Human_Spell_IceSpike_Texture.png.meta
+|   |                       Human_Spell_Lightning_Texture.png
+|   |                       Human_Spell_Lightning_Texture.png.meta
+|   |                       Human_Spell_Ring_Texture.tga
+|   |                       Human_Spell_Ring_Texture.tga.meta
+|   |                       Human_Spell_Seal.png
+|   |                       Human_Spell_Seal.png.meta
+|   |                       Human_Spell_Shield.png
+|   |                       Human_Spell_Shield.png.meta
+|   |                       Human_Spell_Shockwave_Cone.png
+|   |                       Human_Spell_Shockwave_Cone.png.meta
+|   |                       Human_Spell_Shockwave_Ground_Texture.png
+|   |                       Human_Spell_Shockwave_Ground_Texture.png.meta
+|   |                       Human_Spell_Smoke_Texture.tga
+|   |                       Human_Spell_Smoke_Texture.tga.meta
+|   |                       Human_Spell_Star.png
+|   |                       Human_Spell_Star.png.meta
+|   |                       
+|   \---Mixamo
+|           Sprinting Forward Roll.fbx
+|           Sprinting Forward Roll.fbx.meta
+|           Sword And Shield Block Idle.fbx
+|           Sword And Shield Block Idle.fbx.meta
+|           
++---Scenes
+|       BossBattle.unity
+|       BossBattle.unity.meta
+|       Home_equipment.unity
+|       Home_equipment.unity.meta
+|       Home_shop.unity
+|       Home_shop.unity.meta
+|       Title.unity
+|       Title.unity.meta
+|       TypeABattle.unity
+|       TypeABattle.unity.meta
+|       TypeBBattle.unity
+|       TypeBBattle.unity.meta
+|       TypeCBattle.unity
+|       TypeCBattle.unity.meta
+|       
++---Settings
+|       DefaultVolumeProfile.asset
+|       DefaultVolumeProfile.asset.meta
+|       Mobile_Renderer.asset
+|       Mobile_Renderer.asset.meta
+|       Mobile_RPAsset.asset
+|       Mobile_RPAsset.asset.meta
+|       PC_Renderer.asset
+|       PC_Renderer.asset.meta
+|       PC_RPAsset.asset
+|       PC_RPAsset.asset.meta
+|       SampleSceneProfile.asset
+|       SampleSceneProfile.asset.meta
+|       UniversalRenderPipelineGlobalSettings.asset
+|       UniversalRenderPipelineGlobalSettings.asset.meta
+|       
++---TextMesh Pro
+|   |   Fonts.meta
+|   |   Resources.meta
+|   |   Shaders.meta
+|   |   Sprites.meta
+|   |   
+|   +---Fonts
+|   |       LiberationSans - OFL.txt
+|   |       LiberationSans - OFL.txt.meta
+|   |       LiberationSans.ttf
+|   |       LiberationSans.ttf.meta
+|   |       
+|   +---Resources
+|   |   |   Fonts & Materials.meta
+|   |   |   LineBreaking Following Characters.txt
+|   |   |   LineBreaking Following Characters.txt.meta
+|   |   |   LineBreaking Leading Characters.txt
+|   |   |   LineBreaking Leading Characters.txt.meta
+|   |   |   Sprite Assets.meta
+|   |   |   Style Sheets.meta
+|   |   |   TMP Settings.asset
+|   |   |   TMP Settings.asset.meta
+|   |   |   
+|   |   +---Fonts & Materials
+|   |   |       LiberationSans SDF - Drop Shadow.mat
+|   |   |       LiberationSans SDF - Drop Shadow.mat.meta
+|   |   |       LiberationSans SDF - Fallback.asset
+|   |   |       LiberationSans SDF - Fallback.asset.meta
+|   |   |       LiberationSans SDF - Outline.mat
+|   |   |       LiberationSans SDF - Outline.mat.meta
+|   |   |       LiberationSans SDF.asset
+|   |   |       LiberationSans SDF.asset.meta
+|   |   |       
+|   |   +---Sprite Assets
+|   |   |       EmojiOne.asset
+|   |   |       EmojiOne.asset.meta
+|   |   |       
+|   |   \---Style Sheets
+|   |           Default Style Sheet.asset
+|   |           Default Style Sheet.asset.meta
+|   |           
+|   +---Shaders
+|   |       SDFFunctions.hlsl
+|   |       SDFFunctions.hlsl.meta
+|   |       TMPro.cginc
+|   |       TMPro.cginc.meta
+|   |       TMPro_Mobile.cginc
+|   |       TMPro_Mobile.cginc.meta
+|   |       TMPro_Properties.cginc
+|   |       TMPro_Properties.cginc.meta
+|   |       TMPro_Surface.cginc
+|   |       TMPro_Surface.cginc.meta
+|   |       TMP_Bitmap-Custom-Atlas.shader
+|   |       TMP_Bitmap-Custom-Atlas.shader.meta
+|   |       TMP_Bitmap-Mobile.shader
+|   |       TMP_Bitmap-Mobile.shader.meta
+|   |       TMP_Bitmap.shader
+|   |       TMP_Bitmap.shader.meta
+|   |       TMP_SDF Overlay.shader
+|   |       TMP_SDF Overlay.shader.meta
+|   |       TMP_SDF SSD.shader
+|   |       TMP_SDF SSD.shader.meta
+|   |       TMP_SDF-HDRP LIT.shadergraph
+|   |       TMP_SDF-HDRP LIT.shadergraph.meta
+|   |       TMP_SDF-HDRP UNLIT.shadergraph
+|   |       TMP_SDF-HDRP UNLIT.shadergraph.meta
+|   |       TMP_SDF-Mobile Masking.shader
+|   |       TMP_SDF-Mobile Masking.shader.meta
+|   |       TMP_SDF-Mobile Overlay.shader
+|   |       TMP_SDF-Mobile Overlay.shader.meta
+|   |       TMP_SDF-Mobile SSD.shader
+|   |       TMP_SDF-Mobile SSD.shader.meta
+|   |       TMP_SDF-Mobile-2-Pass.shader
+|   |       TMP_SDF-Mobile-2-Pass.shader.meta
+|   |       TMP_SDF-Mobile.shader
+|   |       TMP_SDF-Mobile.shader.meta
+|   |       TMP_SDF-Surface-Mobile.shader
+|   |       TMP_SDF-Surface-Mobile.shader.meta
+|   |       TMP_SDF-Surface.shader
+|   |       TMP_SDF-Surface.shader.meta
+|   |       TMP_SDF-URP Lit.shadergraph
+|   |       TMP_SDF-URP Lit.shadergraph.meta
+|   |       TMP_SDF-URP Unlit.shadergraph
+|   |       TMP_SDF-URP Unlit.shadergraph.meta
+|   |       TMP_SDF.shader
+|   |       TMP_SDF.shader.meta
+|   |       TMP_Sprite.shader
+|   |       TMP_Sprite.shader.meta
+|   |       
+|   \---Sprites
+|           EmojiOne Attribution.txt
+|           EmojiOne Attribution.txt.meta
+|           EmojiOne.json
+|           EmojiOne.json.meta
+|           EmojiOne.png
+|           EmojiOne.png.meta
+|           
+\---TutorialInfo
+    |   Icons.meta
+    |   Layout.wlt
+    |   Layout.wlt.meta
+    |   Scripts.meta
+    |   
+    +---Icons
+    |       URP.png
+    |       URP.png.meta
+    |       
+    \---Scripts
+        |   Editor.meta
+        |   Readme.cs
+        |   Readme.cs.meta
+        |   
+        \---Editor
+                ReadmeEditor.cs
+                ReadmeEditor.cs.meta
+                
