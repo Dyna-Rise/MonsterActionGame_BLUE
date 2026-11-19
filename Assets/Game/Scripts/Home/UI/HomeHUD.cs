@@ -1,6 +1,7 @@
 using MonsterAction.Data;
 using MonsterAction.Home.Interaction;
 using MonsterAction.Home.Player;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -11,10 +12,10 @@ namespace MonsterAction.Home.UI
     /// </summary>
     public class HomeHUD : MonoBehaviour
     {
-        [SerializeField] private Text moneyText;
+        [SerializeField] private TextMeshProUGUI moneyText;
         [Tooltip("案内の表示 / 非表示を切り替える部分")]
         [SerializeField] private GameObject promptRoot;
-        [SerializeField] private Text promptText;
+        [SerializeField] private TextMeshProUGUI promptText;
         [SerializeField] private string promptFormat = "□  {0}";
 
         private HomePlayerController player;

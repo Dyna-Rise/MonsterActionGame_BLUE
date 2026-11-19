@@ -1477,6 +1477,8 @@ MonoBehaviour:
   healColor: {r: 0.4, g: 1, b: 0.5, a: 1}
   guardColor: {r: 0.5, g: 0.85, b: 1, a: 1}
   guardShake: 0.06
+  damageFont: {fileID: 11400000, guid: 0a819bde5b509bc49a24c44859c7914a, type: 2}
+  damageFontMaterial: {fileID: 2100000, guid: f3b8b53f79efc79a79c0da788f1b3347, type: 2}
 --- !u!4 &1593468017
 Transform:
   m_ObjectHideFlags: 0

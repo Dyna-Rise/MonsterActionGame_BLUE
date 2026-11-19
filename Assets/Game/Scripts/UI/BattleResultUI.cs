@@ -1,4 +1,5 @@
 using System.Collections;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -12,10 +13,10 @@ namespace MonsterAction.Battle.UI
     [RequireComponent(typeof(CanvasGroup))]
     public class BattleResultUI : MonoBehaviour
     {
-        [SerializeField] private Text titleText;
-        [SerializeField] private Text messageText;
+        [SerializeField] private TextMeshProUGUI titleText;
+        [SerializeField] private TextMeshProUGUI messageText;
         [Tooltip("報酬金の表示（クリア時だけ）")]
-        [SerializeField] private Text rewardText;
+        [SerializeField] private TextMeshProUGUI rewardText;
         [SerializeField] private float fadeTime = 0.8f;
 
         [Header("文言と色")]

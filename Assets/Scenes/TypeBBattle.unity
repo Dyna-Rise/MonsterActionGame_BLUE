@@ -1225,6 +1225,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 917811258}
     - target: {fileID: 6576552724650268553, guid: a967b64b836b0e145aa22a3b0b541dc5, type: 3}
+      propertyPath: arrowPrefab
+      value: 
+      objectReference: {fileID: 2044842363851597109, guid: 1402f803273b6b94381297eb26ca9625, type: 3}
+    - target: {fileID: 6576552724650268553, guid: a967b64b836b0e145aa22a3b0b541dc5, type: 3}
       propertyPath: cameraTransform
       value: 
       objectReference: {fileID: 961739753}
@@ -1498,6 +1502,8 @@ MonoBehaviour:
   healColor: {r: 0.4, g: 1, b: 0.5, a: 1}
   guardColor: {r: 0.5, g: 0.85, b: 1, a: 1}
   guardShake: 0.06
+  damageFont: {fileID: 11400000, guid: 0a819bde5b509bc49a24c44859c7914a, type: 2}
+  damageFontMaterial: {fileID: 2100000, guid: f3b8b53f79efc79a79c0da788f1b3347, type: 2}
 --- !u!4 &1593468017
 Transform:
   m_ObjectHideFlags: 0

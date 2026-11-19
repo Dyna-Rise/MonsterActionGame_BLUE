@@ -1,4 +1,9 @@
+using MonsterAction.Combat;
 using System.Collections;
+using System.Security.Cryptography.X509Certificates;
+using System.Threading;
+using Unity.VisualScripting;
+using UnityEditor;
 using UnityEngine;
 
 namespace MonsterAction.Battle.Boss
@@ -70,6 +75,12 @@ namespace MonsterAction.Battle.Boss
 
         [Header("咆哮")]
         [SerializeField] private float roarRadius = 12f;
+        //追加
+        [SerializeField] private GameObject roarEffect;
+        //追加終了
+
+        [Header("歩き時間")]
+        [SerializeField] private float walkTime = 5f;
 
         [Header("怒り")]
         [Tooltip("怒り状態のモーション速度")]
@@ -88,14 +99,14 @@ namespace MonsterAction.Battle.Boss
         private bool hasRoared;
         private bool enraged;
 
-        private float RestTime(float seconds) => enraged ? seconds * enragedRestRate : seconds;
+        private float RestTime(float seconds) => enraged ? seconds * enragedRestRate : seconds;//bool型変数の後に？をその後の処理に:を付けることでifを省略して条件分岐させることができる
 
         // ================================================================
         //  どの行動をするか決める
         // ================================================================
 
         /// <summary>次の行動を決めて返す（行動が終わるたびに呼ばれる）</summary>
-        protected override IEnumerator ThinkNextAction()
+        protected override IEnumerator ThinkNextAction()//IEnumeratorはreturnを返さないとエラーになる
         {
             // TODO：次にやる行動を return で返す
             //   ★ 書きはじめたら、下の「yield return null;」は必ず消す
@@ -116,7 +127,42 @@ namespace MonsterAction.Battle.Boss
             //        if (distance <= farRange)   { if (r < 55) return ChargeCombo(); ... }
             //        （遠いとき）...
             //   4. 最後は必ず何かを return する（どの if にも入らなかったとき用）
-            yield return null; //エラー回避用
+            //yield return null; //エラー回避用
+
+            //1番
+            if (!hasRoared) { hasRoared = true; return Roar(); }//hasRoaredがfalseならRoarを実行する
+            
+            //2番
+            if (!enraged && HpRate <= 0.5f) { enraged = true; Anim.speed = enragedAnimSpeed;return Roar(); }//HpRateで体力の割合を管理、5割を下回ったら怒り状態をONにしてRoar
+            
+            //3番
+            float dis = DistanceToPlayer;//float型関数で距離を得る()Vector3.magnitudeは平方根を求める
+            int r = Random.Range(0, 100);
+            if (dis <= meleeRange) //近距離の処理
+            {
+                if (r < 40) return Bite();//0～39で噛みつき(40%)
+                else if (r >= 40 && r < 80) return Scratch();//40～79でひっかき(40%)
+                else if (r >= 80 && r < 90) return Breath();//80～89でブレス(10%)
+                else if (r >= 90 && r < 100) return Throw();//90～99で岩投げ(10%)
+            }
+
+            if (dis <= farRange) //中距離の処理
+            {
+                if (r < 70) return ChargeCombo();//0～69で突進(70%)
+                else if (r >= 70 && r < 80) return Breath();//70～79でブレス(10%)
+                else if (r >= 80 && r < 90) return Throw();//80～89で岩投げ(10%)
+                else if (r >= 90 && r < 100) return Approach(walkTime);//90～99で移動(10%)
+            }
+
+            if (dis > farRange) //遠距離の処理
+            {
+                if (r < 40) return Breath();//0～39でブレス(70%)
+                else if (r >= 40 && r < 80) return Throw();//40～79で岩投げ(40%)
+                else if (r >= 80 && r < 100) return ChargeCombo();//80～99で突進(20%)
+            }
+            
+            //4番
+            return null;
         }
 
         // ================================================================
@@ -134,7 +180,42 @@ namespace MonsterAction.Battle.Boss
             //                                    （3つ目の 0f がダメージ。0 なのでのけぞるだけ）
             //   5. モーションの最後まで待つ      yield return WaitStateTime(Scream, 0.95f);
             //   6. 少し休む                      yield return Rest(RestTime(0.5f));
-            yield return null; //エラー回避用
+            //yield return null; //エラー回避用
+
+            //1番
+            yield return TurnToPlayer(1f, Walk);//Playerに1秒向き直す、アニメーションはWalkを参照
+            //transform.fowardは現在向いている方向の正規化された値
+            //normalizedは入力されているvectorの数値を距離で割って1以下にする
+            //Quaternion.LookRotationは指定した方向を向くための回転を計算する。Quaternion.RotateTowardsは現在の回転から、目標の回転へ徐々に近づける。
+            //RotateTowards(現在,指定した角度,回転速度)
+
+            //2番
+            Play(Scream);//親クラスのPlayメソッドでScreamモーションを再生する。遷移時間は初期値の0.15f
+            
+            //3番
+            yield return WaitStateTime(Scream, 0.25f);//Screamの25%まで進めたらWaitStateTimeを返す。GetStateTimeは(stateName)がどこまで再生されたか確認する。
+            //     protected IEnumerator WaitStateTime(string stateName, float t, float timeout = 6f)
+            //{
+            //    float limit = Time.time + timeout;
+            //    yield return null; // CrossFade が反映されるのを1フレーム待つ
+            //    while (GetStateTime(stateName) < t && Time.time < limit) yield return null;
+            //}
+            
+            //4番
+            AreaAttack(transform.position, roarRadius, 0f, knockback: 1.5f);//AreaAttackメソッド、現在地点からroarRadius半径分、0ﾀﾞﾒｰｼﾞで1.5mノックバックする
+
+            //追加
+            if (roarEffect != null)
+            {
+                Instantiate(roarEffect, this.transform.position, Quaternion.Euler(0f, 0f, 0f));
+            }
+            //追加終了
+
+            //5番
+            yield return WaitStateTime(Scream, 0.95f);//Screamの95%まで進めたらWaitStateTimeを返す
+            
+            //6番
+            yield return Rest(RestTime(0.5f));//RestTimeに引数を渡すと怒り状態か判断してfloat型を返す。Restは引数にrestTimeScaleを掛け、0～restRandomExtra未満の数値を足した分Waitするしてreturnする。
         }
 
         // ================================================================
@@ -157,7 +238,40 @@ namespace MonsterAction.Battle.Boss
             //   4. 口の攻撃判定 ON                 biteHitbox.Begin(biteDamage, knockback: 1f);
             //   5. 55% まで待って OFF              WaitStateTime(BasicAttack, 0.55f) → biteHitbox.End();
             //   6. 最後まで待って休む              WaitStateTime(BasicAttack, 0.95f) → Rest(RestTime(1.0f))
-            yield return null; //エラー回避用
+            //yield return null; //エラー回避用
+
+            //1番
+            yield return TurnToPlayer(0.5f, Walk);
+            
+            //2番
+            Play(BasicAttack);
+            
+            //3番
+            while (GetStateTime(BasicAttack) < 0.3f) //GetStateTime内処理IsInTransitionはアニメーション遷移中かどうかをbool型で返し、GetNextAnimatorStateInfoは遷移先の参照、IsNameは再生しているステート名が引数と一致しているかbool型で返し、GetCurrentAnimatorStateInfoは現在のステート情報でそれぞれ引数の0はベースレイヤーで、normalizedTimeはアニメーションの進行度を0～1の割合で参照する。?は条件演算子でx?a:bでxならa、falseならbを返す。この場合BasicAttackの3割まで繰り返す。
+            {
+                FaceTowards(DirectionToPlayer, 1.5f);
+                Move(transform.forward * 2.5f);
+                yield return null;
+            }
+            
+            //4番
+            biteHitbox.Begin(biteDamage, knockback: 1f);//口の攻撃判定、Beginは
+            //    public void Begin(float damage, float knockback = 1f, bool causesFlinch = true, bool knockDown = false)
+            //{
+            //    template = new DamageInfo(damage, Vector3.zero, Vector3.zero,
+            //                              owner != null ? owner.gameObject : gameObject, causesFlinch, knockback, knockDown);
+            //    hasHit = false;
+            //    IsActive = true;
+            //}
+
+            //5番
+            yield return WaitStateTime(BasicAttack, 0.55f);
+            biteHitbox.End();//  public void End() => IsActive = false;
+
+            //6番
+            yield return WaitStateTime(BasicAttack, 0.95f);
+            yield return Rest(RestTime(1f));
+
         }
 
         /// <summary>ひっかき（小）：軸合わせしてから翼の爪で軽く払う</summary>
@@ -171,8 +285,35 @@ namespace MonsterAction.Battle.Boss
             //        ...
             //        foreach (var h in clawHitboxes) h.End();
             //   ・判定は 30% 〜 55%、最後に Rest(RestTime(0.9f))
-            yield return null; //エラー回避用
+            //yield return null; //エラー回避用
+            yield return TurnToPlayer(0.5f, Walk);
+
+            Play(ClawAttack);
+
+            yield return WaitStateTimeTracking(ClawAttack, 0.3f, 1.5f);//Time.time+timeoutになるまではプレイヤーの方向を向き続ける。
+
+            //  protected IEnumerator WaitStateTimeTracking(string stateName, float t, float turnMultiplier = 1f, float timeout = 6f)
+            //  {
+            //    float limit = Time.time + timeout;
+            //    yield return null;
+            //    while (GetStateTime(stateName) < t && Time.time < limit)
+            //    {
+            //        FaceTowards(DirectionToPlayer, turnMultiplier);
+            //        yield return null;
+            //    }
+            //  }
+
+            foreach (var h in clawHitboxes) h.Begin(clawDamage, knockback: 0.8f);
+
+            yield return WaitStateTime(ClawAttack, 0.55f);
+            foreach (var h in clawHitboxes) h.End();
+
+            yield return WaitStateTime(ClawAttack, 0.95f);
+            yield return Rest(RestTime(1f));
+
         }
+
+
 
         // ================================================================
         //  遠距離攻撃（大）
@@ -195,7 +336,80 @@ namespace MonsterAction.Battle.Boss
             //            ball.Launch(dir * breathSpeed, MakeDamage(breathDamage, knockback: 4f, knockDown: true), transform);
             //        }
             //   4. WaitStateTime(Scream, 0.95f) → Rest(RestTime(1.4f))
-            yield return null; //エラー回避用
+            //yield return null; //エラー回避用
+
+            //1番
+            Play(Scream);
+            yield return WaitStateTimeTracking(Scream, 0.35f, 1.2f);
+
+            //2番
+            Vector3 start = transform.position + transform.forward * breathStartForward + Vector3.up * breathHeight;//スタート位置は位置+(角度掛けるブレス開始位置)+Y軸掛けるブレスの飛ぶ高さ
+
+            //3番
+            foreach (Vector3 dir in FanDirections(breathCount, breathSpreadAngle))//FanDirectionsからbrathCount分、方向を1つずつ取得する。
+            {
+                var ball = BossProjectile.Spawn(breathPrefab, start, breathRadius, breathColor);//ブレスの弾を、スタート位置に設定された大きさと色で作る
+                //  /// <summary>Prefab か、無ければ色付きの球を、position に作る</summary>
+                //public static BossProjectile Spawn(BossProjectile prefab, Vector3 position, float radius, Color color)
+                //{
+                //    return prefab != null ? Instantiate(prefab, position, Quaternion.identity) : CreateDefault(position, radius, color);
+                //}
+                ball.Launch(dir * breathSpeed, MakeDamage(breathDamage, knockback: 4, knockDown: true), transform);//攻撃者を自分にし、方向にスピードを掛けた数値で飛ばす
+                /// <summary>
+                /// 発射する。
+                /// gravity を負の値（例 -20）にすると放物線を描く（投げた岩など）。
+                /// </summary>
+                //    public void Launch(Vector3 velocity, DamageInfo damage, Transform owner, float gravity = 0f)
+                //    {
+                //        this.velocity = velocity;
+                //        this.gravity = gravity;
+                //        this.owner = owner;
+                //        template = damage;
+                //    }
+
+                /// <summary>このボスが攻撃者になる DamageInfo を作る（飛び道具用）</summary>
+                //    protected DamageInfo MakeDamage(float damage, float knockback, bool causesFlinch = true, bool knockDown = false) =>
+                //    new DamageInfo(damage, Vector3.zero, Vector3.zero, gameObject, causesFlinch, knockback, knockDown);
+
+
+                //           public struct DamageInfo
+                //{
+                //    /// <summary>ダメージ量</summary>
+                //    public float Amount;
+                //    /// <summary>当たった位置（ヒットエフェクトの表示位置などに使う）</summary>
+                //    public Vector3 HitPoint;
+                //    /// <summary>攻撃の向き（攻撃者 → 被弾者、水平方向）。ノックバック方向に使う</summary>
+                //    public Vector3 Direction;
+                //    /// <summary>攻撃した GameObject（自分の攻撃が自分に当たるのを防ぐ判定などに使う）</summary>
+                //    public GameObject Attacker;
+                //    /// <summary>のけぞり（ひるみ）を発生させるか</summary>
+                //    public bool CausesFlinch;
+                //    /// <summary>ノックバック距離（m）。0 ならその場でひるむ</summary>
+                //    public float KnockbackDistance;
+                //    /// <summary>
+                //    /// ダウンさせる大攻撃か。true なら、受けた側は吹き飛んで倒れ、しばらく起き上がれない。
+                //    /// （CausesFlinch より強いリアクション。ガードに成功すればダウンしない）
+                //    /// </summary>
+                //    public bool KnockDown;
+                //    public DamageInfo(float amount, Vector3 hitPoint, Vector3 direction, GameObject attacker,
+                //                      bool causesFlinch = true, float knockbackDistance = 0f, bool knockDown = false)
+                //    {
+                //        Amount = amount;
+                //        HitPoint = hitPoint;
+                //        Direction = direction;
+                //        Attacker = attacker;
+                //        CausesFlinch = causesFlinch;
+                //        KnockbackDistance = knockbackDistance;
+                //        KnockDown = knockDown;
+                //    }
+                //}
+
+            
+
+            }
+            //4番
+            yield return WaitStateTime(Scream, 0.95f);
+            yield return Rest(RestTime(1.4f));
         }
 
         /// <summary>
@@ -214,11 +428,35 @@ namespace MonsterAction.Battle.Boss
             //        rock.Launch(BossProjectile.BallisticVelocity(start, landing, rockFlightTime, rockGravity),
             //                    MakeDamage(rockDamage, knockback: 3f, knockDown: true), transform, rockGravity);
             //   ・最後は WaitStateTime(HornAttack, 0.95f) → Rest(RestTime(1.4f))
-            yield return null; //エラー回避用
+            //yield return null; //エラー回避用
+
+            Play(HornAttack);
+            yield return WaitStateTimeTracking(HornAttack, 0.4f, 1.2f);
+
+            Vector3 start = transform.position + transform.forward * rockStartForward + Vector3.up * rockStartHeight;
+            foreach (Vector3 dir in FanDirections(rockCount, rockSpreadAngle))
+            {
+                Vector3 landing = transform.position+dir*rockDistance;//着地点は現在地に距離掛ける岩の射程を足した地点
+                landing.y = transform.position.y;//着地点の高さは現在地の高さと同じ(地面)
+                var rock = BossProjectile.Spawn(rockPrefab, start, rockRadius, rockColor);
+                rock.Launch(BossProjectile.BallisticVelocity(start,landing,rockFlightTime,rockGravity), MakeDamage(breathDamage, knockback: 4f, knockDown: true), transform, gravity: rockGravity);
+            }
+            //            /// <summary>start から target に、flightTime 秒で届く放物線の初速を計算する</summary>
+            //public static Vector3 BallisticVelocity(Vector3 start, Vector3 target, float flightTime, float gravity)
+            //{
+            //    flightTime = Mathf.Max(0.1f, flightTime);
+            //    Vector3 v = (target - start) / flightTime;
+            //    v.y -= 0.5f * gravity * flightTime; // 重力で落ちる分を上向きに足す
+            //    return v;
+            //}
+
+            yield return WaitStateTime(HornAttack, 0.95f);
+            yield return Rest(RestTime(1.4f));
+
         }
 
         /// <summary>正面を中心に、count 本の方向を angle 度ずつ左右に広げて返す（水平）</summary>
-        private System.Collections.Generic.IEnumerable<Vector3> FanDirections(int count, float angle)
+        private System.Collections.Generic.IEnumerable<Vector3> FanDirections(int count, float angle)//IEnumerableは要素を1つずつ取り出せる順番にデータを列挙できる仕組み
         {
             // TODO：例）count = 3, angle = 12 なら「左 12°・正面・右 12°」の3つの向きを返す
             //   1. 正面の向き（水平）     Vector3 forward = transform.forward; forward.y = 0f; forward.Normalize();
@@ -226,7 +464,18 @@ namespace MonsterAction.Battle.Boss
             //        float offset = (i - (count - 1) * 0.5f) * angle;   // 3本なら -12, 0, +12
             //        yield return Quaternion.AngleAxis(offset, Vector3.up) * forward;   // 正面を offset 度だけ回した向き
             //   ★ 書きはじめたら、下の「yield break;」は消してOK
-            yield break; // 何も返さない（エラー回避用）
+            //yield break; // 何も返さない（エラー回避用）
+            
+            //1番
+            Vector3 forward = transform.forward; forward.y = 0f;forward.Normalize();//vector3型で正面を取得、yを0にし、数値を正規化
+            
+            //2番
+            for (int i = 0; i < count; i++)//countで設定した引数まで繰り返す
+            {
+                float offset = (i - (count - 1) * 0.5f) * angle;//offsetはcount-1に0.5を掛けてiから引いたものにangleを掛ける
+                yield return Quaternion.AngleAxis(offset, Vector3.up) * forward;//forwardをY軸を中心にoffset分回転させる
+            }
+
         }
 
         // ================================================================
@@ -248,6 +497,28 @@ namespace MonsterAction.Battle.Boss
             //   4. 止まる                  yield return Brake(0.6f);
             //   5. 休む                    yield return Rest(RestTime(1.6f));
             yield return null; //エラー回避用
+
+            //1番
+            yield return TurnToPlayer(0.8f, Walk);
+            
+            //2番
+            Play(Scream, 0.1f);
+            yield return WaitStateTimeTracking(Scream, 0.25f, 1.5f);
+
+            //3番
+            int charge = Random.Range(1, maxCharges + 1);
+            for (int i = 0; i < charge; i++)
+            {
+                yield return ChargeRun();//ChargeRunが終わるまで処理を一時停止
+                if (i < charge - 1) yield return Drift();//もしChargeRun後にcharge回数が残る場合はDrift
+            }
+
+            //4番
+            yield return Brake(0.6f);
+
+            //5番
+            yield return Rest(RestTime(1.6f));
+
         }
 
         /// <summary>1回分の突進：ゆるく追いかけながら走り、プレイヤーを通り過ぎたら終わる</summary>
@@ -262,7 +533,42 @@ namespace MonsterAction.Battle.Boss
             //        ・プレイヤーが後ろ側（Mathf.Abs(AngleToPlayer) > 100f）にいる時間を数えて、0.35 秒を超えたら break
             //        ・time += Time.deltaTime;  yield return null;
             //   4. 判定 OFF                    bodyHitbox.End();
-            yield return null; //エラー回避用
+            //yield return null; //エラー回避用
+
+            //1番
+            Play(Run, 0.1f);
+
+            //2番
+            bodyHitbox.Begin(chargeDamage, knockback: 6f, knockDown: true);
+
+            //3番
+            float time = 0.0f;
+            float behindTime = 0.0f;
+            while (time < chargeMaxTime)
+            {
+                FaceTowards(DirectionToPlayer, chargeHoming);
+                Move(transform.forward * chargeSpeed);
+                if (Mathf.Abs(AngleToPlayer) > 100f)
+                {
+                    behindTime += Time.deltaTime;
+                }
+                else
+                {
+                    behindTime = 0f;
+                }
+
+                if (behindTime >= 0.35) 
+                {
+                    break;
+                }
+
+                time += Time.deltaTime;
+                yield return null;
+            }
+
+            //4番
+            bodyHitbox.End();
+            yield return null;
         }
 
         /// <summary>ドリフト：勢いで滑りながら、すばやくプレイヤーの方へ向き直る（この間も当たる）</summary>
@@ -278,7 +584,32 @@ namespace MonsterAction.Battle.Boss
             //        Move(slide * rate);                      // 勢いがだんだん落ちる
             //        FaceTowards(DirectionToPlayer, driftTurn);  // すばやく向き直る
             //   5. 判定 OFF
-            yield return null; //エラー回避用
+            //yield return null; //エラー回避用
+            
+            //1番
+            Vector3 slide = transform.forward * chargeSpeed;
+
+            //2番
+            Play(AngleToPlayer > 0f ? "Walk Right" : "Walk Left", 0.1f);
+
+            //3番
+            bodyHitbox.Begin(chargeDamage * 0.7f, knockback: 4f, knockDown: true);
+
+            //4番
+            float time = 0.0f;
+            while (time < driftTime)
+            {
+                float rate = 1f - time / driftTime;
+                Move(slide * rate);
+                FaceTowards(DirectionToPlayer, driftTurn);
+                time += Time.deltaTime;
+                yield return null;
+            }
+
+            //5番
+            bodyHitbox.End();
+            yield return null;
+
         }
 
         /// <summary>減速して止まる</summary>
@@ -289,7 +620,21 @@ namespace MonsterAction.Battle.Boss
             //   2. seconds 秒の間、毎フレーム少しずつ遅く進む
             //        Move(transform.forward * chargeSpeed * (1f - time / seconds) * 0.5f);
             //        time += Time.deltaTime;  yield return null;
-            yield return null; //エラー回避用
+            //yield return null; //エラー回避用
+            
+            //1番
+            Play(Walk, 0.2f);
+
+            //2番
+            float time = 0.0f;
+            while (time < seconds)
+            {
+                Move(transform.forward * chargeSpeed * (1f - time / seconds) * 0.5f);
+                time += Time.deltaTime;
+                yield return null;
+            }
+            yield return null;
+
         }
 
         // ================================================================
@@ -306,7 +651,28 @@ namespace MonsterAction.Battle.Boss
             //        FaceTowards(DirectionToPlayer);          // プレイヤーの方へ向く
             //        Move(transform.forward * walkSpeed);     // 前に進む
             //        yield return null;                       // 次のフレームまで待つ
-            yield return null; //エラー回避用
+            //yield return null; //エラー回避用
+            
+            //1番
+            Play(Walk, 0.25f);
+
+            //2番
+            float end = Time.time + maxSeconds;
+
+            while (Time.time < end && DistanceToPlayer > meleeRange * 0.8f)
+            {
+                FaceTowards(DirectionToPlayer);
+                Move(transform.forward * walkSpeed);
+                yield return null;
+            }
+            yield return null;
+        }
+
+        //ギズモ表示用
+        private void OnDrawGizmos()
+        {
+            Gizmos.DrawWireSphere(transform.position, meleeRange);
+            Gizmos.DrawWireSphere(transform.position, farRange);
         }
 
 #if UNITY_EDITOR
