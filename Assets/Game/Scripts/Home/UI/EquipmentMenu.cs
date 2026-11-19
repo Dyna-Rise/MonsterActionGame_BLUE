@@ -69,8 +69,14 @@ namespace MonsterAction.Home.UI
             }
 
             // TODO ②：スキルも並べる
-            //   ・CreateHeader でスキルの見出しを作る
-            //   ・SkillData.All を foreach して、CreateRow() と entries.Add(new Entry { typeIndex = -1, skill = skill })
+            CreateHeader("スキルタイプ");
+            foreach (SkillType skill in SkillData.All)
+            {
+                CreateRow(); //行を作る
+                entries.Add(new Entry { typeIndex = -1, skill = skill });
+            }
+
+            //SkillData.All を foreach して、CreateRow() と entries.Add(new Entry { typeIndex = -1, skill = skill })
             //   （typeIndex = -1 で「スキルの行」という意味になります）
         }
 
@@ -102,6 +108,20 @@ namespace MonsterAction.Home.UI
                     //       付けている → 右に "装備中"（OnColor）
                     //       外している → 右に "外している"（OffColor）
                     //   ・名前は SkillData.GetName(e.skill)、情報は SkillData.GetStars(level)
+                    string skillName = SkillData.GetName(e.skill);
+                    int level = GameData.GetSkillLevel(e.skill);
+                    if (level <= 0) //レベル0＝未購入
+                    {
+                        rows[i].Set(skillName, SkillData.GetStars(0), "未購入", DisabledColor);//rowは行、上からi番目
+                    }
+                    else if(GameData.IsSkillEquipped(e.skill)) //GameDataにスキルを装備しているか質問している
+                    {
+                        rows[i].Set(skillName, SkillData.GetStars(level), "装備中", OnColor);
+                    }
+                    else
+                    {
+                        rows[i].Set(skillName, SkillData.GetStars(level), "外している",OffColor);
+                    }
                 }
             }
         }
@@ -110,20 +130,25 @@ namespace MonsterAction.Home.UI
         //  行にカーソルが乗った → 説明を出す
         // ================================================================
 
-        protected override void OnRowSelected(int index)
+        protected override void OnRowSelected(int index) //行が選択された時
         {
-            if (index < 0 || index >= entries.Count) return;
-            var e = entries[index];
+            if (index < 0 || index >= entries.Count) return;　//もしindexの値が0以下、規定以上の場合はreturnする（エラー防止）||はor
+            var e = entries[index];　
 
-            if (e.IsType)
+            if (e.IsType) //これでプレイヤータイプの説明を出している
             {
                 SetDescription(playerTypes[e.typeIndex].description);
             }
-            else
+            else　//それ以外はスキルの説明になる
             {
                 // TODO ④：スキルの説明を出す
                 //   SkillData.GetDescription(e.skill) を SetDescription に渡す
                 //   （未購入なら「村人のショップで買えます。」と付け足すと親切）
+                SetDescription(SkillData.GetDescription(e.skill));
+                if(GameData.GetSkillLevel(e.skill)<=0)
+                {
+                    SetDescription("村人のショップで買えます");
+                }
             }
         }
 
@@ -131,7 +156,7 @@ namespace MonsterAction.Home.UI
         //  行が決定された → タイプを選ぶ / スキルを付け外しする
         // ================================================================
 
-        protected override void OnRowClicked(int index)
+        protected override void OnRowClicked(int index)　//行がクリックされた時
         {
             if (index < 0 || index >= entries.Count) return;
             var e = entries[index];
@@ -139,16 +164,38 @@ namespace MonsterAction.Home.UI
             if (e.IsType)
             {
                 // TODO ①：そのタイプにする
-                //   1. var t = playerTypes[e.typeIndex];  で選んだタイプを取り出す
-                //   2. GameData.SelectedPlayerTypeId に t.id を入れる
-                //   3. ShowMessage($"{t.displayName} にした");
+                var t = playerTypes[e.typeIndex];  //で記憶させていたタイプを取り出す
+                GameData.SelectedPlayerTypeId = t.id; //GameDataにidを入れる
+                ShowMessage($"{t.displayName} にした"); //メッセージを表示させる
+
+                
+
             }
             else
             {
+
                 // TODO ⑤：スキルを付ける / 外す
                 //   1. 未購入（GameData.GetSkillLevel が 0 以下）なら … "まだ買っていません"
                 //   2. 付けていれば外す、外していれば付ける（GameData.SetSkillEquipped）
                 //   3. SetSkillEquipped が false なら（枠がいっぱい）… "スキル枠がいっぱいです。先にどれかを外してください"
+                if(GameData.GetSkillLevel(e.skill)<=0)//クリックした行のスキルレベルが0以下
+                {
+                    ShowMessage("まだ買っていません");
+                }
+                else if(GameData.IsSkillEquipped(e.skill)) //もしスキルを装備していたら
+                {
+                    GameData.SetSkillEquipped(e.skill, false);//falseで外す
+                }
+                else if (GameData.EquippedSkillCount >= GameData.MaxEquippedSkills)//制限より多くスキルをつけようとしたら
+                {
+                    ShowMessage("スキル枠がいっぱいです。先にどれかを外してください");
+                }
+                else
+                {
+                    GameData.SetSkillEquipped(e.skill, true);//true付ける
+                }
+                
+
             }
 
             Refresh(); // 表示を更新する
