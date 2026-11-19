@@ -32,6 +32,10 @@ PrefabInstance:
       propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[1].tangentMode
       value: 69
       objectReference: {fileID: 0}
+    - target: {fileID: 5166850989947078528, guid: cbc3e4e7ac66ec64390c6122adb2b2d7, type: 3}
+      propertyPath: speed
+      value: 25
+      objectReference: {fileID: 0}
     - target: {fileID: 7355868648442842349, guid: cbc3e4e7ac66ec64390c6122adb2b2d7, type: 3}
       propertyPath: m_Size.x
       value: 0.1
