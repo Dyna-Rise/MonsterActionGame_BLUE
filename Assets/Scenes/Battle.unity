@@ -870,6 +870,12 @@ MonoBehaviour:
   bosses:
   - bossId: DragonNightmare
     prefab: {fileID: 9030711035443847139, guid: 1b2a86f0d551b8e4d8345ad13e07c9b8, type: 3}
+  - bossId: DragonNightmare_a
+    prefab: {fileID: 9030711035443847139, guid: f0037b744e9738b40bbb9c7d6182d9ff, type: 3}
+  - bossId: DragonNightmare_k
+    prefab: {fileID: 182966052197837279, guid: 571cf382bd5b5564588174380db29001, type: 3}
+  - bossId: RedDragon
+    prefab: {fileID: 7501891750403997548, guid: c7c7e5192be15134382dce254a85aa43, type: 3}
 --- !u!4 &1001943751
 Transform:
   m_ObjectHideFlags: 0

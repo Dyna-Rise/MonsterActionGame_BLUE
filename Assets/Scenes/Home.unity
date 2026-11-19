@@ -8013,9 +8013,73 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 897370840725178339, guid: 158295697b0525940be6a2d3ed413838, type: 3}
+      propertyPath: quests.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 897370840725178339, guid: 158295697b0525940be6a2d3ed413838, type: 3}
+      propertyPath: quests.Array.data[1].id
+      value: DragonNightmare_a
+      objectReference: {fileID: 0}
+    - target: {fileID: 897370840725178339, guid: 158295697b0525940be6a2d3ed413838, type: 3}
+      propertyPath: quests.Array.data[2].id
+      value: DragonNightmare_k
+      objectReference: {fileID: 0}
+    - target: {fileID: 897370840725178339, guid: 158295697b0525940be6a2d3ed413838, type: 3}
+      propertyPath: quests.Array.data[3].id
+      value: RedDragon
+      objectReference: {fileID: 0}
+    - target: {fileID: 897370840725178339, guid: 158295697b0525940be6a2d3ed413838, type: 3}
       propertyPath: quests.Array.data[0].bossPrefab
       value: 
       objectReference: {fileID: 9030711035443847139, guid: 1b2a86f0d551b8e4d8345ad13e07c9b8, type: 3}
+    - target: {fileID: 897370840725178339, guid: 158295697b0525940be6a2d3ed413838, type: 3}
+      propertyPath: quests.Array.data[1].bossPrefab
+      value: 
+      objectReference: {fileID: 182966052197837279, guid: 571cf382bd5b5564588174380db29001, type: 3}
+    - target: {fileID: 897370840725178339, guid: 158295697b0525940be6a2d3ed413838, type: 3}
+      propertyPath: quests.Array.data[1].difficulty
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 897370840725178339, guid: 158295697b0525940be6a2d3ed413838, type: 3}
+      propertyPath: quests.Array.data[2].bossPrefab
+      value: 
+      objectReference: {fileID: 9030711035443847139, guid: f0037b744e9738b40bbb9c7d6182d9ff, type: 3}
+    - target: {fileID: 897370840725178339, guid: 158295697b0525940be6a2d3ed413838, type: 3}
+      propertyPath: quests.Array.data[2].difficulty
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 897370840725178339, guid: 158295697b0525940be6a2d3ed413838, type: 3}
+      propertyPath: quests.Array.data[3].bossPrefab
+      value: 
+      objectReference: {fileID: 7501891750403997548, guid: c7c7e5192be15134382dce254a85aa43, type: 3}
+    - target: {fileID: 897370840725178339, guid: 158295697b0525940be6a2d3ed413838, type: 3}
+      propertyPath: quests.Array.data[3].difficulty
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 897370840725178339, guid: 158295697b0525940be6a2d3ed413838, type: 3}
+      propertyPath: quests.Array.data[1].description
+      value: "\u6751\u306E\u8FD1\u304F\u306B\u73FE\u308C\u305F\u9ED2\u3044\u7ADC\u3002\n\u565B\u307F\u3064\u304D\u30FB\u5C3B\u5C3E\u30FB\u706B\u7403\u306B\u6CE8\u610F\u3002"
+      objectReference: {fileID: 0}
+    - target: {fileID: 897370840725178339, guid: 158295697b0525940be6a2d3ed413838, type: 3}
+      propertyPath: quests.Array.data[1].displayName
+      value: "\u30CA\u30A4\u30C8\u30E1\u30A2\u30C9\u30E9\u30B4\u30F3\u4E9C\u7A2E"
+      objectReference: {fileID: 0}
+    - target: {fileID: 897370840725178339, guid: 158295697b0525940be6a2d3ed413838, type: 3}
+      propertyPath: quests.Array.data[2].description
+      value: "\u6751\u306E\u8FD1\u304F\u306B\u73FE\u308C\u305F\u9ED2\u3044\u7ADC\u3002\n\u565B\u307F\u3064\u304D\u30FB\u5C3B\u5C3E\u30FB\u706B\u7403\u306B\u6CE8\u610F\u3002"
+      objectReference: {fileID: 0}
+    - target: {fileID: 897370840725178339, guid: 158295697b0525940be6a2d3ed413838, type: 3}
+      propertyPath: quests.Array.data[2].displayName
+      value: "\u30CA\u30A4\u30C8\u30E1\u30A2\u30C9\u30E9\u30B4\u30F3\u5E0C\u5C11\u7A2E"
+      objectReference: {fileID: 0}
+    - target: {fileID: 897370840725178339, guid: 158295697b0525940be6a2d3ed413838, type: 3}
+      propertyPath: quests.Array.data[3].description
+      value: "\u6751\u306E\u8FD1\u304F\u306B\u73FE\u308C\u305F\u9ED2\u3044\u7ADC\u3002\n\u565B\u307F\u3064\u304D\u30FB\u5C3B\u5C3E\u30FB\u706B\u7403\u306B\u6CE8\u610F\u3002"
+      objectReference: {fileID: 0}
+    - target: {fileID: 897370840725178339, guid: 158295697b0525940be6a2d3ed413838, type: 3}
+      propertyPath: quests.Array.data[3].displayName
+      value: "\u30EC\u30C3\u30C9\u30C9\u30E9\u30B4\u30F3"
+      objectReference: {fileID: 0}
     - target: {fileID: 2290622187223115803, guid: 158295697b0525940be6a2d3ed413838, type: 3}
       propertyPath: m_Name
       value: QuestMenu
