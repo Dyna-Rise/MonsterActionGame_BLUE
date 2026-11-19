@@ -1,0 +1,269 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &9030711035443847139
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6166300847064308180}
+  - component: {fileID: 5690595900917726057}
+  - component: {fileID: 3231378440685513363}
+  - component: {fileID: 6272319324860947906}
+  m_Layer: 0
+  m_Name: Boss_DragonNightmareVariants
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6166300847064308180
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9030711035443847139}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 5962277318855723834}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!143 &5690595900917726057
+CharacterController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9030711035443847139}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Height: 5
+  m_Radius: 1.8
+  m_SlopeLimit: 50
+  m_StepOffset: 0.5
+  m_SkinWidth: 0.08
+  m_MinMoveDistance: 0.001
+  m_Center: {x: 0, y: 2.5, z: 0}
+--- !u!114 &3231378440685513363
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9030711035443847139}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c7604b4434c8ae48bd6aa0d6f793ed0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MonsterAction.Combat.LockOnTarget
+  aimPoint: {fileID: 5962277318855742780}
+  offset: {x: 0, y: 1, z: 0}
+  priority: 10
+--- !u!114 &6272319324860947906
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9030711035443847139}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eec4befffe18ffd409af04cb8f9dfab9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MonsterAction.Battle.Boss.DragonNightmareBossVariants
+  bossName: "\u30CA\u30A4\u30C8\u30E1\u30A2\u30C9\u30E9\u30B4\u30F3 \u4E9C\u7A2E"
+  maxHp: 900
+  flinchThreshold: 150
+  rewardMoney: 1500
+  restTimeScale: 1.6
+  restRandomExtra: 0.8
+  turnSpeed: 120
+  gravity: -30
+  bodyRadius: 2.2
+  bodyHalfLength: 1.5
+  bodyCenterOffset: {x: 0, y: 0, z: 0}
+  idleState: Idle
+  hitState: GetHit
+  dieState: Die
+  animator: {fileID: 0}
+  meleeRange: 7
+  farRange: 18
+  walkSpeed: 3
+  biteHitbox: {fileID: 1817504790930669644}
+  clawHitboxes:
+  - {fileID: 560456162449472167}
+  - {fileID: 6230754789409213508}
+  bodyHitbox: {fileID: 5272754394296137322}
+  biteDamage: 25
+  clawDamage: 25
+  chargeDamage: 40
+  chargeSpeed: 13
+  chargeHoming: 0.35
+  chargeMaxTime: 2.5
+  maxCharges: 3
+  driftTime: 0.7
+  driftTurn: 4
+  breathPrefab: {fileID: 559087982733288111, guid: c9f2a48407365ea45b9997b00515e4a3, type: 3}
+  breathDamage: 35
+  breathSpeed: 20
+  breathRadius: 1
+  breathCount: 3
+  breathSpreadAngle: 12
+  breathHeight: 1.2
+  breathStartForward: 4
+  breathColor: {r: 1, g: 0.45, b: 0.1, a: 1}
+  rockPrefab: {fileID: 3992550560370543053, guid: 762206de9ab381042bf5dba6869a6a13, type: 3}
+  rockDamage: 30
+  rockRadius: 1.5
+  rockCount: 5
+  rockSpreadAngle: 12
+  rockDistance: 16
+  rockFlightTime: 1.5
+  rockGravity: -6
+  rockStartHeight: 1.5
+  rockStartForward: 3
+  rockColor: {r: 0.45, g: 0.4, b: 0.35, a: 1}
+  roarRadius: 12
+  roarDamage: 10
+  roarEffect: {fileID: 5614835284154224771, guid: d1417ef414a526d4880e92b37feb967f, type: 3}
+  jumpAttackRadius: 10
+  jumpDamage: 15
+  jumpEffect: {fileID: 4913061021662774499, guid: d6a636cc3196a974caef4275a078a8cd, type: 3}
+  walkTime: 5
+  enragedAnimSpeed: 1.2
+  enragedRestRate: 0.6
+--- !u!1001 &5962277318855789356
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 6166300847064308180}
+    m_Modifications:
+    - target: {fileID: 100720, guid: 8252519d2c6fd014bb5f75765a8c4fda, type: 3}
+      propertyPath: m_Name
+      value: Albino
+      objectReference: {fileID: 0}
+    - target: {fileID: 458774, guid: 8252519d2c6fd014bb5f75765a8c4fda, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 458774, guid: 8252519d2c6fd014bb5f75765a8c4fda, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 458774, guid: 8252519d2c6fd014bb5f75765a8c4fda, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 458774, guid: 8252519d2c6fd014bb5f75765a8c4fda, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 458774, guid: 8252519d2c6fd014bb5f75765a8c4fda, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 458774, guid: 8252519d2c6fd014bb5f75765a8c4fda, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 458774, guid: 8252519d2c6fd014bb5f75765a8c4fda, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 458774, guid: 8252519d2c6fd014bb5f75765a8c4fda, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 458774, guid: 8252519d2c6fd014bb5f75765a8c4fda, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 458774, guid: 8252519d2c6fd014bb5f75765a8c4fda, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 13792112, guid: 8252519d2c6fd014bb5f75765a8c4fda, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 81d2b67dc7484724095d4343217c4e31, type: 2}
+    - target: {fileID: 5442408128571951968, guid: 8252519d2c6fd014bb5f75765a8c4fda, type: 3}
+      propertyPath: radius
+      value: 2
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 8252519d2c6fd014bb5f75765a8c4fda, type: 3}
+--- !u!114 &560456162449472167 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6159059830985077131, guid: 8252519d2c6fd014bb5f75765a8c4fda, type: 3}
+  m_PrefabInstance: {fileID: 5962277318855789356}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84e324346f3c7504f8eef027cf8cc83e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MonsterAction.Battle.Boss.BossAttackHitbox
+--- !u!114 &1817504790930669644 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5442408128571951968, guid: 8252519d2c6fd014bb5f75765a8c4fda, type: 3}
+  m_PrefabInstance: {fileID: 5962277318855789356}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84e324346f3c7504f8eef027cf8cc83e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MonsterAction.Battle.Boss.BossAttackHitbox
+--- !u!114 &5272754394296137322 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1986885194591911238, guid: 8252519d2c6fd014bb5f75765a8c4fda, type: 3}
+  m_PrefabInstance: {fileID: 5962277318855789356}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84e324346f3c7504f8eef027cf8cc83e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MonsterAction.Battle.Boss.BossAttackHitbox
+--- !u!4 &5962277318855723834 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 458774, guid: 8252519d2c6fd014bb5f75765a8c4fda, type: 3}
+  m_PrefabInstance: {fileID: 5962277318855789356}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &5962277318855742780 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 482832, guid: 8252519d2c6fd014bb5f75765a8c4fda, type: 3}
+  m_PrefabInstance: {fileID: 5962277318855789356}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &6230754789409213508 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 344056815719827304, guid: 8252519d2c6fd014bb5f75765a8c4fda, type: 3}
+  m_PrefabInstance: {fileID: 5962277318855789356}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84e324346f3c7504f8eef027cf8cc83e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MonsterAction.Battle.Boss.BossAttackHitbox
